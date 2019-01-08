@@ -1,7 +1,6 @@
 package frc.team3100.robot.Wrist;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 
 public class WristMotion extends Command {
