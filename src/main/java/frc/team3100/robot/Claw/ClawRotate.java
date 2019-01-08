@@ -6,7 +6,7 @@ import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 public class ClawRotate extends Command {
-    private double stickError = 0.3;
+    private double joystickError = 0.3;
     public ClawRotate() {
         super("ClawRotate");
     }
@@ -16,9 +16,9 @@ public class ClawRotate extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.techControls.getLeftTrigger() > stickError) {
+        if(RobotMap.techControls.getLeftTrigger() > joystickError) {
             Robot.claw.wheels(RobotMap.techControls.getLeftTrigger());
-        } else if(RobotMap.techControls.getRightTrigger() > stickError) {
+        } else if(RobotMap.techControls.getRightTrigger() > joystickError) {
             Robot.claw.wheels(-RobotMap.techControls.getRightTrigger());
         }
     }

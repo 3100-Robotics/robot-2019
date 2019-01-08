@@ -17,15 +17,24 @@ public class Variables {
         high,
         low
     }
-    public enum ArmPosition {
-        MIN(SmartDashboard.getNumber("ArmMin",0)),
-        MAX(SmartDashboard.getNumber("ArmMax",5)),
-        HIGHMID(SmartDashboard.getNumber("ArmHighMid",3.75)),
-        LOWMID(SmartDashboard.getNumber("ArmLowMid",1.25));
+    public enum ClawPositions {
+        wristFGround(0),
+        wristFBall(0),
+        wristFMid(0),
+        wristFHigh(0),
+        wristBHigh(0),
+        wristBMid(0),
+
+        armFGround(0),
+        armFBall(0),
+        armFMid(0),
+        armFHigh(0),
+        armBHigh(0),
+        armBMid(0);
 
         private final double position;
 
-        ArmPosition(double position) {
+        ClawPositions(double position) {
             this.position = position;
         }
 
@@ -34,26 +43,11 @@ public class Variables {
         }
     }
 
-    public enum WristPosition {
-        MIN(SmartDashboard.getNumber("WristMin",0)),
-        MAX(SmartDashboard.getNumber("WristMax",5)),
-        HIGHMID(SmartDashboard.getNumber("WristHighMid",3.75)),
-        LOWMID(SmartDashboard.getNumber("WristLowMid",1.25));
-
-        private final double position;
-
-        WristPosition(double position) {
-            this.position = position;
-        }
-
-        public double getPosition() {
-            return position;
-        }
-    }
 
 
     public static boolean clawOpenState = false;
     public static boolean wristLock = true;
+    public static boolean wristAuto = true;
     public static boolean armLock = true;
     public static boolean armAuto = true;
     public boolean climbState = false;

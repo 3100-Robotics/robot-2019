@@ -10,6 +10,7 @@ public class RobotMap {
     //     C O N T R O L L E R S
     private static int driveControlsChannel = 1;
     private static int techControlsChannel = 2;
+    private static int controlBoardChannel = 3;
 
 
     //     P W M
@@ -70,6 +71,16 @@ public class RobotMap {
 
     public static final int rightTriggerChannel = 3;
     public static final int leftTriggerChannel = 2;
+    // B O A R D
+    public static final int BoardButton1Channel = 1;
+    public static final int BoardButton2Channel = 2;
+    public static final int BoardButton3Channel = 3;
+    public static final int BoardButton4Channel = 4;
+    public static final int BoardButton5Channel = 5;
+    public static final int BoardButton6Channel = 6;
+    public static final int BoardButton7Channel = 7;
+    public static final int BoardButton8Channel = 8;
+    public static final int BoardButton9Channel = 9;
 
 
 
