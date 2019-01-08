@@ -53,6 +53,7 @@ public class Robot extends TimedRobot {
         RobotMap.leftDriveMotor3.follow(RobotMap.leftDriveMotor1);
         RobotMap.rightDriveMotor2.follow(RobotMap.rightDriveMotor1);
         RobotMap.rightDriveMotor3.follow(RobotMap.rightDriveMotor1);
+        RobotMap.armMotor2.follow(RobotMap.armMotor1);
 
     }
 

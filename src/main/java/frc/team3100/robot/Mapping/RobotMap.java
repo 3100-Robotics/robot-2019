@@ -14,10 +14,8 @@ public class RobotMap {
 
     //     P W M
     private static int clawMotorChannel = 0;
-    private static int shelfMotor1Channel = 1;
-    private static int shelfMotor2Channel = 2;
-    private static int lifterMotor1Channel = 3;
-    private static int lifterMotor2Channel = 4;
+    private static int shelfMotorsChannel = 1;
+    private static int lifterMotorsChannel = 2;
 
 
     //     C A N
@@ -94,10 +92,8 @@ public class RobotMap {
     public static TalonSRX wristMotor = new TalonSRX(wristMotorChannel);
 
     public static SpeedController clawMotor = new Spark(clawMotorChannel);
-    public static SpeedController shelfMotor1 = new Spark(shelfMotor1Channel);
-    public static SpeedController shelfMotor2 = new Spark(shelfMotor2Channel);
-    public static SpeedController lifterMotor1 = new Spark(lifterMotor1Channel);
-    public static SpeedController lifterMotor2 = new Spark(lifterMotor2Channel);
+    public static SpeedController shelfMotors = new Spark(shelfMotorsChannel);
+    public static SpeedController lifterMotors = new Spark(lifterMotorsChannel);
 
 
     //    Initialize pneumatic controllers (solenoids)

@@ -3,6 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="robot-2019" target="1.8" />
+      <module name="robot-2019.main" target="1.8" />
+      <module name="robot-2019.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

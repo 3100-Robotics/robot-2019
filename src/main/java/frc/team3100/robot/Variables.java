@@ -1,5 +1,7 @@
 package frc.team3100.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class Variables {
 
     public enum RelativeDirection {
@@ -16,18 +18,35 @@ public class Variables {
         low
     }
     public enum ArmPosition {
-        FRONTGROUND(-1000),
-        BACKGROUND(1000),
-        FRONTSWITCH(-500),
-        BACKSWITCH(500);
+        MIN(SmartDashboard.getNumber("ArmMin",0)),
+        MAX(SmartDashboard.getNumber("ArmMax",5)),
+        HIGHMID(SmartDashboard.getNumber("ArmHighMid",3.75)),
+        LOWMID(SmartDashboard.getNumber("ArmLowMid",1.25));
 
-        private final int position;
+        private final double position;
 
-        ArmPosition(int position) {
+        ArmPosition(double position) {
             this.position = position;
         }
 
-        public int getPosition() {
+        public double getPosition() {
+            return position;
+        }
+    }
+
+    public enum WristPosition {
+        MIN(SmartDashboard.getNumber("WristMin",0)),
+        MAX(SmartDashboard.getNumber("WristMax",5)),
+        HIGHMID(SmartDashboard.getNumber("WristHighMid",3.75)),
+        LOWMID(SmartDashboard.getNumber("WristLowMid",1.25));
+
+        private final double position;
+
+        WristPosition(double position) {
+            this.position = position;
+        }
+
+        public double getPosition() {
             return position;
         }
     }
@@ -35,6 +54,8 @@ public class Variables {
 
     public static boolean clawOpenState = false;
     public static boolean wristLock = true;
+    public static boolean armLock = true;
+    public static boolean armAuto = true;
     public boolean climbState = false;
     public boolean cubeHeld = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;
