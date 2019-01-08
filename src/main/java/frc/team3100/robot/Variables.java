@@ -34,6 +34,7 @@ public class Variables {
 
 
     public static boolean clawOpenState = false;
+    public static boolean wristLock = true;
     public boolean climbState = false;
     public boolean cubeHeld = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;

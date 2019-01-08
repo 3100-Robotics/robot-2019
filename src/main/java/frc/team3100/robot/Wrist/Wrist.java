@@ -5,6 +5,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Variables;
+
+import static com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 
 public class Wrist extends PIDSubsystem implements Dashboard.DashboardUpdatable {
     private static double kP = SmartDashboard.getNumber("WristP",0);
@@ -17,22 +20,29 @@ public class Wrist extends PIDSubsystem implements Dashboard.DashboardUpdatable 
         getPIDController().setContinuous(true);
     }
 
-
-
-
-
-
-
-
     public double returnPIDInput() {
         return RobotMap.wristEncoder.pidGet();
     }
 
     public void usePIDOutput(double output) {
-
+        this.rotate(output);
     }
 
-
+    public void rotate(double speed) {
+        if(Math.abs(speed) < .2) {
+            speed = 0;
+            RobotMap.wristBrakeRelease.set(false);
+            RobotMap.wristBrakeEngage.set(true);
+            Variables.wristLock = true;
+        } else {
+            if(Variables.wristLock) {
+                RobotMap.wristBrakeRelease.set(true);
+                RobotMap.wristBrakeEngage.set(false);
+                Variables.wristLock = false;
+            }
+        }
+        RobotMap.wristMotor.set(PercentOutput,speed);
+    }
 
 
 
