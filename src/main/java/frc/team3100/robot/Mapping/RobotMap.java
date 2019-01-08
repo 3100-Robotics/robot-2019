@@ -2,6 +2,7 @@ package frc.team3100.robot.Mapping;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -28,8 +29,7 @@ public class RobotMap {
     private static int shiftDriveHighChannel = 1;
 
     //     D I O
-    private static int wristEncoderChannelA = 0;
-    private static int wristEncoderChannelB = 1;
+    private static int wristEncoderChannel = 0;
 
 
     //     X B O X
@@ -73,7 +73,7 @@ public class RobotMap {
 
     //    Initialize sensors
     public static Gyro gyro = new ADXRS450_Gyro();
-    public static Encoder wristEncoder = new Encoder(wristEncoderChannelA,wristEncoderChannelB);
+    public static AnalogInput wristEncoder = new AnalogInput(wristEncoderChannel);
 
 
 

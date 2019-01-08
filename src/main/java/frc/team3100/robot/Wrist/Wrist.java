@@ -1,7 +1,7 @@
 package frc.team3100.robot.Wrist;
 
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -13,28 +13,41 @@ public class Wrist extends PIDSubsystem implements Dashboard.DashboardUpdatable 
 
     public Wrist() {
         super("Wrist",kP,kI,kD);
+        getPIDController().setInputRange(0,5);
+        getPIDController().setContinuous(true);
     }
 
+
+
+
+
+
+
+
     public double returnPIDInput() {
-        return RobotMap.wristEncoder.get();
+        return RobotMap.wristEncoder.pidGet();
     }
 
     public void usePIDOutput(double output) {
 
     }
 
-    public void initDefaultCommand() {
 
+
+
+
+
+
+    public void initDefaultCommand() {
+        setDefaultCommand(new WristMotion());
     }
 
     public void initSD() {
-        Livewindow.add()
+        LiveWindow.add(getPIDController());
     }
 
     public void updateSD() {
-
+        LiveWindow.updateValues();
     }
-
-
 
 }

@@ -45,7 +45,7 @@ public class Dashboard {
 			for (DashboardUpdatable subsystem : subsystems) {
 				subsystem.updateSD();
 			}
-			
+			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
 		}
 	}

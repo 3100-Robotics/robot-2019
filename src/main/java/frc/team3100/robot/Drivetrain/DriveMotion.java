@@ -8,6 +8,7 @@ public class DriveMotion extends Command {
 
 
     public DriveMotion() {
+        super("DriveMotion");
         requires(Robot.drive);
     }
 
