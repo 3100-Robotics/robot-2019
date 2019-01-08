@@ -9,10 +9,9 @@ import frc.team3100.robot.Mapping.XBoxStates;
 
 public class OI {
 
-    private XBoxStates driveControls = RobotMap.driveControls;
 
 
-    public Button shifter = new JoystickButton(driveControls,RobotMap.aButtonChannel);
+    public Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
 
 
     public OI() {

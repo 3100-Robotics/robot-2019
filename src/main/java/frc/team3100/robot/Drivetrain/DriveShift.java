@@ -8,7 +8,7 @@ public class DriveShift extends Command {
 
 
     public DriveShift() {
-
+        super("DriveShift");
     }
 
     protected void initialize() {

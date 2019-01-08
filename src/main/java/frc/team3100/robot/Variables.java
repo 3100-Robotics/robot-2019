@@ -33,7 +33,7 @@ public class Variables {
     }
 
 
-    public boolean clawOpenState = false;
+    public static boolean clawOpenState = false;
     public boolean climbState = false;
     public boolean cubeHeld = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;

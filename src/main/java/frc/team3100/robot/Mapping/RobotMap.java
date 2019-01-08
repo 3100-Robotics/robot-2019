@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
 public class RobotMap {
 
     //     C O N T R O L L E R S
-    private static int driveController = 1;
+    private static int driveControlsChannel = 1;
+    private static int techControlsChannel = 2;
+
 
     //     P W M
     private static int clawMotorChannel = 0;
@@ -53,7 +55,8 @@ public class RobotMap {
 
 
 
-    //     X B O X
+    //     D R I V E R   B U T T O N S
+    //X B O X
     public static final int rightXAxisChannel = 4;
     public static final int rightYAxisChannel = 5;
     public static final int leftXAxisChannel = 0;
@@ -73,8 +76,11 @@ public class RobotMap {
 
 
 
+
     //    Initialize XBox Controllers
-    public static XBoxStates driveControls = new XBoxStates(driveController);
+    public static XBoxStates driveControls = new XBoxStates(driveControlsChannel);
+    public static XBoxStates techControls = new XBoxStates(techControlsChannel);
+
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
@@ -103,10 +109,6 @@ public class RobotMap {
     public static Solenoid wristBrakeRelease = new Solenoid(wristBrakeReleaseChannel);
 
 
-    //    Initialize servos
-
-
-
     //    Initialize sensors
     public static Gyro gyro = new ADXRS450_Gyro();
 
@@ -116,11 +118,5 @@ public class RobotMap {
     public static Encoder driveRightEncoder = new Encoder(driveRightEncoderChannelA,driveRightEncoderChannelB);
     public static Encoder lifterEncoder = new Encoder(lifterEncoderChannelA,lifterEncoderChannelB);
     public static Encoder shelfEncoder = new Encoder(shelfEncoderChannelA,shelfEncoderChannelB);
-
-
-
-
-
-
 
 }
