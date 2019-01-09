@@ -3,6 +3,10 @@ package frc.team3100.robot.Mapping;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.team3100.robot.Mapping.RobotMap;
 
+/*
+Makes the Xbox controller's inputs far more manageable for the rest of the program.
+ */
+
 public class XBoxStates extends Joystick {
 
     public XBoxStates(int port) {

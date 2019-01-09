@@ -9,6 +9,12 @@ import frc.team3100.robot.Variables;
 
 import static com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 
+/*
+Subsystem that defines the motion for the arm component of the game piece manipulator.
+Defines the breaking action, PID controlled motion, and interfaces with the absolute encoder.
+ */
+
+
 public class Arm extends PIDSubsystem implements Dashboard.DashboardUpdatable {
     private static double kP = SmartDashboard.getNumber("ArmP",0);
     private static double kI = SmartDashboard.getNumber("ArmI",0);

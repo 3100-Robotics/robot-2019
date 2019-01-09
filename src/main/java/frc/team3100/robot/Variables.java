@@ -2,6 +2,11 @@ package frc.team3100.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+
+/*
+Stores all of the variables and state values used throughout the robot program.
+ */
+
 public class Variables {
 
     public enum RelativeDirection {

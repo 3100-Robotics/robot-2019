@@ -6,7 +6,9 @@ import frc.team3100.robot.Drivetrain.DriveShift;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Mapping.XBoxStates;
 
-
+/*
+Interfaces buttons with commands
+ */
 public class OI {
 
 

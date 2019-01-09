@@ -4,6 +4,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
+/*
+Triggers the shift from low to high gear or vice-versa
+ */
 public class DriveShift extends Command {
 
 

@@ -9,6 +9,11 @@ import frc.team3100.robot.Variables;
 
 import static com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 
+/*
+Pretty much an identical copy of the arm subsystem. Defines all aspects of the wrist and
+enables for PID Position control.
+ */
+
 public class Wrist extends PIDSubsystem implements Dashboard.DashboardUpdatable {
     private static double kP = SmartDashboard.getNumber("WristP",0);
     private static double kI = SmartDashboard.getNumber("WristI",0);

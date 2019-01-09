@@ -5,6 +5,11 @@ import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
+/*
+This command takes a wrist and arm input and tells the respective subsystems to move to that location,
+starting the autonomous motion.
+ */
+
 public class AutoClawMotion extends Command {
 
     private static Variables.ClawPositions armTargetPosition;

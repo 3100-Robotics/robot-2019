@@ -4,6 +4,9 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 
+/*
+This defines all of the ports the robot will need to access and initialize whatever object is on that port.
+ */
 
 public class RobotMap {
 

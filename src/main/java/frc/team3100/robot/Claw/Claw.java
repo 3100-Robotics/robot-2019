@@ -6,6 +6,10 @@ import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
 
+/*
+This subsystem defines the claw and the motors used to pickup the cargo.
+ */
+
 public class Claw extends Subsystem implements Dashboard.DashboardUpdatable {
     private static double motorSpeed = 0;
 

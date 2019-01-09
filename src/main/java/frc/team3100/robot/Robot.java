@@ -11,7 +11,9 @@ import frc.team3100.robot.Lifter.Lifter;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Wrist.Wrist;
 
-
+/*
+Initializes all subsystems and runs the scheduler to enable the use of commands.
+ */
 public class Robot extends TimedRobot {
     private Command AutoChosen;
 

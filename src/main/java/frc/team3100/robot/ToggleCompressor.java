@@ -3,7 +3,7 @@ package frc.team3100.robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Controls the air compressor on the robot.
  */
 public class ToggleCompressor extends Command {
 

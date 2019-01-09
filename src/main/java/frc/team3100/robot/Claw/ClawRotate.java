@@ -5,6 +5,10 @@ import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
+/*
+This command takes the two trigger inputs on the Technician's controller and makes the claw motors move accordingly.
+ */
+
 public class ClawRotate extends Command {
     private double joystickError = 0.3;
     public ClawRotate() {
