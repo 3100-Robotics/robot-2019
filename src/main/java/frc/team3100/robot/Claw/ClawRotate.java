@@ -9,6 +9,7 @@ public class ClawRotate extends Command {
     private double joystickError = 0.3;
     public ClawRotate() {
         super("ClawRotate");
+        requires(Robot.claw);
     }
 
     protected void initialize() {

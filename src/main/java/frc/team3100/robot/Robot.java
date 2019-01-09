@@ -54,6 +54,11 @@ public class Robot extends TimedRobot {
         RobotMap.rightDriveMotor2.follow(RobotMap.rightDriveMotor1);
         RobotMap.rightDriveMotor3.follow(RobotMap.rightDriveMotor1);
         RobotMap.armMotor2.follow(RobotMap.armMotor1);
+        RobotMap.rightDriveMotor3.setInverted(true);
+        RobotMap.leftDriveMotor3.setInverted(true);
+        RobotMap.leftDriveMotor2.setInverted(true);
+
+        RobotMap.leftDriveMotor1.setInverted(false);
 
     }
 

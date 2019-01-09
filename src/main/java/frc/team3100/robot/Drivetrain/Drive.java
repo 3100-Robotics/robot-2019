@@ -12,10 +12,6 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
 
 
 
-    private double dMoveLimit = 0.1;
-    private double limitedMoveLeft = 0;
-    private double limitedMoveRight = 0;
-
     public Drive() {
         super("Drive");
     }
@@ -37,26 +33,7 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void driveArcade(double inputMoveLeft, double inputMoveRight) {
         SmartDashboard.putNumber("leftPower",inputMoveLeft);
-
-        double dMoveLeft = inputMoveLeft - limitedMoveLeft;
-        if (dMoveLeft > dMoveLimit) {
-            dMoveLeft = dMoveLimit;
-        } else if (dMoveLeft < -dMoveLimit) {
-            dMoveLeft = -dMoveLimit;
-        }
-
-        limitedMoveLeft += dMoveLeft;
-
-
-
-        double dMoveRight = inputMoveRight - limitedMoveRight;
-        if(dMoveRight > dMoveLimit) {
-            dMoveRight = dMoveLimit;
-        } else if (dMoveRight < -dMoveLimit) {
-            dMoveRight = -dMoveLimit;
-        }
-
-        limitedMoveRight += dMoveRight;
+        SmartDashboard.putNumber("rightPower",inputMoveRight);
 
         RobotMap.leftDriveMotor1.set(PercentOutput,inputMoveLeft);
         RobotMap.rightDriveMotor1.set(PercentOutput,inputMoveRight);
