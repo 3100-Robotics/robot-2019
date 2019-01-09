@@ -64,6 +64,7 @@ public class Arm extends PIDSubsystem implements Dashboard.DashboardUpdatable {
 
     public void updateSD() {
         LiveWindow.updateValues();
+        SmartDashboard.putBoolean("Arm Break",RobotMap.armBrakeEngage.get());
     }
 
 }

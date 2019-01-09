@@ -9,19 +9,21 @@ Stores all of the variables and state values used throughout the robot program.
 
 public class Variables {
 
-    public enum RelativeDirection {
-        LEFT,
-        RIGHT,
-        FRONT,
-        BACK,
-        TOP,
-        BOTTOM
-    }
 
     public enum DriveTrainStates {
-        high,
-        low
+        high("High"),
+        low("Low");
+        private final String gear;
+
+        DriveTrainStates(String gear) {
+            this.gear = gear;
+        }
+
+        public String getGear() {
+            return gear;
+        }
     }
+
     public enum ClawPositions {
         wristFGround(0),
         wristFBall(0),
@@ -55,6 +57,7 @@ public class Variables {
     public static boolean wristAuto = true;
     public static boolean armLock = true;
     public static boolean armAuto = true;
+    public static boolean driveAuto = true;
     public boolean climbState = false;
     public boolean cubeHeld = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;

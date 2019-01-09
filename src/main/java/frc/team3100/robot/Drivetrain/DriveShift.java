@@ -15,12 +15,10 @@ public class DriveShift extends Command {
     }
 
     protected void initialize() {
-        if(Variables.driveTrainState == Variables.DriveTrainStates.low) {
+        if(Variables.driveTrainState.getGear().equals("low")) {
             Robot.drive.shiftHigh();
-            Variables.driveTrainState = Variables.DriveTrainStates.high;
         } else {
             Robot.drive.shiftLow();
-            Variables.driveTrainState = Variables.DriveTrainStates.low;
         }
     }
 
