@@ -1,9 +1,12 @@
 package frc.team3100.robot.Arm;
 
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Dashboard;
+import frc.team3100.robot.Gains;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
 
@@ -15,39 +18,78 @@ Defines the breaking action, PID controlled motion, and interfaces with the abso
  */
 
 
-public class Arm extends PIDSubsystem implements Dashboard.DashboardUpdatable {
-    private static double kP = SmartDashboard.getNumber("ArmP",0);
-    private static double kI = SmartDashboard.getNumber("ArmI",0);
-    private static double kD = SmartDashboard.getNumber("ArmD",0);
+public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
+
+    private static TalonSRX motor = RobotMap.leftDriveMotor1;
+    /**
+     * Which PID slot to pull gains from. Starting 2018, you can choose from
+     * 0,1,2 or 3. Only the first two (0,1) are visible in web-based
+     * configuration.
+     */
+    private static int kSlotIdx = 0;
+    /**
+     * Talon SRX/ Victor SPX will supports multiple (cascaded) PID loops. For
+     * now we just want the primary one.
+     */
+    private static int kPIDLoopIdx = 0;
+    /**
+     * Set to zero to skip waiting for confirmation, set to nonzero to wait and
+     * report to DS if action fails.
+     */
+    private static int kTimeoutMs = 30;
+    /* Choose so that Talon does not report sensor out of phase */
+    private static boolean kSensorPhase = false;
+
+    /**
+     * Gains used in Positon Closed Loop, to be adjusted accordingly
+     * Gains(kp, ki, kd, kf, izone, peak output);
+     */
+    private static final Gains kGains = new Gains(1, 0.0, 0, 0.0, 0, 1.0);;
+    private static double pos;
 
     public Arm() {
-        super("Arm",kP,kI,kD);
-        getPIDController().setInputRange(0,5);
-        getPIDController().setContinuous(true);
+        super("Arm");
+
+        /* Config the sensor used for Primary PID and sensor direction */
+        motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,
+                kPIDLoopIdx,
+                kTimeoutMs);
+
+        /* Ensure sensor is positive when output is positive */
+        motor.setSensorPhase(kSensorPhase);
+
+        /* Config the peak and nominal outputs, 12V means full */
+        motor.configNominalOutputForward(0, kTimeoutMs);
+        motor.configNominalOutputReverse(0, kTimeoutMs);
+        motor.configPeakOutputForward(1, kTimeoutMs);
+        motor.configPeakOutputReverse(-1, kTimeoutMs);
+
+        /**
+         * Config the allowable closed-loop error, Closed-Loop output will be
+         * neutral within this range. See Table in Section 17.2.1 for native
+         * units per rotation.
+         */
+        motor.configAllowableClosedloopError(0, kPIDLoopIdx, kTimeoutMs);
+
+        /* Config Position Closed Loop gains in slot0, tsypically kF stays zero. */
+        motor.config_kF(kPIDLoopIdx, kGains.kF, kTimeoutMs);
+        motor.config_kP(kPIDLoopIdx, kGains.kP, kTimeoutMs);
+        motor.config_kI(kPIDLoopIdx, kGains.kI, kTimeoutMs);
+        motor.config_kD(kPIDLoopIdx, kGains.kD, kTimeoutMs);
+        motor.setSelectedSensorPosition(0);
+
     }
 
-    public double returnPIDInput() {
-        return RobotMap.armEncoder.pidGet();
-    }
-
-    public void usePIDOutput(double output) {
-        this.rotate(output);
-    }
 
     public void rotate(double speed) {
-        if(Math.abs(speed) < .2) {
-            speed = 0;
-            RobotMap.armBrakeRelease.set(false);
-            RobotMap.armBrakeEngage.set(true);
-            Variables.armLock = true;
-        } else {
-            if(Variables.armLock) {
-                RobotMap.armBrakeRelease.set(true);
-                RobotMap.armBrakeEngage.set(false);
-                Variables.armLock = false;
-            }
-        }
-        RobotMap.armMotor1.set(PercentOutput,speed);
+            motor.set(ControlMode.PercentOutput,speed);
+
+    }
+
+    public void movePosition(double position) {
+        SmartDashboard.putNumber("a",7);
+        this.pos = position;
+        motor.set(ControlMode.Position,position);
     }
 
 
@@ -59,12 +101,20 @@ public class Arm extends PIDSubsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void initSD() {
-        LiveWindow.add(getPIDController());
+        if(motor.getControlMode() == ControlMode.Position) {
+            SmartDashboard.putNumber("target",pos);
+        }
+        SmartDashboard.putBoolean("Arm Break",RobotMap.armBrakeEngage.get());
+        SmartDashboard.putNumber("MotorSpeed",motor.getOutputCurrent());
+        SmartDashboard.putNumber("Position",motor.getSensorCollection().getQuadraturePosition());
     }
 
     public void updateSD() {
-        LiveWindow.updateValues();
+        if(motor.getControlMode() == ControlMode.Position) {
+            SmartDashboard.putNumber("target",pos);
+        }
         SmartDashboard.putBoolean("Arm Break",RobotMap.armBrakeEngage.get());
+        SmartDashboard.putNumber("MotorSpeed",motor.getOutputCurrent());
+        SmartDashboard.putNumber("Position",motor.getSensorCollection().getQuadraturePosition());
     }
-
 }

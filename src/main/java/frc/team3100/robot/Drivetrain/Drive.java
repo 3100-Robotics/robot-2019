@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -111,13 +112,14 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
 
         leftInputPower = limitedMoveLeft;
         rightInputPower = limitedMoveRight;
-        RobotMap.leftDriveMotor1.set(PercentOutput,limitedMoveLeft);
-        RobotMap.rightDriveMotor1.set(PercentOutput,limitedMoveRight);
+        //RobotMap.leftDriveMotor1.set(PercentOutput,limitedMoveLeft);
+        //RobotMap.rightDriveMotor1.set(PercentOutput,limitedMoveRight);
 
     }
 
     public void initSD() {
-
+        LiveWindow.add(leftDrivePod);
+        LiveWindow.add(rightDrivePod);
 
     }
 

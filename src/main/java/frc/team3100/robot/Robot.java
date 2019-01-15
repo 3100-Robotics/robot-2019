@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Arm.Arm;
 import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
@@ -34,7 +35,6 @@ public class Robot extends TimedRobot {
 
     public void robotInit() {
 
-
         //Creates instances of all of the subsystems for the autonomous to access.
         compressor = new Compressor();
         drive = new Drive();
@@ -57,9 +57,9 @@ public class Robot extends TimedRobot {
         RobotMap.armMotor2.follow(RobotMap.armMotor1);
 
         RobotMap.rightDriveMotor3.setInverted(true);
-        RobotMap.leftDriveMotor3.setInverted(true);
-        RobotMap.leftDriveMotor2.setInverted(true);
-        RobotMap.leftDriveMotor1.setInverted(false);
+        RobotMap.leftDriveMotor3.setInverted(false);
+        RobotMap.leftDriveMotor2.setInverted(false);
+        RobotMap.leftDriveMotor1.setInverted(true);
 
 
 
@@ -80,6 +80,7 @@ public class Robot extends TimedRobot {
 
     public void teleopInit() {
         // Setting autoVal equal to false so the auto code stops running
+        Dashboard.initDashboard();
         if(autoVal) {
             if(AutoChosen.isRunning()) {
                 AutoChosen.cancel();
@@ -119,7 +120,8 @@ public class Robot extends TimedRobot {
     }
 
     public void disabledInit() {
-
+        SmartDashboard.putNumber("a",0);
+        SmartDashboard.putNumber("b",0);
     }
 
     public void disabledPeriodic() {

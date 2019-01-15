@@ -1,6 +1,7 @@
 package frc.team3100.robot.Autonomous;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
@@ -13,20 +14,16 @@ starting the autonomous motion.
 public class AutoClawMotion extends Command {
 
     private static Variables.ClawPositions armTargetPosition;
-    private static Variables.ClawPositions wristTargetPosition;
-    public AutoClawMotion(Variables.ClawPositions armTarget, Variables.ClawPositions wristTarget) {
+    public AutoClawMotion(Variables.ClawPositions armTarget) {
         super("AutoClawMotion");
-        wristTargetPosition = wristTarget;
         armTargetPosition = armTarget;
     }
 
     protected void initialize() {
+
         Variables.armAuto = true;
-        Variables.wristAuto = true;
-        Robot.arm.setSetpoint(armTargetPosition.getPosition());
-        Robot.wrist.setSetpoint(wristTargetPosition.getPosition());
-        Robot.arm.enable();
-        Robot.wrist.enable();
+        Robot.arm.movePosition(armTargetPosition.getPosition());
+        SmartDashboard.putNumber("a",1);
     }
 
     protected void execute() {
@@ -38,7 +35,7 @@ public class AutoClawMotion extends Command {
     }
 
     protected void end() {
-
+        SmartDashboard.putNumber("a",2);
     }
 
     protected void interrupted() {

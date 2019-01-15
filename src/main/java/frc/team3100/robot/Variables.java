@@ -35,8 +35,8 @@ public class Variables {
         armFGround(0),
         armFBall(0),
         armFMid(0),
-        armFHigh(0),
-        armBHigh(0),
+        armFHigh(4096),
+        armBHigh(-4096),
         armBMid(0);
 
         private final double position;
@@ -60,6 +60,7 @@ public class Variables {
     public static boolean driveAuto = true;
     public boolean climbState = false;
     public boolean cubeHeld = false;
+    public static boolean armRunning = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;
     public double drivePIDRotchange = 0;
 

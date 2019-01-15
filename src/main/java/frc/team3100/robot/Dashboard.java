@@ -26,6 +26,9 @@ public class Dashboard {
 	public static void initDashboard() {
 
         subsystems.add(Robot.drive);
+        subsystems.add(Robot.arm);
+        subsystems.add(Robot.claw);
+        subsystems.add(Robot.wrist);
 		for (DashboardUpdatable subsystem : subsystems) {
 			subsystem.initSD();
 		}
@@ -40,7 +43,7 @@ public class Dashboard {
 
 
 	public static void updateDashboard() {
-		if (updateTimer.hasPeriodPassed(0.25)) {
+		if (updateTimer.hasPeriodPassed(0.2)) {
 		
 			for (DashboardUpdatable subsystem : subsystems) {
 				subsystem.updateSD();

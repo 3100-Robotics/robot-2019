@@ -20,7 +20,7 @@ public class XBoxStates extends Joystick {
         }
 
         public double getRightStickY() {
-            return getRawAxis(RobotMap.rightYAxisChannel);
+            return -1 * getRawAxis(RobotMap.rightYAxisChannel);
         }
 
         public double getLeftStickX() {

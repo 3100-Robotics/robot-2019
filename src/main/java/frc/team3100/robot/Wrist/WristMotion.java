@@ -21,12 +21,12 @@ public class WristMotion extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.techControls.getLeftStickY() > joystickError) {
+        if(RobotMap.driveControls.getLeftStickY() > joystickError) {
             if(Variables.wristAuto) {
                 Variables.wristAuto = false;
                 Robot.wrist.disable();
             }
-            Robot.wrist.rotate(RobotMap.techControls.getRightStickY());
+            Robot.wrist.rotate(RobotMap.driveControls.getRightStickY());
         }
     }
 

@@ -11,8 +11,8 @@ This defines all of the ports the robot will need to access and initialize whate
 public class RobotMap {
 
     //     C O N T R O L L E R S
-    private static int driveControlsChannel = 1;
-    private static int techControlsChannel = 2;
+    private static int driveControlsChannel = 0;
+    private static int techControlsChannel = 1;
     private static int controlBoardChannel = 3;
 
 
@@ -41,6 +41,8 @@ public class RobotMap {
     private static int armBrakeReleaseChannel = 3;
     private static int wristBrakeEngageChannel = 4;
     private static int wristBrakeReleaseChannel = 5;
+    private static int lifterPistonRaiseChannel = 6;
+    private static int lifterPistonLowerChannel = 7;
 
 
     //     D I O
@@ -50,10 +52,6 @@ public class RobotMap {
     private static int driveLeftEncoderChannelB = 3;
     private static int driveRightEncoderChannelA = 4;
     private static int driveRightEncoderChannelB = 5;
-    private static int lifterEncoderChannelA = 6;
-    private static int lifterEncoderChannelB = 7;
-    private static int shelfEncoderChannelA = 8;
-    private static int shelfEncoderChannelB = 9;
 
 
 
@@ -91,7 +89,7 @@ public class RobotMap {
 
     //    Initialize XBox Controllers
     public static XBoxStates driveControls = new XBoxStates(driveControlsChannel);
-    public static XBoxStates techControls = new XBoxStates(techControlsChannel);
+    //public static XBoxStates techControls = new XBoxStates(techControlsChannel);
 
 
     //    Initialize speed controllers
@@ -126,7 +124,4 @@ public class RobotMap {
     public static AnalogInput armEncoder = new AnalogInput(armEncoderChannel);
     public static Encoder driveLeftEncoder = new Encoder(driveLeftEncoderChannelA,driveLeftEncoderChannelB);
     public static Encoder driveRightEncoder = new Encoder(driveRightEncoderChannelA,driveRightEncoderChannelB);
-    public static Encoder lifterEncoder = new Encoder(lifterEncoderChannelA,lifterEncoderChannelB);
-    public static Encoder shelfEncoder = new Encoder(shelfEncoderChannelA,shelfEncoderChannelB);
-
 }

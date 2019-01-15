@@ -21,7 +21,7 @@ public class DriveMotion extends Command {
     }
 
     protected void execute() {
-        Robot.drive.driveTank(RobotMap.driveControls.getLeftStickY(), RobotMap.driveControls.getRightStickY());
+        //Robot.drive.driveTank(RobotMap.driveControls.getLeftStickY(), RobotMap.driveControls.getRightStickY());
     }
 
     protected boolean isFinished() {
