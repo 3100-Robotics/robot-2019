@@ -33,12 +33,10 @@ public class ArmMotion extends Command {
         SmartDashboard.putNumber("joyInp",speed);
         if(Math.abs(speed) > joystickError) {
             Robot.arm.rotate(speed);
-            SmartDashboard.putNumber("a",1);
             Variables.armRunning = true;
         }
         if(Variables.armRunning && Math.abs(speed) < joystickError) {
             Robot.arm.rotate(0);
-            SmartDashboard.putNumber("a",2);
             Variables.armRunning = false;
 
         }

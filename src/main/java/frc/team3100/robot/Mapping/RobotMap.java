@@ -16,6 +16,11 @@ public class RobotMap {
     private static int controlBoardChannel = 3;
 
 
+    //     P C M   C O N T R O L L E R S
+    private static int PCM1Channel = 40;
+    private static int PCM2Channel = 41;
+
+
     //     P W M
     private static int clawMotorChannel = 0;
     private static int shelfMotorsChannel = 1;
@@ -34,20 +39,26 @@ public class RobotMap {
     private static int wristMotorChannel = 9;
 
 
-    //     P C M
+    //     M A N I F O L D S (0-7 x 2)
     private static int driveShiftLowChannel = 0;
     private static int driveShiftHighChannel = 1;
     private static int armBrakeEngageChannel = 2;
     private static int armBrakeReleaseChannel = 3;
     private static int wristBrakeEngageChannel = 4;
     private static int wristBrakeReleaseChannel = 5;
-    private static int lifterPistonRaiseChannel = 6;
-    private static int lifterPistonLowerChannel = 7;
+    private static int lifterFrontPistonRaiseChannel = 6;
+    private static int lifterFrontPistonLowerChannel = 7;
+
+    private static int lifterBackPistonRaiseChannel = 6;
+    private static int lifterBackPistonLowerChannel = 7;
+
+
+    //     A N A L O G
+    private static int wristEncoderChannel = 2;
+    private static int armEncoderChannel = 3;
 
 
     //     D I O
-    private static int wristEncoderChannel = 0;
-    private static int armEncoderChannel = 1;
     private static int driveLeftEncoderChannelA = 2;
     private static int driveLeftEncoderChannelB = 3;
     private static int driveRightEncoderChannelA = 4;
@@ -108,11 +119,11 @@ public class RobotMap {
     public static SpeedController lifterMotors = new Spark(lifterMotorsChannel);
 
 
-    //    Initialize pneumatic controllers (solenoids)
-    public static Solenoid shiftDriveLow = new Solenoid(driveShiftLowChannel);
-    public static Solenoid shiftDriveHigh = new Solenoid(driveShiftHighChannel);
-    public static Solenoid armBrakeEngage = new Solenoid(armBrakeEngageChannel);
-    public static Solenoid armBrakeRelease = new Solenoid(armBrakeReleaseChannel);
+    //    Initialize Manifolds
+    public static Solenoid shiftDriveLow = new Solenoid(PCM1Channel,driveShiftLowChannel);
+    public static Solenoid shiftDriveHigh = new Solenoid(PCM1Channel,driveShiftHighChannel);
+    public static Solenoid armBrakeEngage = new Solenoid(PCM1Channel,armBrakeEngageChannel);
+    public static Solenoid armBrakeRelease = new Solenoid(PCM1Channel,armBrakeReleaseChannel);
     public static Solenoid wristBrakeEngage = new Solenoid(wristBrakeEngageChannel);
     public static Solenoid wristBrakeRelease = new Solenoid(wristBrakeReleaseChannel);
 
@@ -122,6 +133,9 @@ public class RobotMap {
 
     public static AnalogInput wristEncoder = new AnalogInput(wristEncoderChannel);
     public static AnalogInput armEncoder = new AnalogInput(armEncoderChannel);
+    public static AnalogInput ultrasonic = new AnalogInput(0);
+    public static AnalogInput ultrasonic2 = new AnalogInput(1);
+
     public static Encoder driveLeftEncoder = new Encoder(driveLeftEncoderChannelA,driveLeftEncoderChannelB);
     public static Encoder driveRightEncoder = new Encoder(driveRightEncoderChannelA,driveRightEncoderChannelB);
 }

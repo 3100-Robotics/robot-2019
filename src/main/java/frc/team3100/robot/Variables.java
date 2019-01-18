@@ -39,13 +39,13 @@ public class Variables {
         armBHigh(-4096),
         armBMid(0);
 
-        private final double position;
+        private final int position;
 
-        ClawPositions(double position) {
+        ClawPositions(int position) {
             this.position = position;
         }
 
-        public double getPosition() {
+        public int getPosition() {
             return position;
         }
     }

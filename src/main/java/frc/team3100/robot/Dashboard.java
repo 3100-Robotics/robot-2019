@@ -2,6 +2,7 @@ package frc.team3100.robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team3100.robot.Mapping.RobotMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,8 @@ public class Dashboard {
 			}
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
+			SmartDashboard.putNumber("ultra", RobotMap.ultrasonic.getValue());
+			SmartDashboard.putNumber("ultra2", RobotMap.ultrasonic2.getValue());
 		}
 	}
 	

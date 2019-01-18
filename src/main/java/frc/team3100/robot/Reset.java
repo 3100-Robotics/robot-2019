@@ -14,9 +14,9 @@ overrides the autonomous control of the claw arm.
 MAX V / 100 ms == 5770
  */
 
-public class reset extends Command {
+public class Reset extends Command {
 
-    public reset() {
+    public Reset() {
         super("reset");
     }
 
@@ -30,7 +30,7 @@ public class reset extends Command {
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {

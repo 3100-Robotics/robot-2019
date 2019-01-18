@@ -13,17 +13,19 @@ starting the autonomous motion.
 
 public class AutoClawMotion extends Command {
 
-    private static Variables.ClawPositions armTargetPosition;
+    private int armTargetPosition;
+
     public AutoClawMotion(Variables.ClawPositions armTarget) {
         super("AutoClawMotion");
-        armTargetPosition = armTarget;
+        armTargetPosition = armTarget.getPosition();
     }
 
     protected void initialize() {
 
         Variables.armAuto = true;
-        Robot.arm.movePosition(armTargetPosition.getPosition());
-        SmartDashboard.putNumber("a",1);
+
+        Robot.arm.movePosition(armTargetPosition);
+
     }
 
     protected void execute() {
@@ -35,7 +37,7 @@ public class AutoClawMotion extends Command {
     }
 
     protected void end() {
-        SmartDashboard.putNumber("a",2);
+
     }
 
     protected void interrupted() {

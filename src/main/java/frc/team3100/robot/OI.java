@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team3100.robot.Autonomous.AutoClawMotion;
 import frc.team3100.robot.Drivetrain.DriveShift;
 import frc.team3100.robot.Mapping.RobotMap;
-import frc.team3100.robot.Mapping.XBoxStates;
 
 /*
 Interfaces buttons with commands
@@ -23,9 +22,9 @@ public class OI {
 
     public OI() {
         shifter.whenPressed(new DriveShift());
-        test1.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBHigh));
-        test2.whenPressed(new AutoClawMotion(Variables.ClawPositions.armFHigh));
-        test3.whenPressed(new reset());
+        test1.whenPressed(new AutoClawMotion(Variables.ClawPositions.armFHigh));
+        test2.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBHigh));
+        test3.whenPressed(new Reset());
 
 
 
