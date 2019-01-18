@@ -1,5 +1,8 @@
 package frc.team3100.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.networktables.NetworkTableValue;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -32,6 +35,8 @@ public class Robot extends TimedRobot {
     public static boolean autoVal;
     public static String gameData;
 
+    public static NetworkTable table;
+
 
     public void robotInit() {
 
@@ -47,7 +52,10 @@ public class Robot extends TimedRobot {
         // ALWAYS initialize OI after subsystems
         oi = new OI();
 
-
+        table = NetworkTableInstance.getDefault().getTable("limelight");
+        table.getEntry("ledMode").setNumber(3);
+        table.getEntry("camMode").setNumber(0);
+        table.getEntry("pipeline").setNumber(0);
 
         RobotMap.gyro.calibrate();
         RobotMap.leftDriveMotor2.follow(RobotMap.leftDriveMotor1);

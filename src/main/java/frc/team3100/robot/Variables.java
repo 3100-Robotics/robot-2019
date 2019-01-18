@@ -8,7 +8,14 @@ Stores all of the variables and state values used throughout the robot program.
  */
 
 public class Variables {
-
+    public enum Direction {
+        FRONT,
+        BACK,
+        LEFT,
+        RIGHT,
+        TOP,
+        BOTTOM
+    }
 
     public enum DriveTrainStates {
         high("High"),
@@ -63,6 +70,7 @@ public class Variables {
     public static boolean armRunning = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;
     public double drivePIDRotchange = 0;
+
 
 }
 

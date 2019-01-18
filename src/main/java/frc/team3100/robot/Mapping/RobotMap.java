@@ -49,11 +49,13 @@ public class RobotMap {
     private static int lifterFrontPistonRaiseChannel = 6;
     private static int lifterFrontPistonLowerChannel = 7;
 
-    private static int lifterBackPistonRaiseChannel = 6;
-    private static int lifterBackPistonLowerChannel = 7;
+    private static int lifterBackPistonRaiseChannel = 1;
+    private static int lifterBackPistonLowerChannel = 0;
 
 
     //     A N A L O G
+    private static int lifterFrontUltraChannel = 0;
+    private static int lifterBackUltraChannel = 1;
     private static int wristEncoderChannel = 2;
     private static int armEncoderChannel = 3;
 
@@ -115,8 +117,6 @@ public class RobotMap {
     public static TalonSRX wristMotor = new TalonSRX(wristMotorChannel);
 
     public static SpeedController clawMotor = new Spark(clawMotorChannel);
-    public static SpeedController shelfMotors = new Spark(shelfMotorsChannel);
-    public static SpeedController lifterMotors = new Spark(lifterMotorsChannel);
 
 
     //    Initialize Manifolds
@@ -124,8 +124,13 @@ public class RobotMap {
     public static Solenoid shiftDriveHigh = new Solenoid(PCM1Channel,driveShiftHighChannel);
     public static Solenoid armBrakeEngage = new Solenoid(PCM1Channel,armBrakeEngageChannel);
     public static Solenoid armBrakeRelease = new Solenoid(PCM1Channel,armBrakeReleaseChannel);
-    public static Solenoid wristBrakeEngage = new Solenoid(wristBrakeEngageChannel);
-    public static Solenoid wristBrakeRelease = new Solenoid(wristBrakeReleaseChannel);
+    public static Solenoid wristBrakeEngage = new Solenoid(PCM1Channel,wristBrakeEngageChannel);
+    public static Solenoid wristBrakeRelease = new Solenoid(PCM1Channel,wristBrakeReleaseChannel);
+    public static Solenoid lifterFrontRaise = new Solenoid(PCM2Channel,lifterFrontPistonRaiseChannel);
+    public static Solenoid lifterFrontLower = new Solenoid(PCM2Channel,lifterFrontPistonLowerChannel);
+    public static Solenoid lifterBackRaise = new Solenoid(PCM2Channel,lifterBackPistonRaiseChannel);
+    public static Solenoid lifterBackLower = new Solenoid(PCM2Channel,lifterFrontPistonLowerChannel);
+
 
 
     //    Initialize sensors
@@ -133,8 +138,8 @@ public class RobotMap {
 
     public static AnalogInput wristEncoder = new AnalogInput(wristEncoderChannel);
     public static AnalogInput armEncoder = new AnalogInput(armEncoderChannel);
-    public static AnalogInput ultrasonic = new AnalogInput(0);
-    public static AnalogInput ultrasonic2 = new AnalogInput(1);
+    public static AnalogInput lifterFrontUltra = new AnalogInput(lifterFrontUltraChannel);
+    public static AnalogInput lifterBackUltra = new AnalogInput(lifterBackUltraChannel);
 
     public static Encoder driveLeftEncoder = new Encoder(driveLeftEncoderChannelA,driveLeftEncoderChannelB);
     public static Encoder driveRightEncoder = new Encoder(driveRightEncoderChannelA,driveRightEncoderChannelB);

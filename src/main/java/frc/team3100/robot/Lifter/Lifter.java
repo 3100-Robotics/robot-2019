@@ -19,12 +19,17 @@ public class Lifter extends Subsystem implements Dashboard.DashboardUpdatable {
 
 
     public void frontToggle(boolean extend) {
-
+        RobotMap.lifterFrontRaise.set(extend);
+        RobotMap.lifterFrontLower.set(!extend);
     }
 
     public void backToggle(boolean extend) {
-
+        RobotMap.lifterBackRaise.set(extend);
+        RobotMap.lifterBackLower.set(!extend);
     }
+
+
+
 
 
 

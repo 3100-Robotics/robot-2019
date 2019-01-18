@@ -1,5 +1,8 @@
 package frc.team3100.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableValue;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -51,8 +54,10 @@ public class Dashboard {
 			}
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
-			SmartDashboard.putNumber("ultra", RobotMap.ultrasonic.getValue());
-			SmartDashboard.putNumber("ultra2", RobotMap.ultrasonic2.getValue());
+
+			SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
+			SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
+			SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
 		}
 	}
 	
