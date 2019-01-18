@@ -126,8 +126,8 @@ public class RobotMap {
     public static Solenoid armBrakeRelease = new Solenoid(PCM1Channel,armBrakeReleaseChannel);
     public static Solenoid wristBrakeEngage = new Solenoid(PCM1Channel,wristBrakeEngageChannel);
     public static Solenoid wristBrakeRelease = new Solenoid(PCM1Channel,wristBrakeReleaseChannel);
-    public static Solenoid lifterFrontRaise = new Solenoid(PCM2Channel,lifterFrontPistonRaiseChannel);
-    public static Solenoid lifterFrontLower = new Solenoid(PCM2Channel,lifterFrontPistonLowerChannel);
+    public static Solenoid lifterFrontRaise = new Solenoid(PCM1Channel,lifterFrontPistonRaiseChannel);
+    public static Solenoid lifterFrontLower = new Solenoid(PCM1Channel,lifterFrontPistonLowerChannel);
     public static Solenoid lifterBackRaise = new Solenoid(PCM2Channel,lifterBackPistonRaiseChannel);
     public static Solenoid lifterBackLower = new Solenoid(PCM2Channel,lifterFrontPistonLowerChannel);
 

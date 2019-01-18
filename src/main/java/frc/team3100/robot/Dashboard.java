@@ -38,7 +38,13 @@ public class Dashboard {
 		}
 		
 		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
-		
+
+		SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
+		SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
+		SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
+
+		SmartDashboard.putNumber("Distance",Math.log(Robot.table.getEntry("ta").getDouble(0.0)/22.7968301) / Math.log(0.9278672366));
+
 		updateTimer.start();
 	}
 
@@ -58,6 +64,8 @@ public class Dashboard {
 			SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
 			SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
 			SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
+
+			SmartDashboard.putNumber("Distance",Math.log(Robot.table.getEntry("ta").getDouble(0.0)/22.7968301) / Math.log(0.9278672366));
 		}
 	}
 	
