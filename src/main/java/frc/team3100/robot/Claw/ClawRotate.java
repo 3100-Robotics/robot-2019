@@ -13,7 +13,6 @@ This command takes the two trigger inputs on the Technician's controller and mak
 
 public class ClawRotate extends Command {
 
-    Button intakeToggle = new JoystickButton(RobotMap.driveControls,RobotMap.leftBumperChannel);
 
     public ClawRotate() {
         super("ClawRotate");
@@ -27,7 +26,7 @@ public class ClawRotate extends Command {
     protected void execute() {
         if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
             Robot.claw.wheels(-RobotMap.driveControls.getLeftTrigger());
-        } else if(intakeToggle.get()){
+        } else if(RobotMap.driveControls.getLeftBumper()){
             Robot.claw.wheels(.5);
         }
     }

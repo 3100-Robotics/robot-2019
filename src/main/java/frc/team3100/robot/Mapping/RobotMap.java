@@ -14,7 +14,7 @@ public class RobotMap {
     //     C O N T R O L L E R S
     private static int driveControlsChannel = 0;
     private static int techControlsChannel = 1;
-    private static int controlBoardChannel = 3;
+    private static int techBoardChannel = 3;
 
 
     //     P C M   C O N T R O L L E R S
@@ -72,26 +72,26 @@ public class RobotMap {
     public static final int rightTriggerChannel = 3;
     public static final int leftTriggerChannel = 2;
     // B O A R D
-    public static final int BoardButton1Channel = 1;
-    public static final int BoardButton2Channel = 2;
-    public static final int BoardButton3Channel = 3;
-    public static final int BoardButton4Channel = 4;
-    public static final int BoardButton5Channel = 5;
-    public static final int BoardButton6Channel = 6;
-    public static final int BoardButton7Channel = 7;
-    public static final int BoardButton8Channel = 8;
-    public static final int BoardButton9Channel = 9;
-    public static final int BoardButton10Channel = 10;
-    public static final int BoardButton11Channel = 11;
-    public static final int BoardButton12Channel = 12;
-    public static final int BoardButton13Channel = 13;
-    public static final int BoardButton14Channel = 14;
-    public static final int BoardButton15Channel = 15;
-    public static final int BoardButton16Channel = 16;
-    public static final int BoardButton17Channel = 17;
-    public static final int BoardButton18Channel = 18;
-    public static final int BoardButton19Channel = 19;
-    public static final int BoardButton20Channel = 20;
+    public static final int boardButton1Channel = 1;
+    public static final int boardButton2Channel = 2;
+    public static final int boardButton3Channel = 3;
+    public static final int boardButton4Channel = 4;
+    public static final int boardButton5Channel = 5;
+    public static final int boardButton6Channel = 6;
+    public static final int boardButton7Channel = 7;
+    public static final int boardButton8Channel = 8;
+    public static final int boardButton9Channel = 9;
+    public static final int boardButton10Channel = 10;
+    public static final int boardButton11Channel = 11;
+    public static final int boardButton12Channel = 12;
+    public static final int boardButton13Channel = 13;
+    public static final int boardButton14Channel = 14;
+    public static final int boardButton15Channel = 15;
+    public static final int boardButton16Channel = 16;
+    public static final int boardButton17Channel = 17;
+    public static final int boardButton18Channel = 18;
+    public static final int boardButton19Channel = 19;
+    public static final int boardButton20Channel = 20;
 
 
 
@@ -100,6 +100,7 @@ public class RobotMap {
     //    Initialize XBox Controllers
     public static XBoxStates driveControls = new XBoxStates(driveControlsChannel);
     public static XBoxStates techControls = new XBoxStates(techControlsChannel);
+    public static ButtonBoard techBoard = new ButtonBoard(techBoardChannel);
 
 
     //    Initialize speed controllers
@@ -120,7 +121,7 @@ public class RobotMap {
 
 
     //    Initialize Solenoids
-    public static Solenoid shiftDriveLow = new Solenoid(PCM1Channel,driveShiftLowChannel);
+    public static Solenoid driveShiftLow = new Solenoid(PCM1Channel,driveShiftLowChannel);
     public static Solenoid armBrakeEngage = new Solenoid(PCM1Channel,armBrakeEngageChannel);
     public static Solenoid lifterFrontExtend = new Solenoid(PCM1Channel,lifterFrontPistonExtendChannel);
     public static Solenoid lifterBackExtend = new Solenoid(PCM1Channel,lifterBackPistonExtendChannel);

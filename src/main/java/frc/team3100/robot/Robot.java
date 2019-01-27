@@ -2,7 +2,6 @@ package frc.team3100.robot;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -60,19 +59,16 @@ public class Robot extends TimedRobot {
 
 
     public void autonomousInit() {
-        // What to run ONCE at the beginning of the autonomous period
         autoVal = true;
 
     }
 
     public void autonomousPeriodic() {
-        // Running auto code for the first 15 seconds of the match.
         Scheduler.getInstance().run();
         Dashboard.updateDashboard();
     }
 
     public void teleopInit() {
-        // Setting autoVal equal to false so the auto code stops running
         Dashboard.initDashboard();
         if(autoVal) {
             if(AutoChosen.isRunning()) {
@@ -85,7 +81,6 @@ public class Robot extends TimedRobot {
     }
 
     public void teleopPeriodic() {
-        // Starts the scheduler for the teleop period to run the autonomous
         Scheduler.getInstance().run();
         Dashboard.updateDashboard();
     }
@@ -101,7 +96,6 @@ public class Robot extends TimedRobot {
     }
 
     public void testPeriodic() {
-        // Starts the scheduler for the teleop period to run the autonomous
         Scheduler.getInstance().run();
         Dashboard.updateDashboard();
 

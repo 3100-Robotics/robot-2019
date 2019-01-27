@@ -69,8 +69,9 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         return motor.getSelectedSensorPosition();
     }
 
-
-
+    public void stop() {
+        motor.set(ControlMode.PercentOutput,0);
+    }
 
 
 

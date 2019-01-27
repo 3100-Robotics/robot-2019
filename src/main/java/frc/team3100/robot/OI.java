@@ -13,18 +13,15 @@ public class OI {
 
 
 
-    public Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
-    private Button test1 = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
-    private Button test2 = new JoystickButton(RobotMap.driveControls,RobotMap.xButtonChannel);
-    private Button test3 = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
+    private Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
+    private Button test1 = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton1Channel);
+    private Button test2 = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton2Channel);
+    private Button test3 = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton3Channel);
 
 
 
     public OI() {
         shifter.whenPressed(new DriveShift());
-        test1.whenPressed(new AutoClawMotion(Variables.ClawPositions.armFHigh));
-        test2.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBHigh));
-        test3.whenPressed(new Reset());
 
 
 

@@ -14,29 +14,39 @@ starting the autonomous motion.
 
 public class AutoClawMotion extends Command {
 
-    private int armTargetPosition;
-    private int wristTargetPosition;
+    private double armTargetPosition;
+    private double wristTargetPosition;
+    private double armLimitZone = Variables.ClawPositions.armLimits.getPosition();
+    private boolean wristSafed = false;
+    private boolean wristTargetEntered = false;
 
     public AutoClawMotion(Variables.ClawPositions armTarget, Variables.ClawPositions wristTarget) {
         super("AutoClawMotion");
+        requires(Robot.wrist);
+        requires(Robot.claw);
         armTargetPosition = armTarget.getPosition();
         wristTargetPosition = wristTarget.getPosition();
+
     }
 
     protected void initialize() {
+        wristSafed = false;
         Robot.arm.movePosition(armTargetPosition);
-        if(armTargetPosition > 3000 + Variables.armSensorOffset) {
-
-        } else if(armTargetPosition > 2500 + Variables.armSensorOffset) {
-
-        }
         Variables.armAuto = true;
-
-
     }
 
     protected void execute() {
-        
+        if(armTargetPosition < armLimitZone && Robot.arm.getCurrentPosition() > armLimitZone && !wristSafed) {
+            Robot.wrist.movePosition(Variables.ClawPositions.wristHatchBack.getPosition());
+            wristSafed = true;
+        } else if(Robot.arm.getCurrentPosition() < armLimitZone && wristSafed) {
+            Robot.wrist.movePosition(wristTargetPosition);
+            wristSafed = false;
+            wristTargetEntered = true;
+        } else if(!wristTargetEntered){
+            Robot.wrist.movePosition(wristTargetPosition);
+            wristTargetEntered = true;
+        }
     }
 
     protected boolean isFinished() {
@@ -49,11 +59,12 @@ public class AutoClawMotion extends Command {
     }
 
     protected void end() {
-
+        Variables.armAuto = false;
     }
 
     protected void interrupted() {
-
+        Robot.wrist.stop();
+        Robot.arm.stop();
     }
 }
 

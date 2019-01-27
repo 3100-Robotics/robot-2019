@@ -32,13 +32,9 @@ public class Lifter extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void initSD() {
-        SmartDashboard.putNumber("ClawMotorSpeed",motorSpeed);
-        SmartDashboard.putBoolean("ClawOpen", Variables.clawOpenState);
     }
 
     public void updateSD() {
-        SmartDashboard.putNumber("ClawMotorSpeed",motorSpeed);
-        SmartDashboard.putBoolean("ClawOpen", Variables.clawOpenState);
     }
 
 
