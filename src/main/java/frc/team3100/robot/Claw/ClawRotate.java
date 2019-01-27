@@ -1,5 +1,7 @@
 package frc.team3100.robot.Claw;
 
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
@@ -10,7 +12,9 @@ This command takes the two trigger inputs on the Technician's controller and mak
  */
 
 public class ClawRotate extends Command {
-    private double joystickError = 0.3;
+
+    Button intakeToggle = new JoystickButton(RobotMap.driveControls,RobotMap.leftBumperChannel);
+
     public ClawRotate() {
         super("ClawRotate");
         requires(Robot.claw);
@@ -21,10 +25,10 @@ public class ClawRotate extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.driveControls.getLeftTrigger() > joystickError) {
-            Robot.claw.wheels(RobotMap.driveControls.getLeftTrigger());
-        } else if(RobotMap.driveControls.getRightTrigger() > joystickError) {
-            Robot.claw.wheels(-RobotMap.driveControls.getRightTrigger());
+        if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
+            Robot.claw.wheels(-RobotMap.driveControls.getLeftTrigger());
+        } else if(intakeToggle.get()){
+            Robot.claw.wheels(.5);
         }
     }
 
