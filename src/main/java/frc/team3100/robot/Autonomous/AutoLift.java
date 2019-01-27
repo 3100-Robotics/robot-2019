@@ -5,4 +5,5 @@ This will execute the insane plan to raise our robot ~20 inches onto the lv 3 ha
  */
 
 public class AutoLift {
+
 }

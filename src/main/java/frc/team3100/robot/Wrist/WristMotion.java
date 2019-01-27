@@ -10,7 +10,7 @@ Overrides the auto motion of the claw when the technician's right sick exceeds a
  */
 
 public class WristMotion extends Command {
-    private static double joystickError = 0.3;
+    private double speed;
     public WristMotion() {
         super("WristMotion");
         requires(Robot.wrist);
@@ -21,13 +21,10 @@ public class WristMotion extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.driveControls.getLeftStickY() > joystickError) {
-            if(Variables.wristAuto) {
-                Variables.wristAuto = false;
-                Robot.wrist.disable();
-            }
-            Robot.wrist.rotate(RobotMap.driveControls.getRightStickY());
-        }
+        speed = RobotMap.techControls.getRightStickY();
+        speed = speed * speed * ((speed > 0) ? 1 : -1);
+        Robot.wrist.manualRotation(speed);
+
     }
 
     protected boolean isFinished() {

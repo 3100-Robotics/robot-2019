@@ -20,98 +20,69 @@ Defines the breaking action, PID controlled motion, and interfaces with the abso
 
 public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
-    private static TalonSRX motor = RobotMap.leftDriveMotor1;
-    /**
-     * Which PID slot to pull gains from. Starting 2018, you can choose from
-     * 0,1,2 or 3. Only the first two (0,1) are visible in web-based
-     * configuration.
-     */
-    private static int kSlotIdx = 0;
-    /**
-     * Talon SRX/ Victor SPX will supports multiple (cascaded) PID loops. For
-     * now we just want the primary one.
-     */
-    private static int kPIDLoopIdx = 0;
-    /**
-     * Set to zero to skip waiting for confirmation, set to nonzero to wait and
-     * report to DS if action fails.
-     */
-    private static int kTimeoutMs = 30;
-    /* Choose so that Talon does not report sensor out of phase */
-    private static boolean kSensorPhase = false;
+    private static TalonSRX motor = RobotMap.armMotor1;
 
-    /**
-     * Gains used in Positon Closed Loop, to be adjusted accordingly
-     * Gains(kp, ki, kd, kf, izone, peak output);
-     */
-    private static final Gains kGains = new Gains(.225, 0.0, 0, 0, 0, 1.0);;
-    private static double pos;
+    private static final Gains kGains = new Gains(.225, 0.0, 0, 0, 0, 1.0);
+    private double pos;
 
     public Arm() {
         super("Arm");
 
         /* Config the sensor used for Primary PID and sensor direction */
-        motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,
-                kPIDLoopIdx,
-                kTimeoutMs);
-
-        /* Ensure sensor is positive when output is positive */
-        motor.setSensorPhase(kSensorPhase);
+        motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
+        motor.setSensorPhase(false);
 
         /* Config the peak and nominal outputs, 12V means full */
-        motor.configNominalOutputForward(0, kTimeoutMs);
-        motor.configNominalOutputReverse(0, kTimeoutMs);
-        motor.configPeakOutputForward(.8, kTimeoutMs);
-        motor.configPeakOutputReverse(-.8, kTimeoutMs);
+        motor.configNominalOutputForward(0);
+        motor.configNominalOutputReverse(0);
+        motor.configPeakOutputForward(1);
+        motor.configPeakOutputReverse(-1);
 
-        /**
-         * Config the allowable closed-loop error, Closed-Loop output will be
-         * neutral within this range. See Table in Section 17.2.1 for native
-         * units per rotation.
-         */
-        motor.configAllowableClosedloopError(0, kPIDLoopIdx, kTimeoutMs);
-
-        /* Config Position Closed Loop gains in slot0, tsypically kF stays zero. */
-        motor.config_kF(kPIDLoopIdx, kGains.kF, kTimeoutMs);
-        motor.config_kP(kPIDLoopIdx, kGains.kP, kTimeoutMs);
-        motor.config_kI(kPIDLoopIdx, kGains.kI, kTimeoutMs);
-        motor.config_kD(kPIDLoopIdx, kGains.kD, kTimeoutMs);
+        /* Config Position Closed Loop gains in slot0, typically kF stays zero. */
+        motor.config_kF(0,kGains.kF);
+        motor.config_kP(0,kGains.kP);
+        motor.config_kI(0,kGains.kI);
+        motor.config_kD(0,kGains.kD);
         motor.setSelectedSensorPosition(0);
-
     }
 
+    public void initDefaultCommand() {
+        setDefaultCommand(new ArmMotion());
+    }
 
-    public void rotate(double speed) {
-            motor.set(ControlMode.PercentOutput,speed);
+    public void manualRotation(double speed) {
+        speed = speed < Variables.joystickError ? 0:speed;
 
+        if(speed != 0) {
+            motor.set(ControlMode.PercentOutput, speed);
+        }
     }
 
     public void movePosition(double position) {
-
-        SmartDashboard.putNumber("a",position);
-        System.out.println(position);
-        this.pos = position;
+        pos = position;
         motor.set(ControlMode.Position,position);
     }
 
 
 
-
-
-    public void initDefaultCommand() {
-        setDefaultCommand(new ArmMotion());
+    public double getCurrentPosition() {
+        return motor.getSelectedSensorPosition();
     }
+
+
+
+
+
+
+
 
     public void initSD() {
 
     }
 
     public void updateSD() {
-        if(motor.getControlMode() == ControlMode.Position) {
-            SmartDashboard.putNumber("target",pos);
-        }
-        SmartDashboard.putBoolean("Arm Break",RobotMap.armBrakeEngage.get());
-        SmartDashboard.putNumber("MotorSpeed",motor.getOutputCurrent());
-        SmartDashboard.putNumber("Position",motor.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Arm target",pos);
+        SmartDashboard.putNumber("Arm Speed",motor.getOutputCurrent());
+        SmartDashboard.putNumber("Arm Position",this.getCurrentPosition());
     }
 }

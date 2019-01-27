@@ -13,7 +13,7 @@ public class OI {
 
 
 
-    private Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
+    public Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
     private Button test1 = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
     private Button test2 = new JoystickButton(RobotMap.driveControls,RobotMap.xButtonChannel);
     private Button test3 = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);

@@ -33,9 +33,6 @@ public class Dashboard {
 		for (DashboardUpdatable subsystem : subsystems) {
 			subsystem.initSD();
 		}
-		
-		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
-		
 		updateTimer.start();
 	}
 
@@ -49,10 +46,12 @@ public class Dashboard {
 			for (DashboardUpdatable subsystem : subsystems) {
 				subsystem.updateSD();
 			}
+
+			SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
+			SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
+			SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
-			SmartDashboard.putNumber("ultra", RobotMap.ultrasonic.getValue());
-			SmartDashboard.putNumber("ultra2", RobotMap.ultrasonic2.getValue());
 		}
 	}
 	

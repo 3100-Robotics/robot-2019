@@ -11,13 +11,13 @@ The command listens for a change in the technician controller's right joystick a
 overrides the autonomous control of the claw arm.
 
 
-MAX V / 100 ms == 5770
+MAX V / 100 ms ==
  */
 
 public class ArmMotion extends Command {
 
-    private static double speed = 0;
-    private static double joystickError = 0.1;
+    private double speed;
+
     public ArmMotion() {
         super("ArmMotion");
         requires(Robot.arm);
@@ -28,18 +28,9 @@ public class ArmMotion extends Command {
     }
 
     protected void execute() {
-        speed = RobotMap.driveControls.getRightStickY();
-        speed *= speed * ((speed > 0) ? 1 : -1);
-        SmartDashboard.putNumber("joyInp",speed);
-        if(Math.abs(speed) > joystickError) {
-            Robot.arm.rotate(speed);
-            Variables.armRunning = true;
-        }
-        if(Variables.armRunning && Math.abs(speed) < joystickError) {
-            Robot.arm.rotate(0);
-            Variables.armRunning = false;
-
-        }
+        speed = RobotMap.techControls.getLeftStickY();
+        speed = speed * speed * ((speed > 0) ? 1 : -1);
+        Robot.arm.manualRotation(speed);
         
     }
 

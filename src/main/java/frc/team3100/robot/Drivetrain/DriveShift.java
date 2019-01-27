@@ -1,25 +1,25 @@
 package frc.team3100.robot.Drivetrain;
 
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
+
 
 /*
 Triggers the shift from low to high gear or vice-versa
  */
+
 public class DriveShift extends Command {
-
-
+    Button shifter = new JoystickButton(RobotMap.driveControls, RobotMap.aButtonChannel);
     public DriveShift() {
         super("DriveShift");
     }
 
     protected void initialize() {
-        if(Variables.driveTrainState.getGear().equals("low")) {
-            Robot.drive.shiftHigh();
-        } else {
-            Robot.drive.shiftLow();
-        }
+        Robot.drive.shiftLow();
     }
 
     protected void execute() {
@@ -27,11 +27,11 @@ public class DriveShift extends Command {
     }
 
     protected boolean isFinished() {
-        return true;
+        return shifter.get();
     }
 
     protected void end() {
-
+        Robot.drive.shiftHigh();
     }
 
     protected void interrupted() {

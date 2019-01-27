@@ -1,5 +1,7 @@
 package frc.team3100.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -12,14 +14,15 @@ import frc.team3100.robot.Lifter.Lifter;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Wrist.Wrist;
 
+
 /*
 Initializes all subsystems and runs the scheduler to enable the use of commands.
  */
 public class Robot extends TimedRobot {
+
     private Command AutoChosen;
 
     // Define subsystems for Commands to access
-    public static Compressor compressor;
     public static Drive drive;
     public static Variables varLog;
     public static Wrist wrist;
@@ -30,13 +33,11 @@ public class Robot extends TimedRobot {
 
     // Define variables used later in the Robot class
     public static boolean autoVal;
-    public static String gameData;
 
+    public static NetworkTable table;
 
     public void robotInit() {
-
         //Creates instances of all of the subsystems for the autonomous to access.
-        compressor = new Compressor();
         drive = new Drive();
         varLog = new Variables();
         wrist = new Wrist();
@@ -47,19 +48,11 @@ public class Robot extends TimedRobot {
         // ALWAYS initialize OI after subsystems
         oi = new OI();
 
-
+        table = NetworkTableInstance.getDefault().getTable("limelight");
 
         RobotMap.gyro.calibrate();
-        RobotMap.leftDriveMotor2.follow(RobotMap.leftDriveMotor1);
-        RobotMap.leftDriveMotor3.follow(RobotMap.leftDriveMotor1);
-        RobotMap.rightDriveMotor2.follow(RobotMap.rightDriveMotor1);
-        RobotMap.rightDriveMotor3.follow(RobotMap.rightDriveMotor1);
-        RobotMap.armMotor2.follow(RobotMap.armMotor1);
 
-        RobotMap.rightDriveMotor3.setInverted(true);
-        RobotMap.leftDriveMotor3.setInverted(false);
-        RobotMap.leftDriveMotor2.setInverted(false);
-        RobotMap.leftDriveMotor1.setInverted(true);
+        new TalonConfig().configure();
 
 
 
@@ -95,11 +88,6 @@ public class Robot extends TimedRobot {
         // Starts the scheduler for the teleop period to run the autonomous
         Scheduler.getInstance().run();
         Dashboard.updateDashboard();
-
-
-
-
-
     }
 
      public void testInit() {
