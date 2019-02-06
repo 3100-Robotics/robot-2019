@@ -56,11 +56,11 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
         inputSpeed = deadband(inputSpeed);
         inputRotate = deadband(inputRotate);
 
-        scaleSpeed = inputSpeed < 1 ? -1:1;
-        scaleRotate = inputRotate < 1 ? -1:1;
+        scaleSpeed = inputSpeed < 0 ? -1 : 1;
+        scaleRotate = inputRotate < 0 ? -1 : 1;
 
-        inputSpeed = inputSpeed * inputSpeed * scaleSpeed;
-        inputRotate = inputRotate * inputRotate * scaleRotate;
+        inputSpeed *= inputSpeed * scaleSpeed;
+        inputRotate *= inputRotate * scaleRotate;
 
 
         double dSpeed = inputSpeed - limitedSpeed;
@@ -69,31 +69,32 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
         } else if (dSpeed < -dSpeedLimit) {
             dSpeed = -dSpeedLimit;
         }
-
         limitedSpeed += dSpeed;
 
-        if(inputRotate != 0) {
-            double dRotate = inputRotate - limitedRotate;
-            if (dRotate > dRotateLimit) {
-                dRotate = dRotateLimit;
-            } else if (dRotate < -dRotateLimit) {
-                dRotate = -dRotateLimit;
-            }
+        double dRotate = inputRotate - limitedRotate;
+        if (dRotate > dRotateLimit) {
+            dRotate = dRotateLimit;
+        } else if (dRotate < -dRotateLimit) {
+            dRotate = -dRotateLimit;
+        }
 
-            limitedRotate += dRotate;
+        limitedRotate += dRotate;
+
+        if(deadband(limitedRotate) != 0) {
 
             RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, -limitedRotate);
             RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, +limitedRotate);
-            ran = true;
+            ran = false;
         } else {
-
-            if (ran) {
-                targetAngle = RobotMap.rightDriveMotor1.getSelectedSensorPosition(1);
-
+            if (!ran) {
+                targetAngle = RobotMap.rightDriveMotor1.getSelectedSensorPosition(0);
+                limitedRotate = 0;
             }
             RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.AuxPID, targetAngle);
             RobotMap.leftDriveMotor1.follow(RobotMap.rightDriveMotor1, FollowerType.AuxOutput1);
             ran = true;
+
+
         }
     }
 

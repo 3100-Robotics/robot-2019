@@ -51,8 +51,6 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void manualRotation(double speed) {
-        speed = speed < Variables.joystickError ? 0:speed;
-
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
         }

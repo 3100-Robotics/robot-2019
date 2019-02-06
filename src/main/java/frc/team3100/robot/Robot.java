@@ -2,6 +2,7 @@ package frc.team3100.robot;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -29,6 +30,7 @@ public class Robot extends TimedRobot {
     public static Lifter lifter;
     public static Claw claw;
     public static OI oi;
+    public static Compressor compressor;
 
     // Define variables used later in the Robot class
     public static boolean autoVal;
@@ -37,6 +39,8 @@ public class Robot extends TimedRobot {
 
     public void robotInit() {
         //Creates instances of all of the subsystems for the autonomous to access.
+        compressor = new Compressor(41);
+        compressor.setClosedLoopControl(true);
         drive = new Drive();
         varLog = new Variables();
         wrist = new Wrist();

@@ -1,4 +1,3 @@
-Java
+FRC 3100 2019 Robot Code
 ---
-
-This example involves building and deploying Java sources. This should be all you need to get started, however there are plenty of resources online for building more advanced java projects should you require.
+All the code used in The Lightning Turtle's 2019 robot. 

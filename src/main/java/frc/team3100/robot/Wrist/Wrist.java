@@ -47,7 +47,7 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void manualRotation(double speed) {
-        speed = speed < Variables.joystickError ? 0:speed;
+        speed = Math.abs(speed) < Variables.joystickError ? 0:speed;
 
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
@@ -55,8 +55,12 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void movePosition(double position) {
-        pos = position;
-        motor.set(ControlMode.Position,position);
+        if(position != pos) {
+            pos = position;
+            motor.set(ControlMode.Position, position);
+        } else {
+            System.out.println("Repeat Wrist Motion Command");
+        }
     }
 
 

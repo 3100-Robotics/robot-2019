@@ -18,11 +18,11 @@ public class RobotMap {
 
 
     //     P C M   C O N T R O L L E R S
-    private static int PCM1Channel = 40;
+    private static int PCM1Channel = 41;
 
 
     //     P W M
-    private static int clawMotorChannel = 0;
+    private static int clawMotorChannel = 9;
 
 
     //     C A N
@@ -39,9 +39,9 @@ public class RobotMap {
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
     private static int driveShiftLowChannel = 0;
-    private static int armBrakeEngageChannel = 1;
-    private static int lifterFrontPistonExtendChannel = 2;
-    private static int lifterBackPistonExtendChannel = 3;
+    private static int armBrakeEngageChannel = 3;
+    private static int lifterFrontPistonExtendChannel = 1;
+    private static int lifterBackPistonExtendChannel = 2;
 
 
     //     A N A L O G
@@ -68,6 +68,9 @@ public class RobotMap {
 
     public static final int rightBumperChannel = 6;
     public static final int leftBumperChannel = 5;
+
+    public static final int startButtonChannel = 7;
+    public static final int homeButtonChannel = 8;
 
     public static final int rightTriggerChannel = 3;
     public static final int leftTriggerChannel = 2;
@@ -105,7 +108,7 @@ public class RobotMap {
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
-    public static VictorSPX leftDriveMotor2 = new VictorSPX(driveLeft2Channel);
+    public static TalonSRX leftDriveMotor2 = new TalonSRX(driveLeft2Channel);
     public static VictorSPX leftDriveMotor3 = new VictorSPX(driveLeft3Channel);
 
     public static TalonSRX rightDriveMotor1 = new TalonSRX(driveRight1Channel);

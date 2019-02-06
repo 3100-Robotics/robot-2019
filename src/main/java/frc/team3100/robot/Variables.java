@@ -60,6 +60,14 @@ public class Variables {
         }
     }
 
+    public enum Direction {
+        FRONT,
+        BACK,
+        LEFT,
+        RIGHT,
+        TOP,
+        BOTTOM
+    }
 
     public static double armSensorOffset = 0;
     public static double joystickError = .2;
@@ -71,6 +79,10 @@ public class Variables {
     public static boolean armRunning = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;
     public double drivePIDRotchange = 0;
+    public static boolean frontState = false;
+    public static boolean backState = false;
+    public final static Gains kGains_Turning = new Gains( 0.001, 0.0,  0, 0.0,200,  1.00 );
+    public final static double kNeutralDeadband = 0.001;
 
 }
 

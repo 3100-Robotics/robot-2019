@@ -24,10 +24,12 @@ public class ClawRotate extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
-            Robot.claw.wheels(-RobotMap.driveControls.getLeftTrigger());
-        } else if(RobotMap.driveControls.getLeftBumper()){
+        if(RobotMap.techControls.getLeftTrigger() > Variables.joystickError) {
+            Robot.claw.wheels(-RobotMap.techControls.getLeftTrigger());
+        } else if(RobotMap.techControls.getLeftBumper()){
             Robot.claw.wheels(.5);
+        } else {
+            Robot.claw.wheels(0);
         }
     }
 

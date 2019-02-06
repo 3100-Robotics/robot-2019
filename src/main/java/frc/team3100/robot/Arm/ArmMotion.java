@@ -29,7 +29,6 @@ public class ArmMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getLeftStickY();
-        speed = speed * speed * ((speed > 0) ? 1 : -1);
         Robot.arm.manualRotation(speed);
         
     }

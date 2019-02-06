@@ -7,7 +7,7 @@ import frc.team3100.robot.Robot;
 
 public class LimelightCalculation {
     private double limelightHeight = 4;
-    private double targetHeight = 24;
+    private double targetHeight = 28.25;
     private double gyroAngle;
     private double robotDistance;
     private double targetX;
