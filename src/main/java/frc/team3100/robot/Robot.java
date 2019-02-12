@@ -8,9 +8,11 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Arm.Arm;
+import frc.team3100.robot.Brake.Brake;
 import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
 import frc.team3100.robot.Lifter.Lifter;
+import frc.team3100.robot.Limelight.CameraMode;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Wrist.Wrist;
 
@@ -29,6 +31,7 @@ public class Robot extends TimedRobot {
     public static Arm arm;
     public static Lifter lifter;
     public static Claw claw;
+    public static Brake brake;
     public static OI oi;
     public static Compressor compressor;
 
@@ -45,8 +48,11 @@ public class Robot extends TimedRobot {
         varLog = new Variables();
         wrist = new Wrist();
         arm = new Arm();
+        brake = new Brake();
         claw = new Claw();
         lifter = new Lifter();
+        Command CameraMode = new CameraMode();
+        CameraMode.start();
 
         // ALWAYS initialize OI after subsystems
         oi = new OI();
@@ -56,6 +62,7 @@ public class Robot extends TimedRobot {
         RobotMap.gyro.calibrate();
 
         new TalonConfig().configure();
+
 
 
 
@@ -101,6 +108,7 @@ public class Robot extends TimedRobot {
 
     public void testPeriodic() {
         Scheduler.getInstance().run();
+
         Dashboard.updateDashboard();
 
     }
@@ -108,6 +116,8 @@ public class Robot extends TimedRobot {
     public void disabledInit() {
         SmartDashboard.putNumber("a",0);
         SmartDashboard.putNumber("b",0);
+        Dashboard.initDashboard();
+        Dashboard.updateDashboard();
     }
 
     public void disabledPeriodic() {

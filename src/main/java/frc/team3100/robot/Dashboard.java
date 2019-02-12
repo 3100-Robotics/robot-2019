@@ -30,6 +30,7 @@ public class Dashboard {
         subsystems.add(Robot.arm);
         subsystems.add(Robot.claw);
         subsystems.add(Robot.wrist);
+        subsystems.add(Robot.brake);
 		for (DashboardUpdatable subsystem : subsystems) {
 			subsystem.initSD();
 		}
@@ -47,16 +48,14 @@ public class Dashboard {
 				subsystem.updateSD();
 			}
 
-			SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
-			SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
-			SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
+
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
 		}
 	}
 	
 	public interface DashboardUpdatable {
-		public void initSD();
-		public void updateSD();
+		void initSD();
+		void updateSD();
 	}
 }

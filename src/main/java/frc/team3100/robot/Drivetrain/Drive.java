@@ -23,8 +23,8 @@ Still need to implement PID Control with the magnetic encoders and potentially t
 
 public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
 
-    private double dSpeedLimit = 0.06;
-    private double dRotateLimit = 0.06;
+    private double dSpeedLimit = 0.08;
+    private double dRotateLimit = 0.08;
     private double limitedSpeed = 0;
     private double limitedRotate = 0;
     private double scaleRotate = 1;
@@ -56,6 +56,8 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
         inputSpeed = deadband(inputSpeed);
         inputRotate = deadband(inputRotate);
 
+
+
         scaleSpeed = inputSpeed < 0 ? -1 : 1;
         scaleRotate = inputRotate < 0 ? -1 : 1;
 
@@ -80,16 +82,16 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
 
         limitedRotate += dRotate;
 
-        if(deadband(limitedRotate) != 0) {
+        if(inputRotate != 0) {
 
             RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, -limitedRotate);
             RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, +limitedRotate);
             ran = false;
+
         } else {
-            if (!ran) {
-                targetAngle = RobotMap.rightDriveMotor1.getSelectedSensorPosition(0);
-                limitedRotate = 0;
-            }
+
+            targetAngle = RobotMap.rightDriveMotor1.getSensorCollection().getPulseWidthVelocity() - RobotMap.leftDriveMotor1.getSensorCollection().getPulseWidthVelocity();
+
             RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.AuxPID, targetAngle);
             RobotMap.leftDriveMotor1.follow(RobotMap.rightDriveMotor1, FollowerType.AuxOutput1);
             ran = true;
@@ -114,5 +116,8 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
         SmartDashboard.putNumber("Drive Speed",limitedSpeed);
         SmartDashboard.putNumber("Drive Rotate",limitedRotate);
         SmartDashboard.putString("Drive Gear", Variables.driveTrainState.getGear());
+        SmartDashboard.putNumber("Drive Left Sensor",RobotMap.leftDriveMotor1.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Drive Right Sensor",RobotMap.rightDriveMotor1.getSensorCollection().getQuadraturePosition());
+
     }
 }

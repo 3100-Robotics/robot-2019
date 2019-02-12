@@ -26,27 +26,28 @@ public class Variables {
 
     public enum ClawPositions {
         wristBallPickupFront(0),
-        wristBallPickupBack(0),
-        wristBallScoreCargoFront(0),
-        wristBallScoreRocketFront(0),
-        wristBallScoreCargoBack(0),
-        wristBallScoreRocketBack(0),
-        wristHatchGround(0),
-        wristHatchFront(0),
-        wristHatchBack(0),
-        wristDefence(0),
+        wristBallPickupBack(615),
+        wristBallScoreCargoFront(770), // ACTUAL
+        wristBallScoreRocketFront(735),
+        wristBallScoreCargoBack(512),
+        wristBallScoreRocketBack(615),
+        wristHatchGroundPrep(485),
+        wristHatchGround(485),
+        wristHatchFront(685),
+        wristHatchBack(695),
+        wristDefence(660),
 
         armBallPickupFront(0),
-        armBallPickupBack(0),
-        armBallScoreCargoFront(0),
-        armBallScoreRocketFront(0),
-        armBallScoreCargoBack(0),
-        armBallScoreRocketBack(0),
-        armHatchGround(0),
-        armHatchFront(0),
-        armHatchBack(0),
-        armLimits(0),
-        armDefence(0);
+        armBallPickupBack(805),
+        armBallScoreCargoFront(444), // ACTUAL
+        armBallScoreRocketFront(345),
+        armBallScoreCargoBack(583),
+        armBallScoreRocketBack(680),
+        armHatchGroundPrep(820),
+        armHatchGround(848),
+        armHatchFront(274),
+        armHatchBack(760),
+        armDefence(512);
 
 
         private final double position;
@@ -81,8 +82,12 @@ public class Variables {
     public double drivePIDRotchange = 0;
     public static boolean frontState = false;
     public static boolean backState = false;
-    public final static Gains kGains_Turning = new Gains( 0.001, 0.0,  0, 0.0,200,  1.00 );
-    public final static double kNeutralDeadband = 0.001;
+    public static final Gains kGains_Turning = new Gains( 0.0, 0.0,  0.0, 0.0,200,  1.00 );
+    public static final Gains armGains = new Gains(9.0, 0.0, 1.0, 0.0, 200, 1.0);
+    public static final Gains wristGains = new Gains(7.0, 0.0, 0.1, 0.0, 200, 1.0);
 
+
+    public final static double kNeutralDeadband = 0.001;
+    // 4098 / 1023
 }
 

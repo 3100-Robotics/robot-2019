@@ -23,7 +23,7 @@ public class DriveShift extends Command {
     }
 
     protected boolean isFinished() {
-        return !RobotMap.driveControls.getRightBumper();
+        return !Robot.oi.shifter.get();
     }
 
     protected void end() {

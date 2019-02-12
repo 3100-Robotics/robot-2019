@@ -1,5 +1,7 @@
 package frc.team3100.robot.Autonomous;
 
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -13,10 +15,9 @@ starting the autonomous motion.
  */
 
 public class AutoClawMotion extends Command {
-
+    private Button stopper = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
     private double armTargetPosition;
     private double wristTargetPosition;
-    private double armLimitZone = Variables.ClawPositions.armLimits.getPosition();
     private boolean wristSafed = false;
     private boolean wristTargetEntered = false;
 
@@ -32,30 +33,35 @@ public class AutoClawMotion extends Command {
     protected void initialize() {
         wristSafed = false;
         Robot.arm.movePosition(armTargetPosition);
+        Robot.wrist.movePosition(wristTargetPosition);
         Variables.armAuto = true;
     }
 
     protected void execute() {
+
+        /*
         if(armTargetPosition < armLimitZone && Robot.arm.getCurrentPosition() > armLimitZone && !wristSafed) {
-            Robot.wrist.movePosition(Variables.ClawPositions.wristHatchBack.getPosition());
+            //Robot.wrist.movePosition(Variables.ClawPositions.wristHatchBack.getPosition());
             wristSafed = true;
         } else if(Robot.arm.getCurrentPosition() < armLimitZone && wristSafed) {
-            Robot.wrist.movePosition(wristTargetPosition);
+            //Robot.wrist.movePosition(wristTargetPosition);
             wristSafed = false;
             wristTargetEntered = true;
         } else if(!wristTargetEntered){
-            Robot.wrist.movePosition(wristTargetPosition);
+            //Robot.wrist.movePosition(wristTargetPosition);
             wristTargetEntered = true;
         }
+        */
     }
 
     protected boolean isFinished() {
-        if(Math.abs(Robot.arm.getCurrentPosition() - armTargetPosition) < 10 &&
+        /*if(Math.abs(Robot.arm.getCurrentPosition() - armTargetPosition) < 10 &&
                 Math.abs(Robot.wrist.getCurrentPosition() - wristTargetPosition) < 10) {
             return true;
         } else {
             return false;
-        }
+        }*/
+        return true;
     }
 
     protected void end() {

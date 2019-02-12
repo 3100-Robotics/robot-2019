@@ -27,7 +27,7 @@ public class ClawRotate extends Command {
         if(RobotMap.techControls.getLeftTrigger() > Variables.joystickError) {
             Robot.claw.wheels(-RobotMap.techControls.getLeftTrigger());
         } else if(RobotMap.techControls.getLeftBumper()){
-            Robot.claw.wheels(.5);
+            Robot.claw.wheels(.7);
         } else {
             Robot.claw.wheels(0);
         }

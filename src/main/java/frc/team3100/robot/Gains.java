@@ -1,6 +1,3 @@
-/**
- *  Class that organizes gains used when assigning values to slots
- */
 package frc.team3100.robot;
 
 public class Gains {
@@ -11,7 +8,7 @@ public class Gains {
 	public final int kIzone;
 	public final double kPeakOutput;
 	
-	public Gains(double _kP, double _kI, double _kD, double _kF, int _kIzone, double _kPeakOutput){
+	Gains(double _kP, double _kI, double _kD, double _kF, int _kIzone, double _kPeakOutput){
 		kP = _kP;
 		kI = _kI;
 		kD = _kD;

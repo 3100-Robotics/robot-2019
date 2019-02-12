@@ -33,15 +33,17 @@ public class RobotMap {
     private static int driveLeft2Channel = 5;
     private static int driveLeft3Channel = 6;
     private static int armMotor1Channel = 7;
-    private static int armMotor2Channel = 8;
+    private static int wristMotor2Channel = 8;
     private static int wristMotorChannel = 9;
 
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
-    private static int driveShiftLowChannel = 0;
-    private static int armBrakeEngageChannel = 3;
-    private static int lifterFrontPistonExtendChannel = 1;
+    private static int driveShiftLowChannel = 4;
+    private static int lifterFrontPistonExtendChannel = 3;
     private static int lifterBackPistonExtendChannel = 2;
+    private static int armBrakeEngageChannel = 1;
+    private static int clawHatchReleaseChannel = 0;
+    private static int lifterRotationLockChannel = 5;
 
 
     //     A N A L O G
@@ -116,9 +118,10 @@ public class RobotMap {
     public static VictorSPX rightDriveMotor3 = new VictorSPX(driveRight3Channel);
 
     public static TalonSRX armMotor1 = new TalonSRX(armMotor1Channel);
-    public static VictorSPX armMotor2 = new VictorSPX(armMotor2Channel);
 
     public static TalonSRX wristMotor = new TalonSRX(wristMotorChannel);
+    public static VictorSPX wristMotor2 = new VictorSPX(wristMotor2Channel);
+
 
     public static SpeedController clawMotor = new Spark(clawMotorChannel);
 

@@ -22,7 +22,6 @@ public class WristMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getRightStickY();
-        speed = speed * speed * ((speed > 0) ? 1 : -1);
         Robot.wrist.manualRotation(speed);
 
     }

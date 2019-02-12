@@ -1,13 +1,16 @@
-package frc.team3100.robot.Autonomous;
+package frc.team3100.robot.Limelight;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 
 
 
-public class LimelightCalculation {
+public class LimelightCalculation implements Dashboard.DashboardUpdatable {
     private double limelightHeight = 4;
     private double targetHeight = 28.25;
+    private double limelightAngle = 28;
     private double gyroAngle;
     private double robotDistance;
     private double targetX;
@@ -24,7 +27,8 @@ public class LimelightCalculation {
     }
 
     public double getDistance() {
-        robotDistance = (targetHeight - limelightHeight) / Math.tan(this.getLimelightY());
+        Robot.table.getEntry("camMode").setNumber(1);
+        robotDistance = (targetHeight - limelightHeight) / Math.tan(Math.toRadians(this.getLimelightY() + limelightAngle));
         return robotDistance;
     }
 
@@ -55,6 +59,17 @@ public class LimelightCalculation {
             double xt = (targetX * ((-2 * ttt) + (3 * tt))) + (100 * Math.cos(gyroAngle) * (ttt - tt)) + (60 * (ttt - (2 * tt) + t));
             double yt = (targetY * ((-2 * ttt) + (3 * tt))) + (100 * Math.sin(gyroAngle) * (ttt - tt));
         }
+    }
+
+    public void initSD() {
+
+    }
+
+    public void updateSD() {
+        SmartDashboard.putNumber("LimelightDistance",this.getDistance());
+        SmartDashboard.putNumber("LimelightX", Robot.table.getEntry("tx").getDouble(0.0));
+        SmartDashboard.putNumber("LimelightY", Robot.table.getEntry("ty").getDouble(0.0));
+        SmartDashboard.putNumber("LimelightArea", Robot.table.getEntry("ta").getDouble(0.0));
     }
 
 }

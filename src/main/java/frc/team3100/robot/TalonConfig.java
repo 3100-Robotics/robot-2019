@@ -10,16 +10,20 @@ public class TalonConfig {
 
     public void configure() {
 
-
+        System.out.println("yay");
         RobotMap.leftDriveMotor1.configFactoryDefault();
+        RobotMap.leftDriveMotor2.configFactoryDefault();
+        RobotMap.leftDriveMotor3.configFactoryDefault();
         RobotMap.rightDriveMotor1.configFactoryDefault();
+        RobotMap.rightDriveMotor2.configFactoryDefault();
+        RobotMap.rightDriveMotor3.configFactoryDefault();
 
         // Set Up Followers
         RobotMap.leftDriveMotor2.follow(RobotMap.leftDriveMotor1);
         RobotMap.leftDriveMotor3.follow(RobotMap.leftDriveMotor1);
         RobotMap.rightDriveMotor2.follow(RobotMap.rightDriveMotor1);
         RobotMap.rightDriveMotor3.follow(RobotMap.rightDriveMotor1);
-        RobotMap.armMotor2.follow(RobotMap.armMotor1);
+        RobotMap.wristMotor2.follow(RobotMap.wristMotor);
 
         // Set Inversions for cooperating motors
         RobotMap.rightDriveMotor1.setInverted(true);
@@ -28,7 +32,10 @@ public class TalonConfig {
         RobotMap.leftDriveMotor1.setInverted(false);
         RobotMap.leftDriveMotor2.setInverted(true);
         RobotMap.leftDriveMotor3.setInverted(true);
-        System.out.println("yay");
+
+        RobotMap.wristMotor.setInverted(false);
+        RobotMap.wristMotor2.setInverted(true);
+
 
         RobotMap.leftDriveMotor1.setNeutralMode(NeutralMode.Brake);
         RobotMap.leftDriveMotor2.setNeutralMode(NeutralMode.Brake);
@@ -37,7 +44,8 @@ public class TalonConfig {
         RobotMap.rightDriveMotor2.setNeutralMode(NeutralMode.Brake);
         RobotMap.rightDriveMotor3.setNeutralMode(NeutralMode.Brake);
 
-
+        RobotMap.leftDriveMotor1.setSelectedSensorPosition(0);
+        RobotMap.rightDriveMotor1.setSelectedSensorPosition(0);
 
 
 

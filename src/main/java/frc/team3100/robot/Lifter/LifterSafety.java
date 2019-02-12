@@ -11,9 +11,6 @@ import frc.team3100.robot.Robot;
 This will trigger whatever lifting mechanism we decide on to lift
  */
 public class LifterSafety extends Command {
-    private Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
-    private Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.homeButtonChannel);
-    private boolean began = false;
     public LifterSafety() {
         super("LifterSafety");
     }
@@ -23,14 +20,14 @@ public class LifterSafety extends Command {
     }
 
     protected void execute() {
-        if(safetyButton.get() && triggerButton.get()) {
+        if(Robot.oi.safetyButton.get() && Robot.oi.triggerButton.get()) {
             new AutoLifter();
 
         }
     }
 
     protected boolean isFinished() {
-        return !safetyButton.get();
+        return !Robot.oi.safetyButton.get();
     }
 
     protected void end() {

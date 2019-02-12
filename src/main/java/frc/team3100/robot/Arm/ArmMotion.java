@@ -1,5 +1,6 @@
 package frc.team3100.robot.Arm;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -29,7 +30,12 @@ public class ArmMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getLeftStickY();
-        Robot.arm.manualRotation(speed);
+
+        if(RobotMap.armMotor1.getControlMode() == ControlMode.PercentOutput && Math.abs(speed) < .2) {
+            Robot.arm.manualRotation(.2 * (speed > 0 ? 1:-1));
+        } else {
+            Robot.arm.manualRotation(speed);
+        }
         
     }
 

@@ -1,5 +1,6 @@
 package frc.team3100.robot.Arm;
 
+import com.ctre.phoenix.ParamEnum;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -9,8 +10,6 @@ import frc.team3100.robot.Dashboard;
 import frc.team3100.robot.Gains;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
-
-import static com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 
 /*
 Subsystem that defines the motion for the arm component of the game piece manipulator.
@@ -22,28 +21,24 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
     private static TalonSRX motor = RobotMap.armMotor1;
 
-    private static final Gains kGains = new Gains(.225, 0.0, 0, 0, 0, 1.0);
     private double pos;
+    private boolean ran = false;
 
     public Arm() {
         super("Arm");
-
+        motor.configFactoryDefault();
         /* Config the sensor used for Primary PID and sensor direction */
-        motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
+        motor.configSelectedFeedbackSensor(FeedbackDevice.Analog,0,0);
         motor.setSensorPhase(false);
 
-        /* Config the peak and nominal outputs, 12V means full */
-        motor.configNominalOutputForward(0);
-        motor.configNominalOutputReverse(0);
-        motor.configPeakOutputForward(1);
-        motor.configPeakOutputReverse(-1);
 
         /* Config Position Closed Loop gains in slot0, typically kF stays zero. */
-        motor.config_kF(0,kGains.kF);
-        motor.config_kP(0,kGains.kP);
-        motor.config_kI(0,kGains.kI);
-        motor.config_kD(0,kGains.kD);
-        motor.setSelectedSensorPosition(0);
+        motor.config_kF(0,Variables.armGains.kF);
+        motor.config_kP(0,Variables.armGains.kP);
+        motor.config_kI(0,Variables.armGains.kI);
+        motor.config_kD(0,Variables.armGains.kD);
+        int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
+        motor.setSelectedSensorPosition(absolutePosition);
     }
 
     public void initDefaultCommand() {
@@ -51,24 +46,40 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void manualRotation(double speed) {
+        speed = deadband(speed);
+        double scaleSpeed = speed < 0 ? -1 : 1;
+        speed *= speed * scaleSpeed;
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
+            ran = false;
+
+        } else if(speed == 0 && !ran) {
+            motor.set(ControlMode.PercentOutput, 0);
+            ran = true;
         }
     }
 
     public void movePosition(double position) {
         pos = position;
         motor.set(ControlMode.Position,position);
+
     }
 
+    private double deadband(double input) {
+        if(Math.abs(input) < Variables.joystickError) {
+            return 0;
+        } else {
+            return input;
+        }
+    }
 
-
-    public double getCurrentPosition() {
+    public int getCurrentPosition() {
         return motor.getSelectedSensorPosition();
     }
 
     public void stop() {
         motor.set(ControlMode.PercentOutput,0);
+        ran = true;
     }
 
 
@@ -82,6 +93,9 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     public void updateSD() {
         SmartDashboard.putNumber("Arm target",pos);
         SmartDashboard.putNumber("Arm Speed",motor.getOutputCurrent());
-        SmartDashboard.putNumber("Arm Position",this.getCurrentPosition());
+        SmartDashboard.putNumber("Arm Position",motor.getSensorCollection().getAnalogInRaw());
+        SmartDashboard.putNumber("Arm Position2",motor.getSensorCollection().getAnalogIn());
+        SmartDashboard.putNumber("Arm Position3",this.getCurrentPosition());
+
     }
 }
