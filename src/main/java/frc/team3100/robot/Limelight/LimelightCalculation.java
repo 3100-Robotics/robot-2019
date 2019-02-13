@@ -1,22 +1,27 @@
 package frc.team3100.robot.Limelight;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
 
 
 
-public class LimelightCalculation implements Dashboard.DashboardUpdatable {
-    private double limelightHeight = 4;
+public class LimelightCalculation extends Subsystem implements Dashboard.DashboardUpdatable {
+    private double limelightHeight = 6.625;
     private double targetHeight = 28.25;
-    private double limelightAngle = 28;
+    private double limelightAngle = 21.5;
     private double gyroAngle;
     private double robotDistance;
     private double targetX;
     private double targetY;
     private int points = 100;
     private double[] splineCenterPoints = new double[points];
+
+    public void initDefaultCommand() {
+
+    }
 
     public double getLimelightX() {
         return Robot.table.getEntry("tx").getDouble(0.0);
@@ -27,7 +32,6 @@ public class LimelightCalculation implements Dashboard.DashboardUpdatable {
     }
 
     public double getDistance() {
-        Robot.table.getEntry("camMode").setNumber(1);
         robotDistance = (targetHeight - limelightHeight) / Math.tan(Math.toRadians(this.getLimelightY() + limelightAngle));
         return robotDistance;
     }

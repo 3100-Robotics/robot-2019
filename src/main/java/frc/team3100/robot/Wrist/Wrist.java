@@ -5,8 +5,7 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
-import frc.team3100.robot.Gains;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
 

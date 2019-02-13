@@ -3,18 +3,11 @@ package frc.team3100.robot.Drivetrain;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FollowerType;
-import edu.wpi.first.wpilibj.PIDController;
-import edu.wpi.first.wpilibj.PIDSourceType;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
-import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
-
-import static com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 
 /*
 This defines all aspects of the drive train-- specifically the shifting to high/low gear and the six mini-CIMs.

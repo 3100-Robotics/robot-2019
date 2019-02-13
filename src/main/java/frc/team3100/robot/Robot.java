@@ -13,7 +13,12 @@ import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
 import frc.team3100.robot.Lifter.Lifter;
 import frc.team3100.robot.Limelight.CameraMode;
+import frc.team3100.robot.Limelight.LimelightCalculation;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Mapping.TalonConfig;
+import frc.team3100.robot.OI.Dashboard;
+import frc.team3100.robot.OI.OI;
+import frc.team3100.robot.OI.POVRunner;
 import frc.team3100.robot.Wrist.Wrist;
 
 
@@ -32,6 +37,7 @@ public class Robot extends TimedRobot {
     public static Lifter lifter;
     public static Claw claw;
     public static Brake brake;
+    public static LimelightCalculation vision;
     public static OI oi;
     public static Compressor compressor;
 
@@ -50,9 +56,12 @@ public class Robot extends TimedRobot {
         arm = new Arm();
         brake = new Brake();
         claw = new Claw();
+        vision = new LimelightCalculation();
         lifter = new Lifter();
         Command CameraMode = new CameraMode();
         CameraMode.start();
+        Command POVRunner = new POVRunner();
+        POVRunner.start();
 
         // ALWAYS initialize OI after subsystems
         oi = new OI();

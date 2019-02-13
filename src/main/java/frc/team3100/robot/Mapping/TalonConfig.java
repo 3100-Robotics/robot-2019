@@ -1,16 +1,16 @@
-package frc.team3100.robot;
+package frc.team3100.robot.Mapping;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.RemoteSensorSource;
 import com.ctre.phoenix.motorcontrol.SensorTerm;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Variables;
 
 public class TalonConfig {
 
     public void configure() {
 
-        System.out.println("yay");
         RobotMap.leftDriveMotor1.configFactoryDefault();
         RobotMap.leftDriveMotor2.configFactoryDefault();
         RobotMap.leftDriveMotor3.configFactoryDefault();

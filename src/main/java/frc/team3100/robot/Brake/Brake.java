@@ -2,7 +2,7 @@ package frc.team3100.robot.Brake;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 
 

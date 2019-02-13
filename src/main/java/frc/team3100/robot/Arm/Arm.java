@@ -1,13 +1,11 @@
 package frc.team3100.robot.Arm;
 
-import com.ctre.phoenix.ParamEnum;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
-import frc.team3100.robot.Gains;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
 
@@ -51,10 +49,12 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         speed *= speed * scaleSpeed;
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
+            System.out.println("Moving");
             ran = false;
 
         } else if(speed == 0 && !ran) {
             motor.set(ControlMode.PercentOutput, 0);
+            System.out.println("stopped");
             ran = true;
         }
     }

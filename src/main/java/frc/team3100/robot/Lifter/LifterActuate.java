@@ -21,8 +21,17 @@ public class LifterActuate extends Command {
     }
 
     protected void initialize() {
-        Robot.lifter.frontToggle(frontExtend);
-        Robot.lifter.backToggle(backExtend);
+        if(!Variables.frontState) {
+            Robot.lifter.frontToggle(frontExtend);
+            Robot.lifter.backToggle(backExtend);
+            Variables.frontState = true;
+            Variables.backState = true;
+        } else {
+            Robot.lifter.frontToggle(!frontExtend);
+            Robot.lifter.backToggle(!backExtend);
+            Variables.frontState = false;
+            Variables.backState = false;
+        }
     }
 
     protected void execute() {

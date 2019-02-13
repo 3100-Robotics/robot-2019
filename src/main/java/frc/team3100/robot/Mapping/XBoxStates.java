@@ -52,10 +52,10 @@ public class XBoxStates extends Joystick {
         }
         public double getLeftTrigger() { return getRawAxis(RobotMap.leftTriggerChannel); }
 
-        public boolean POVD() { return (getPOV() == 270); }
-        public boolean POVL() { return (getPOV() == 180); }
-        public boolean POVR() { return (getPOV() == 0); }
-        public boolean POVU() { return (getPOV() == 90); }
+        public boolean getPOVD() { return (getPOV() == 270); }
+        public boolean getPOVL() { return (getPOV() == 180); }
+        public boolean getPOVR() { return (getPOV() == 0); }
+        public boolean getPOVU() { return (getPOV() == 90); }
 
 
 

@@ -1,8 +1,9 @@
-package frc.team3100.robot;
+package frc.team3100.robot.OI;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class Dashboard {
         subsystems.add(Robot.claw);
         subsystems.add(Robot.wrist);
         subsystems.add(Robot.brake);
+        subsystems.add(Robot.vision);
 		for (DashboardUpdatable subsystem : subsystems) {
 			subsystem.initSD();
 		}

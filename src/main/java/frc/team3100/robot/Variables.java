@@ -27,7 +27,7 @@ public class Variables {
     public enum ClawPositions {
         wristBallPickupFront(0),
         wristBallPickupBack(615),
-        wristBallScoreCargoFront(770), // ACTUAL
+        wristBallScoreCargoFront(770),
         wristBallScoreRocketFront(735),
         wristBallScoreCargoBack(512),
         wristBallScoreRocketBack(615),
@@ -39,7 +39,7 @@ public class Variables {
 
         armBallPickupFront(0),
         armBallPickupBack(805),
-        armBallScoreCargoFront(444), // ACTUAL
+        armBallScoreCargoFront(444),
         armBallScoreRocketFront(345),
         armBallScoreCargoBack(583),
         armBallScoreRocketBack(680),
@@ -82,6 +82,7 @@ public class Variables {
     public double drivePIDRotchange = 0;
     public static boolean frontState = false;
     public static boolean backState = false;
+    public static boolean lifterRotatePistonEngaged = true;
     public static final Gains kGains_Turning = new Gains( 0.0, 0.0,  0.0, 0.0,200,  1.00 );
     public static final Gains armGains = new Gains(9.0, 0.0, 1.0, 0.0, 200, 1.0);
     public static final Gains wristGains = new Gains(7.0, 0.0, 0.1, 0.0, 200, 1.0);

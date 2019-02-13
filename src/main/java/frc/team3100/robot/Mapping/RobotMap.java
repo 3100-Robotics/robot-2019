@@ -38,12 +38,12 @@ public class RobotMap {
 
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
-    private static int driveShiftLowChannel = 4;
+    private static int driveShiftLowChannel = 0;
     private static int lifterFrontPistonExtendChannel = 3;
     private static int lifterBackPistonExtendChannel = 2;
     private static int armBrakeEngageChannel = 1;
-    private static int clawHatchReleaseChannel = 0;
-    private static int lifterRotationLockChannel = 5;
+    private static int clawHatchReleaseChannel = 4;
+    private static int lifterRotationChannel = 5;
 
 
     //     A N A L O G
@@ -131,6 +131,7 @@ public class RobotMap {
     public static Solenoid armBrakeEngage = new Solenoid(PCM1Channel,armBrakeEngageChannel);
     public static Solenoid lifterFrontExtend = new Solenoid(PCM1Channel,lifterFrontPistonExtendChannel);
     public static Solenoid lifterBackExtend = new Solenoid(PCM1Channel,lifterBackPistonExtendChannel);
+    public static Solenoid lifterRotation = new Solenoid(PCM1Channel,lifterRotationChannel);
 
 
     //    Initialize sensors

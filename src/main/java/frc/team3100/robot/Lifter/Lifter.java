@@ -1,10 +1,8 @@
 package frc.team3100.robot.Lifter;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.Dashboard;
+import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
-import frc.team3100.robot.Variables;
 
 /*
 This subsystem defines the claw and the motors used to pickup the cargo.
@@ -26,7 +24,9 @@ public class Lifter extends Subsystem implements Dashboard.DashboardUpdatable {
             RobotMap.lifterBackExtend.set(extend);
     }
 
-
+    public void rotate(boolean retract) {
+        RobotMap.lifterRotation.set(retract);
+    }
 
 
 

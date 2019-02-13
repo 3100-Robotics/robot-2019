@@ -55,13 +55,13 @@ public class AutoClawMotion extends Command {
     }
 
     protected boolean isFinished() {
-        /*if(Math.abs(Robot.arm.getCurrentPosition() - armTargetPosition) < 10 &&
-                Math.abs(Robot.wrist.getCurrentPosition() - wristTargetPosition) < 10) {
+        if((Math.abs(Robot.arm.getCurrentPosition() - armTargetPosition) < 5 &&
+                Math.abs(Robot.wrist.getCurrentPosition() - wristTargetPosition) < 5) || Math.abs(RobotMap.techControls.getLeftStickY()) > .2 || Math.abs(RobotMap.techControls.getRightStickY()) > .2) {
             return true;
         } else {
             return false;
-        }*/
-        return true;
+        }
+
     }
 
     protected void end() {
