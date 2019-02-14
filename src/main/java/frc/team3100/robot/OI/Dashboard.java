@@ -51,6 +51,7 @@ public class Dashboard {
 			}
 
 
+			SmartDashboard.putNumber("POVVAL",RobotMap.techControls.getPOV());
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
 		}

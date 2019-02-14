@@ -7,7 +7,7 @@ import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 public class POVRunner extends Command {
-
+    Command motion;
     public POVRunner() {
         super("POVRunner");
 
@@ -29,12 +29,16 @@ public class POVRunner extends Command {
         }
 
         if(RobotMap.techControls.getPOVD()) {
-            new AutoClawMotion(Variables.ClawPositions.armHatchGround,Variables.ClawPositions.wristHatchGround);
+            System.out.println("D");
+            motion = new AutoClawMotion(Variables.ClawPositions.armHatchGround,Variables.ClawPositions.wristHatchGround);
         } else if(RobotMap.techControls.getPOVL()) {
+            System.out.println("L");
             new AutoClawMotion(Variables.ClawPositions.armHatchFront,Variables.ClawPositions.wristHatchFront);
         } else if(RobotMap.techControls.getPOVU()) {
+            System.out.println("U");
             new AutoClawMotion(Variables.ClawPositions.armHatchGroundPrep,Variables.ClawPositions.wristHatchGroundPrep);
         } else if(RobotMap.techControls.getPOVR()) {
+            System.out.println("R");
             new AutoClawMotion(Variables.ClawPositions.armHatchBack,Variables.ClawPositions.wristHatchBack);
         }
     }

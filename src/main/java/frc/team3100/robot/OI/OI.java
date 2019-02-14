@@ -20,10 +20,15 @@ public class OI {
     private Button forntControl = new JoystickButton(RobotMap.driveControls,RobotMap.xButtonChannel);
     private Button backControl = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
     private Button bothControl = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
-    public Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
-    public Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.homeButtonChannel);
     public Button cameraModeButton = new JoystickButton(RobotMap.driveControls,RobotMap.leftBumperChannel);
     public Button lifterRotationButton = new JoystickButton(RobotMap.driveControls,RobotMap.yButtonChannel);
+
+    public Button safetyButton = new JoystickButton(RobotMap.techControls,RobotMap.startButtonChannel);
+    public Button triggerButton = new JoystickButton(RobotMap.techControls,RobotMap.backButtonChannel);
+
+    public Button safetyButton2 = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
+    public Button triggerButton2 = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
+
 
     private Button ballRocketBackButton = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
     private Button ballCargoFrontButton = new JoystickButton(RobotMap.techControls,RobotMap.bButtonChannel);
@@ -40,21 +45,22 @@ public class OI {
         forntControl.whenPressed(new LifterFront(true));
         backControl.whenPressed(new LifterBack(true));
         bothControl.whenPressed(new LifterActuate(true,true));
-        safetyButton.whenPressed(new LifterSafety());
         cameraModeButton.whenPressed(new CameraMode());
         lifterRotationButton.whenPressed(new LifterRotate());
 
 
         ballRocketBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketBack,Variables.ClawPositions.wristBallScoreRocketBack));
-        ballCargoFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoFront,Variables.ClawPositions.armBallScoreCargoFront));
+        ballCargoFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoFront,Variables.ClawPositions.wristBallScoreCargoFront));
         ballCargoBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoBack,Variables.ClawPositions.wristBallScoreCargoBack));
         ballRocketFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketFront,Variables.ClawPositions.wristBallScoreRocketFront));
 
         defenceButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armDefence,Variables.ClawPositions.wristDefence));
         ballPickupBack.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallPickupBack,Variables.ClawPositions.wristBallPickupBack));
 
+        triggerButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchGroundPrep,Variables.ClawPositions.wristHatchGroundPrep));
+        safetyButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchGround,Variables.ClawPositions.wristHatchGround));
 
-
-
+        triggerButton2.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchFront,Variables.ClawPositions.wristHatchFront));
+        safetyButton2.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchBack,Variables.ClawPositions.wristHatchBack));
     }
 }

@@ -11,7 +11,6 @@ import frc.team3100.robot.Robot;
 public class LimelightCalculation extends Subsystem implements Dashboard.DashboardUpdatable {
     private double limelightHeight = 6.625;
     private double targetHeight = 28.25;
-    private double limelightAngle = 21.5;
     private double gyroAngle;
     private double robotDistance;
     private double targetX;
@@ -32,7 +31,7 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
     }
 
     public double getDistance() {
-        robotDistance = (targetHeight - limelightHeight) / Math.tan(Math.toRadians(this.getLimelightY() + limelightAngle));
+        robotDistance = (targetHeight - limelightHeight) / Math.tan(Math.toRadians(this.getLimelightY() + (0.232 * this.getLimelightY()) + 21.8));
         return robotDistance;
     }
 

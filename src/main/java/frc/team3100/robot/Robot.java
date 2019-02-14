@@ -1,8 +1,10 @@
 package frc.team3100.robot;
 
+import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -38,6 +40,8 @@ public class Robot extends TimedRobot {
     public static Claw claw;
     public static Brake brake;
     public static LimelightCalculation vision;
+    public static AHRS ahrs;
+    public static POVRunner povRunner;
     public static OI oi;
     public static Compressor compressor;
 
@@ -57,11 +61,14 @@ public class Robot extends TimedRobot {
         brake = new Brake();
         claw = new Claw();
         vision = new LimelightCalculation();
-        lifter = new Lifter();
+        lifter = new Lifter();try {
+            ahrs = new AHRS(SPI.Port.kMXP);
+        } catch (RuntimeException ex ) {
+            System.out.println("Error instantiating navX MXP:  " + ex.getMessage());
+        }
         Command CameraMode = new CameraMode();
         CameraMode.start();
-        Command POVRunner = new POVRunner();
-        POVRunner.start();
+        povRunner = new POVRunner();
 
         // ALWAYS initialize OI after subsystems
         oi = new OI();
@@ -96,6 +103,7 @@ public class Robot extends TimedRobot {
             }
         }
         autoVal = false;
+        povRunner.start();
 
 
     }

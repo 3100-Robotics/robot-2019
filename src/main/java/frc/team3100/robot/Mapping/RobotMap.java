@@ -71,8 +71,8 @@ public class RobotMap {
     public static final int rightBumperChannel = 6;
     public static final int leftBumperChannel = 5;
 
-    public static final int startButtonChannel = 7;
-    public static final int homeButtonChannel = 8;
+    public static final int startButtonChannel = 8;
+    public static final int backButtonChannel = 7;
 
     public static final int rightTriggerChannel = 3;
     public static final int leftTriggerChannel = 2;
