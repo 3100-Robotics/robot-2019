@@ -37,7 +37,7 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
 
     public double getModifiedGyro() {
         this.getDistance();
-        gyroAngle = RobotMap.gyro.getAngle();
+        gyroAngle = 0;
         while (Math.abs(gyroAngle) >= 360) {
             if (gyroAngle > 360) {
                 gyroAngle -= 360;

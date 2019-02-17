@@ -25,19 +25,25 @@ public class Variables {
     }
 
     public enum ClawPositions {
-        wristBallPickupFront(0),
-        wristBallPickupBack(615),
-        wristBallScoreCargoFront(770),
-        wristBallScoreRocketFront(735),
-        wristBallScoreCargoBack(512),
-        wristBallScoreRocketBack(615),
-        wristHatchGroundPrep(485),
-        wristHatchGround(485),
-        wristHatchFront(685),
-        wristHatchBack(695),
-        wristDefence(660),
+        wristBallPickupFront(593+28),
+        wristBallPickupPlayerBack(0),
+        wristBallPickupPlayerFront(0),
+        wristBallScoreRockketlv2(0),
+        wristBallPickupBack(442+28),
+        wristBallScoreCargoFront(597+28),
+        wristBallScoreRocketFront(562+28),
+        wristBallScoreCargoBack(339+28),
+        wristBallScoreRocketBack(442+28),
+        wristHatchGroundPrep(312+28),
+        wristHatchGround(312+28),
+        wristHatchFront(512+28),
+        wristHatchBack(512+28),
+        wristDefence(487+28),
 
-        armBallPickupFront(0),
+        armBallPickupFront(247),
+        armBallPickupPlayerBack(0),
+        armBallPickupPlayerFront(0),
+        armBallScoreRockketlv2(0),
         armBallPickupBack(805),
         armBallScoreCargoFront(444),
         armBallScoreRocketFront(345),
@@ -71,12 +77,13 @@ public class Variables {
     }
 
     public static double armSensorOffset = 0;
-    public static double joystickError = .2;
+    public static double joystickError = 0.2;
     public static boolean armLock = true;
-    public static boolean armAuto = true;
+    public static boolean armAuto = false;
+    public static boolean wristAuto = false;
     public static boolean driveAuto = true;
     public boolean climbState = false;
-    public boolean cubeHeld = false;
+    public static boolean hatchExtended = false;
     public static boolean armRunning = false;
     public static DriveTrainStates driveTrainState = DriveTrainStates.low;
     public double drivePIDRotchange = 0;
@@ -84,7 +91,7 @@ public class Variables {
     public static boolean backState = false;
     public static boolean lifterRotatePistonEngaged = true;
     public static final Gains kGains_Turning = new Gains( 0.0, 0.0,  0.0, 0.0,200,  1.00 );
-    public static final Gains armGains = new Gains(9.0, 0.0, 1.0, 0.0, 200, 1.0);
+    public static final Gains armGains = new Gains(6.0, 0.0, 1.0, 0.0, 200, 1.0);
     public static final Gains wristGains = new Gains(7.0, 0.0, 0.1, 0.0, 200, 1.0);
 
 

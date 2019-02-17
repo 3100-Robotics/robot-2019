@@ -62,6 +62,7 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void movePosition(double position) {
+        System.out.println(position);
         pos = position;
         motor.set(ControlMode.Position, position);
     }

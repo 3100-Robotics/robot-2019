@@ -1,6 +1,8 @@
 package frc.team3100.robot.Arm;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -16,7 +18,6 @@ MAX V / 100 ms ==
  */
 
 public class ArmMotion extends Command {
-
     private double speed;
 
     public ArmMotion() {
@@ -29,7 +30,6 @@ public class ArmMotion extends Command {
     }
 
     protected void execute() {
-        speed = RobotMap.techControls.getLeftStickY();
 
         if(RobotMap.armMotor1.getControlMode() == ControlMode.PercentOutput && Math.abs(speed) < .2 && !Variables.armAuto) {
             Robot.arm.manualRotation(.2 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1:1));
@@ -48,7 +48,7 @@ public class ArmMotion extends Command {
     }
 
     protected void interrupted() {
-
+        Robot.arm.stop();
     }
 }
 

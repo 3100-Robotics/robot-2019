@@ -15,26 +15,23 @@ starting the autonomous motion.
  */
 
 public class AutoClawMotion extends Command {
-    private Button stopper = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
     private double armTargetPosition;
     private double wristTargetPosition;
-    private boolean wristSafed = false;
-    private boolean wristTargetEntered = false;
 
     public AutoClawMotion(Variables.ClawPositions armTarget, Variables.ClawPositions wristTarget) {
         super("AutoClawMotion");
-        requires(Robot.wrist);
-        requires(Robot.claw);
+        //requires(Robot.wrist);
+        requires(Robot.arm);
         armTargetPosition = armTarget.getPosition();
-        wristTargetPosition = wristTarget.getPosition();
+        //wristTargetPosition = wristTarget.getPosition();
 
     }
 
     protected void initialize() {
-        wristSafed = false;
         Robot.arm.movePosition(armTargetPosition);
-        Robot.wrist.movePosition(wristTargetPosition);
+        //Robot.wrist.movePosition(wristTargetPosition);
         Variables.armAuto = true;
+        //Variables.wristAuto = true;
     }
 
     protected void execute() {
@@ -55,8 +52,7 @@ public class AutoClawMotion extends Command {
     }
 
     protected boolean isFinished() {
-        if((Math.abs(Robot.arm.getCurrentPosition() - armTargetPosition) < 5 &&
-                Math.abs(Robot.wrist.getCurrentPosition() - wristTargetPosition) < 5) || Math.abs(RobotMap.techControls.getLeftStickY()) > .2 || Math.abs(RobotMap.techControls.getRightStickY()) > .2) {
+        if( Math.abs(RobotMap.techControls.getLeftStickY()) > .2 /*|| Math.abs(RobotMap.techControls.getRightStickY()) > .2*/) {
             return true;
         } else {
             return false;
@@ -66,10 +62,12 @@ public class AutoClawMotion extends Command {
 
     protected void end() {
         Variables.armAuto = false;
+        //Variables.wristAuto = false;
+
     }
 
     protected void interrupted() {
-        Robot.wrist.stop();
+        //Robot.wrist.stop();
         Robot.arm.stop();
     }
 }

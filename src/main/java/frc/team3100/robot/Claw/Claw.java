@@ -22,6 +22,10 @@ public class Claw extends Subsystem implements Dashboard.DashboardUpdatable {
         motorSpeed = speed;
     }
 
+    public void extend(boolean extend) {
+        RobotMap.clawHatchRelease.set(extend);
+    }
+
 
 
     public void initDefaultCommand() {

@@ -50,8 +50,11 @@ public class Dashboard {
 				subsystem.updateSD();
 			}
 
-
-			SmartDashboard.putNumber("POVVAL",RobotMap.techControls.getPOV());
+			try {
+				SmartDashboard.putNumber("NavX Angle", Robot.ahrs.getAngle());
+			} catch(Exception e) {
+				System.out.println("Angle Read Error: " + e.getMessage());
+			}
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
 		}

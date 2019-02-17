@@ -1,5 +1,6 @@
 package frc.team3100.robot.Wrist;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
@@ -22,7 +23,16 @@ public class WristMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getRightStickY();
-        Robot.wrist.manualRotation(speed);
+        if(RobotMap.wristMotor.getControlMode() == ControlMode.PercentOutput && Math.abs(speed) < .2 && !Variables.wristAuto) {
+            //RobotMap.wristMotor.setInverted(true);
+            //Robot.wrist.manualRotation(.2);
+            //System.out.println("AAAAA");
+            RobotMap.wristMotor.setInverted(false);
+            Robot.wrist.manualRotation(speed);
+        } else {
+            RobotMap.wristMotor.setInverted(false);
+            Robot.wrist.manualRotation(speed);
+        }
 
     }
 

@@ -36,6 +36,8 @@ public class TalonConfig {
         RobotMap.wristMotor.setInverted(false);
         RobotMap.wristMotor2.setInverted(true);
 
+        RobotMap.armMotor1.setInverted(false);
+
 
         RobotMap.leftDriveMotor1.setNeutralMode(NeutralMode.Brake);
         RobotMap.leftDriveMotor2.setNeutralMode(NeutralMode.Brake);

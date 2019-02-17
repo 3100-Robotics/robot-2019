@@ -1,7 +1,5 @@
 package frc.team3100.robot.Claw;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
@@ -11,30 +9,29 @@ import frc.team3100.robot.Variables;
 This command takes the two trigger inputs on the Technician's controller and makes the claw motors move accordingly.
  */
 
-public class ClawRotate extends Command {
+public class ClawExtend extends Command {
 
 
-    public ClawRotate() {
+    public ClawExtend() {
         super("ClawRotate");
-        requires(Robot.claw);
     }
 
     protected void initialize() {
-
-    }
-
-    protected void execute() {
-        if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
-            Robot.claw.wheels(RobotMap.driveControls.getLeftTrigger());
-        } else if(RobotMap.driveControls.getRightTrigger() > .5){
-            Robot.claw.wheels(-.7);
+        if(Variables.hatchExtended) {
+            Robot.claw.extend(false);
+            Variables.hatchExtended = false;
         } else {
-            Robot.claw.wheels(0);
+            Robot.claw.extend(true);
+            Variables.hatchExtended = true;
         }
     }
 
+    protected void execute() {
+
+    }
+
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {

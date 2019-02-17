@@ -45,27 +45,45 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void manualRotation(double speed) {
         speed = deadband(speed);
+
+        if(motor.getSensorCollection().getAnalogInRaw() < 240) {
+            if(speed > 0) {
+                speed = -.4;
+            }
+        } else if(motor.getSensorCollection().getAnalogInRaw() > 850) {
+            if(speed < 0) {
+                speed = .4;
+            }
+        }
         double scaleSpeed = speed < 0 ? -1 : 1;
         speed *= speed * scaleSpeed;
+
+
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
-            System.out.println("Moving");
             ran = false;
 
         } else if(speed == 0 && !ran) {
             motor.set(ControlMode.PercentOutput, 0);
-            System.out.println("stopped");
             ran = true;
         }
     }
 
     public void movePosition(double position) {
+        if(position < 220) {
+            position = 220;
+            System.out.println("Lower Bound Tripped");
+        } else if(position > 850) {
+            position = 850;
+            System.out.println("Upper Bound Tripped");
+        }
         pos = position;
         motor.set(ControlMode.Position,position);
 
     }
 
     private double deadband(double input) {
+
         if(Math.abs(input) < Variables.joystickError) {
             return 0;
         } else {

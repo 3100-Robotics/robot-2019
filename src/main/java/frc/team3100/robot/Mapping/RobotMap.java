@@ -14,7 +14,7 @@ public class RobotMap {
     //     C O N T R O L L E R S
     private static int driveControlsChannel = 0;
     private static int techControlsChannel = 1;
-    private static int techBoardChannel = 3;
+    private static int techBoardChannel = 2;
 
 
     //     P C M   C O N T R O L L E R S
@@ -132,10 +132,10 @@ public class RobotMap {
     public static Solenoid lifterFrontExtend = new Solenoid(PCM1Channel,lifterFrontPistonExtendChannel);
     public static Solenoid lifterBackExtend = new Solenoid(PCM1Channel,lifterBackPistonExtendChannel);
     public static Solenoid lifterRotation = new Solenoid(PCM1Channel,lifterRotationChannel);
+    public static Solenoid clawHatchRelease = new Solenoid(PCM1Channel,clawHatchReleaseChannel);
 
 
     //    Initialize sensors
-    public static Gyro gyro = new ADXRS450_Gyro();
     public static AnalogInput lifterFrontUltrasonic = new AnalogInput(lifterFrontUltraChannel);
     public static AnalogInput lifterBackUltrasonic = new AnalogInput(lifterBackUltraChannel);
 

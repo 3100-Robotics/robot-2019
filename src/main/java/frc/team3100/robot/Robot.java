@@ -61,7 +61,8 @@ public class Robot extends TimedRobot {
         brake = new Brake();
         claw = new Claw();
         vision = new LimelightCalculation();
-        lifter = new Lifter();try {
+        lifter = new Lifter();
+        try {
             ahrs = new AHRS(SPI.Port.kMXP);
         } catch (RuntimeException ex ) {
             System.out.println("Error instantiating navX MXP:  " + ex.getMessage());
@@ -75,7 +76,6 @@ public class Robot extends TimedRobot {
 
         table = NetworkTableInstance.getDefault().getTable("limelight");
 
-        RobotMap.gyro.calibrate();
 
         new TalonConfig().configure();
 
