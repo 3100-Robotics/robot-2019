@@ -30,16 +30,6 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
 
-    public void shiftLow() {
-        RobotMap.driveShiftLow.set(true);
-        Variables.driveTrainState = Variables.DriveTrainStates.low;
-    }
-
-    public void shiftHigh() {
-        RobotMap.driveShiftLow.set(false);
-        Variables.driveTrainState = Variables.DriveTrainStates.high;
-    }
-
     public void initDefaultCommand() {setDefaultCommand(new DriveMotion());}
 
 
@@ -108,7 +98,6 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
     public void updateSD() {
         SmartDashboard.putNumber("Drive Speed",limitedSpeed);
         SmartDashboard.putNumber("Drive Rotate",limitedRotate);
-        SmartDashboard.putString("Drive Gear", Variables.driveTrainState.getGear());
         SmartDashboard.putNumber("Drive Left Sensor",RobotMap.leftDriveMotor1.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Drive Right Sensor",RobotMap.rightDriveMotor1.getSensorCollection().getQuadraturePosition());
 

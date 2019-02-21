@@ -21,7 +21,7 @@ public class BrakeArmActuation extends Command {
     }
 
     protected void execute() {
-        if(Math.abs(RobotMap.armMotor1.getOutputCurrent()) > .25) {
+        if(Math.abs(RobotMap.armMotor1.getOutputCurrent()) > .3) {
             Robot.brake.retract();
         } else {
             Robot.brake.extend();

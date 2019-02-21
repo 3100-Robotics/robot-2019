@@ -38,17 +38,17 @@ public class RobotMap {
 
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
-    private static int driveShiftLowChannel = 0;
     private static int lifterFrontPistonExtendChannel = 3;
-    private static int lifterBackPistonExtendChannel = 2;
-    private static int armBrakeEngageChannel = 1;
-    private static int clawHatchReleaseChannel = 4;
+    private static int lifterBackPistonExtendChannel = 1;
+    private static int armBrakeEngageChannel = 0;
+    private static int clawHatchReleaseChannel = 2;
     private static int lifterRotationChannel = 5;
 
 
     //     A N A L O G
     private static int lifterFrontUltraChannel = 0;
     private static int lifterBackUltraChannel = 1;
+
 
 
     //     D I O
@@ -110,7 +110,7 @@ public class RobotMap {
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
-    public static TalonSRX leftDriveMotor2 = new TalonSRX(driveLeft2Channel);
+    public static VictorSPX leftDriveMotor2 = new VictorSPX(driveLeft2Channel); /** Change to TalonSRX for Competition **/
     public static VictorSPX leftDriveMotor3 = new VictorSPX(driveLeft3Channel);
 
     public static TalonSRX rightDriveMotor1 = new TalonSRX(driveRight1Channel);
@@ -127,7 +127,6 @@ public class RobotMap {
 
 
     //    Initialize Solenoids
-    public static Solenoid driveShiftLow = new Solenoid(PCM1Channel,driveShiftLowChannel);
     public static Solenoid armBrakeEngage = new Solenoid(PCM1Channel,armBrakeEngageChannel);
     public static Solenoid lifterFrontExtend = new Solenoid(PCM1Channel,lifterFrontPistonExtendChannel);
     public static Solenoid lifterBackExtend = new Solenoid(PCM1Channel,lifterBackPistonExtendChannel);

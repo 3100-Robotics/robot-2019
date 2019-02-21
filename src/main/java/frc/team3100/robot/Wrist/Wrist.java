@@ -25,13 +25,12 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
         /* Config the sensor used for Primary PID and sensor direction */
         motor.configSelectedFeedbackSensor(FeedbackDevice.Analog,0,30);
-        motor.setSensorPhase(false);
 
         /* Config the peak and nominal outputs, 12V means full */
         motor.configNominalOutputForward(0);
         motor.configNominalOutputReverse(0);
-        motor.configPeakOutputForward(.5);
-        motor.configPeakOutputReverse(-.5);
+        motor.configPeakOutputForward(1);
+        motor.configPeakOutputReverse(-1);
 
         /* Config Position Closed Loop gains in slot0, typically kF stays zero. */
         motor.config_kF(0,Variables.wristGains.kF);
@@ -49,8 +48,20 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void manualRotation(double speed) {
         speed = deadband(speed);
+
+        if(motor.getSensorCollection().getAnalogInRaw() < 220) {
+            if(speed < 0) {
+                speed = .21;
+            }
+        } else if(motor.getSensorCollection().getAnalogInRaw() > 720) {
+            if(speed > 0) {
+                speed = -.21;
+            }
+        }
         double scaleSpeed = speed < 0 ? -1 : 1;
         speed *= speed * scaleSpeed;
+
+
         if(speed != 0) {
             motor.set(ControlMode.PercentOutput, speed);
             ran = false;
@@ -62,7 +73,14 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void movePosition(double position) {
-        System.out.println(position);
+
+        if(position < 215) {
+            position = 215;
+            System.out.println("Lower Bound Tripped");
+        } else if(position > 720) {
+            position = 720;
+            System.out.println("Upper Bound Tripped");
+        }
         pos = position;
         motor.set(ControlMode.Position, position);
     }
@@ -98,6 +116,8 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
         SmartDashboard.putNumber("Wrist Speed",motor.getOutputCurrent());
         SmartDashboard.putNumber("Wrist Position",motor.getSensorCollection().getAnalogInRaw());
         SmartDashboard.putNumber("Wrist Position2",motor.getSensorCollection().getAnalogIn());
+        SmartDashboard.putNumber("Wrist Position3",this.getCurrentPosition());
+
     }
 }
 

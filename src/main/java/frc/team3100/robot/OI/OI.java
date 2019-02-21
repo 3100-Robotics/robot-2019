@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team3100.robot.Autonomous.AutoClawMotion;
 import frc.team3100.robot.Claw.ClawExtend;
-import frc.team3100.robot.Drivetrain.DriveShift;
 import frc.team3100.robot.Lifter.*;
 import frc.team3100.robot.Limelight.CameraMode;
 import frc.team3100.robot.Mapping.RobotMap;
@@ -17,7 +16,6 @@ public class OI {
 
 
 
-    public Button shifter = new JoystickButton(RobotMap.driveControls,RobotMap.leftBumperChannel);
     private Button frontControl = new JoystickButton(RobotMap.driveControls,RobotMap.xButtonChannel);
     private Button backControl = new JoystickButton(RobotMap.driveControls,RobotMap.bButtonChannel);
     private Button bothControl = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
@@ -48,10 +46,11 @@ public class OI {
     private Button hatchScoreBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton4Channel);
 
 
+    private Button hatchPlayerCollectButton = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
+
 
 
     public OI() {
-        shifter.whenPressed(new DriveShift());
         frontControl.whenPressed(new LifterFront(true));
         backControl.whenPressed(new LifterBack(true));
         bothControl.whenPressed(new LifterActuate(true,true));
@@ -76,5 +75,7 @@ public class OI {
         hatchGroundButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchGround,Variables.ClawPositions.wristHatchGround));
         hatchScoreFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchFront,Variables.ClawPositions.wristHatchFront));
         hatchScoreBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchBack,Variables.ClawPositions.wristHatchBack));
+
+        hatchPlayerCollectButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchPlayerGrab,Variables.ClawPositions.wristHatchPlayerGrab));
     }
 }

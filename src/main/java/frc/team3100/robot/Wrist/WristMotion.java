@@ -23,17 +23,11 @@ public class WristMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getRightStickY();
-        if(RobotMap.wristMotor.getControlMode() == ControlMode.PercentOutput && Math.abs(speed) < .2 && !Variables.wristAuto) {
-            //RobotMap.wristMotor.setInverted(true);
-            //Robot.wrist.manualRotation(.2);
-            //System.out.println("AAAAA");
-            RobotMap.wristMotor.setInverted(false);
-            Robot.wrist.manualRotation(speed);
+        if(Math.abs(speed) < .2 && !Variables.wristAuto) {
+            Robot.wrist.manualRotation(.21 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? 1:-1));
         } else {
-            RobotMap.wristMotor.setInverted(false);
             Robot.wrist.manualRotation(speed);
         }
-
     }
 
     protected boolean isFinished() {

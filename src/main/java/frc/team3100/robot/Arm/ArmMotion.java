@@ -30,9 +30,9 @@ public class ArmMotion extends Command {
     }
 
     protected void execute() {
-
-        if(RobotMap.armMotor1.getControlMode() == ControlMode.PercentOutput && Math.abs(speed) < .2 && !Variables.armAuto) {
-            Robot.arm.manualRotation(.2 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1:1));
+        speed = RobotMap.techControls.getLeftStickY();
+        if(Math.abs(speed) < .2 && !Variables.armAuto) {
+            Robot.arm.manualRotation(.21 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1:1));
         } else {
             Robot.arm.manualRotation(speed);
         }

@@ -47,12 +47,12 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         speed = deadband(speed);
 
         if(motor.getSensorCollection().getAnalogInRaw() < 240) {
-            if(speed > 0) {
-                speed = -.4;
+            if(speed < 0) {
+                speed = .3;
             }
         } else if(motor.getSensorCollection().getAnalogInRaw() > 850) {
-            if(speed < 0) {
-                speed = .4;
+            if(speed > 0) {
+                speed = -.3;
             }
         }
         double scaleSpeed = speed < 0 ? -1 : 1;
@@ -70,6 +70,8 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void movePosition(double position) {
+        int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
+        motor.setSelectedSensorPosition(absolutePosition);
         if(position < 220) {
             position = 220;
             System.out.println("Lower Bound Tripped");
@@ -84,7 +86,8 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
     private double deadband(double input) {
 
-        if(Math.abs(input) < Variables.joystickError) {
+        if(Math.abs(input) <= Variables.joystickError) {
+            System.out.println("awwww");
             return 0;
         } else {
             return input;

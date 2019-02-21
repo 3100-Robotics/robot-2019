@@ -33,8 +33,10 @@ public class TalonConfig {
         RobotMap.leftDriveMotor2.setInverted(true);
         RobotMap.leftDriveMotor3.setInverted(true);
 
-        RobotMap.wristMotor.setInverted(false);
+        RobotMap.wristMotor.setInverted(true); /** CHANGE TO false FOR COMP ROBOT**/
         RobotMap.wristMotor2.setInverted(true);
+
+        RobotMap.wristMotor.setSensorPhase(true);
 
         RobotMap.armMotor1.setInverted(false);
 
