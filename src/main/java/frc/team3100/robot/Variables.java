@@ -12,25 +12,27 @@ public class Variables {
 
     public enum ClawPositions {
         wristBallPickupFront(593+wristSensorOffset),
-        wristBallPickupPlayerBack(0+wristSensorOffset),
-        wristBallPickupPlayerFront(0+wristSensorOffset),
-        wristBallScoreRockketlv2(0+wristSensorOffset),
+        wristBallPickupPlayerBack(455+wristSensorOffset),
+        wristBallPickupPlayerFront(531+wristSensorOffset),
+        wristBallScoreRockketlv2(494+wristSensorOffset),
         wristBallPickupBack(442+wristSensorOffset),
         wristBallScoreCargoFront(597+wristSensorOffset),
         wristBallScoreRocketFront(562+wristSensorOffset),
         wristBallScoreCargoBack(339+wristSensorOffset),
         wristBallScoreRocketBack(442+wristSensorOffset),
-        wristHatchGroundPrep(312+wristSensorOffset),
-        wristHatchGround(312+wristSensorOffset),
-        wristHatchFront(532+wristSensorOffset),
+        wristHatchGroundPrep(225+wristSensorOffset),
+        wristHatchGround(221+wristSensorOffset),
+        wristHatchFront(520+wristSensorOffset),
         wristHatchBack(522+wristSensorOffset),
-        wristDefence(487+wristSensorOffset),
+        wristDefence(494+wristSensorOffset),
         wristHatchPlayerGrab(742+wristSensorOffset),
+        wristClimbPrep(220+wristSensorOffset),
+        wristClimbMotion(255+wristSensorOffset),
 
         armBallPickupFront(247+armSensorOffset),
-        armBallPickupPlayerBack(0+armSensorOffset),
-        armBallPickupPlayerFront(0+armSensorOffset),
-        armBallScoreRockketlv2(0+armSensorOffset),
+        armBallPickupPlayerBack(625+armSensorOffset),
+        armBallPickupPlayerFront(399+armSensorOffset),
+        armBallScoreRockketlv2(550+armSensorOffset),
         armBallPickupBack(805+armSensorOffset),
         armBallScoreCargoFront(444+armSensorOffset),
         armBallScoreRocketFront(345+armSensorOffset),
@@ -38,10 +40,12 @@ public class Variables {
         armBallScoreRocketBack(680+armSensorOffset),
         armHatchGroundPrep(810+armSensorOffset),
         armHatchGround(840+armSensorOffset),
-        armHatchFront(290+armSensorOffset),
-        armHatchBack(785+armSensorOffset),
+        armHatchFront(260+armSensorOffset),
+        armHatchBack(765+armSensorOffset),
         armDefence(512+armSensorOffset),
-        armHatchPlayerGrab(651+armSensorOffset);
+        armHatchPlayerGrab(651+armSensorOffset),
+        armClimbPrep(670+armSensorOffset),
+        armClimbMotion(900+armSensorOffset);
 
 
         private final double position;
@@ -79,7 +83,7 @@ public class Variables {
     public static boolean lifterRotatePistonEngaged = true;
     public static final Gains kGains_Turning = new Gains( 0.0, 0.0,  0.0, 0.0,200,  1.00 );
     public static final Gains armGains = new Gains(15.0, 0.0, 5.0, 0.0, 200, 1.0);
-    public static final Gains wristGains = new Gains(15.0, 0.0, 5.0, 0.0, 200, 1.0);
+    public static final Gains wristGains = new Gains(12.0, 0.0, 13.0, 0.0, 200, 1.0);
 
 
     public final static double kNeutralDeadband = 0.001;

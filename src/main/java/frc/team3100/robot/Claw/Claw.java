@@ -10,16 +10,19 @@ This subsystem defines the claw and the motors used to pickup the cargo.
  */
 
 public class Claw extends Subsystem implements Dashboard.DashboardUpdatable {
-    private double motorSpeed = 0;
+    private double motor1Speed = 0;
+    private double motor2Speed = 0;
 
     public Claw() {
         super("Claw");
     }
 
 
-    public void wheels(double speed) {
-        RobotMap.clawMotor.set(speed);
-        motorSpeed = speed;
+    public void wheels(double speed1, double speed2) {
+        RobotMap.clawMotor1.set(speed1);
+        RobotMap.clawMotor2.set(speed2);
+        motor1Speed = speed1;
+        motor2Speed = speed2;
     }
 
     public void extend(boolean extend) {
@@ -36,7 +39,8 @@ public class Claw extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void updateSD() {
-        SmartDashboard.putNumber("Claw Speed",motorSpeed);
+        SmartDashboard.putNumber("Claw Motor 1 Speed",motor1Speed);
+        SmartDashboard.putNumber("Claw Motor 2 Speed",motor2Speed);
     }
 
 

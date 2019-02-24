@@ -8,16 +8,13 @@ import frc.team3100.robot.Variables;
 
 public class AutoLifter extends CommandGroup {
 
-    private Command driving = new AutoDrive(.5,.5);
+    private Command driving = new AutoDrive(.5,0);
     public AutoLifter() {
-        addSequential(new LifterActuate(true,true));
-        driving.start();
-        addSequential(new LifterUltrasonicPauser(Variables.Direction.FRONT));
-        addSequential(new LifterActuate(false,true));
-        addSequential(new LifterUltrasonicPauser(Variables.Direction.BACK));
-        addSequential(new LifterActuate(false,false));
-        driving.cancel();
-
+        /*
+        addParallel(new AutoClawMotion(Variables.ClawPositions.armClimbMotion,Variables.ClawPositions.wristClimbMotion));
+        addSequential(new LifterActuate(true));
+        addSequential(new );
+        */
     }
 
 }

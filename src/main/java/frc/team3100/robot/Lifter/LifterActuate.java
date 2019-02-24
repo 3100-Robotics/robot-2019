@@ -10,28 +10,16 @@ This will trigger whatever lifting mechanism we decide on to lift
  */
 public class LifterActuate extends Command {
 
-    private boolean frontExtend;
-    private boolean backExtend;
+    private boolean extend;
     private int time = 0;
 
-    public LifterActuate(boolean frontExtend, boolean backExtend) {
-        requires(Robot.lifter);
-        this.frontExtend = frontExtend;
-        this.backExtend = backExtend;
+    public LifterActuate(boolean extend) {
+        this.extend = extend;
     }
 
     protected void initialize() {
-        if(!Variables.frontState) {
-            Robot.lifter.frontToggle(frontExtend);
-            Robot.lifter.backToggle(backExtend);
-            Variables.frontState = true;
-            Variables.backState = true;
-        } else {
-            Robot.lifter.frontToggle(!frontExtend);
-            Robot.lifter.backToggle(!backExtend);
-            Variables.frontState = false;
-            Variables.backState = false;
-        }
+        // Causes the piston to extend or retract depending on input
+        Robot.lifter.extend(extend);
     }
 
     protected void execute() {
@@ -39,6 +27,7 @@ public class LifterActuate extends Command {
     }
 
     protected boolean isFinished() {
+        // Finishes when the ultrasonic says the robot is in the air
         return RobotMap.lifterFrontUltrasonic.getValue() > 300;
     }
 

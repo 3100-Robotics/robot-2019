@@ -57,6 +57,7 @@ public class Dashboard {
 			}
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
+
 		}
 	}
 	

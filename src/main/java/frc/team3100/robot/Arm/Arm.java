@@ -18,12 +18,13 @@ Defines the breaking action, PID controlled motion, and interfaces with the abso
 public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
     private static TalonSRX motor = RobotMap.armMotor1;
-
     private double pos;
     private boolean ran = false;
 
     public Arm() {
         super("Arm");
+
+        // Configure all Arm TalonSRX settings for auto control
         motor.configFactoryDefault();
         /* Config the sensor used for Primary PID and sensor direction */
         motor.configSelectedFeedbackSensor(FeedbackDevice.Analog,0,0);
@@ -40,21 +41,26 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void initDefaultCommand() {
+        // Set up manual motion command
         setDefaultCommand(new ArmMotion());
     }
 
     public void manualRotation(double speed) {
+        // Using the input from manual motion command to move the arm
         speed = deadband(speed);
 
+        // Soft limits for arm motion
         if(motor.getSensorCollection().getAnalogInRaw() < 240) {
             if(speed < 0) {
-                speed = .3;
+                speed = .29;
             }
         } else if(motor.getSensorCollection().getAnalogInRaw() > 850) {
             if(speed > 0) {
-                speed = -.3;
+                speed = -.29;
             }
         }
+
+        // Scaling the arm speed for more intuitive control
         double scaleSpeed = speed < 0 ? -1 : 1;
         speed *= speed * scaleSpeed;
 
@@ -64,12 +70,16 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
             ran = false;
 
         } else if(speed == 0 && !ran) {
+            //Ensuring motor isn't still running within the controller deadband
             motor.set(ControlMode.PercentOutput, 0);
             ran = true;
         }
     }
 
     public void movePosition(double position) {
+        // Using the position from the AutoClawMotion command and starting the built-in PID
+
+        // Soft-limit on motion
         int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
         motor.setSelectedSensorPosition(absolutePosition);
         if(position < 220) {
@@ -79,15 +89,16 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
             position = 850;
             System.out.println("Upper Bound Tripped");
         }
+
         pos = position;
+        // Starting position control
         motor.set(ControlMode.Position,position);
 
     }
 
     private double deadband(double input) {
-
+        // Defining the controller deadband
         if(Math.abs(input) <= Variables.joystickError) {
-            System.out.println("awwww");
             return 0;
         } else {
             return input;
@@ -95,10 +106,12 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public int getCurrentPosition() {
+        // Find the current position of the sensor
         return motor.getSelectedSensorPosition();
     }
 
     public void stop() {
+        // Halt all arm motion with one simple command! Buy one today!
         motor.set(ControlMode.PercentOutput,0);
         ran = true;
     }
@@ -112,6 +125,7 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
     }
 
     public void updateSD() {
+        // All smartdashboard debug values
         SmartDashboard.putNumber("Arm target",pos);
         SmartDashboard.putNumber("Arm Speed",motor.getOutputCurrent());
         SmartDashboard.putNumber("Arm Position",motor.getSensorCollection().getAnalogInRaw());

@@ -25,11 +25,11 @@ public class ClawRotate extends Command {
 
     protected void execute() {
         if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
-            Robot.claw.wheels(RobotMap.driveControls.getLeftTrigger());
+            Robot.claw.wheels(RobotMap.driveControls.getLeftTrigger(),RobotMap.driveControls.getLeftTrigger());
         } else if(RobotMap.driveControls.getRightTrigger() > .5){
-            Robot.claw.wheels(-.7);
+            Robot.claw.wheels(-.7,-.7);
         } else {
-            Robot.claw.wheels(0);
+            Robot.claw.wheels(0,0);
         }
     }
 

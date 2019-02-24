@@ -22,7 +22,8 @@ public class RobotMap {
 
 
     //     P W M
-    private static int clawMotorChannel = 9;
+    private static int clawMotor1Channel = 9;
+    private static int clawMotor2Channel = 8;
 
 
     //     C A N
@@ -123,7 +124,8 @@ public class RobotMap {
     public static VictorSPX wristMotor2 = new VictorSPX(wristMotor2Channel);
 
 
-    public static SpeedController clawMotor = new Spark(clawMotorChannel);
+    public static SpeedController clawMotor1 = new Spark(clawMotor1Channel);
+    public static SpeedController clawMotor2 = new Spark(clawMotor2Channel);
 
 
     //    Initialize Solenoids

@@ -30,8 +30,11 @@ public class ArmMotion extends Command {
     }
 
     protected void execute() {
+        // Pulls joystick input and applies it to arm speed for manual control.
+
         speed = RobotMap.techControls.getLeftStickY();
         if(Math.abs(speed) < .2 && !Variables.armAuto) {
+            // Adds anti-gravity when not given controller input
             Robot.arm.manualRotation(.21 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1:1));
         } else {
             Robot.arm.manualRotation(speed);

@@ -24,12 +24,13 @@ public class AutoClawMotion extends Command {
         requires(Robot.arm);
         armTargetPosition = armTarget.getPosition();
         wristTargetPosition = wristTarget.getPosition();
-        if(Robot.arm.getCurrentPosition() >= armTargetPosition) {
+
+        /*if(Robot.arm.getCurrentPosition() >= armTargetPosition) {
             armTargetPosition += 20;
         } else {
             armTargetPosition -= 20;
         }
-        /*if(Robot.arm.getCurrentPosition() >= 512) {
+        if(Robot.arm.getCurrentPosition() >= 512) {
             wristTargetPosition -= 50;
         } else {
             wristTargetPosition += 50;
@@ -62,7 +63,8 @@ public class AutoClawMotion extends Command {
     }
 
     protected boolean isFinished() {
-        if( Math.abs(RobotMap.techControls.getLeftStickY()) > .2 || Math.abs(RobotMap.techControls.getRightStickY()) > .2) {
+        if(Math.abs(RobotMap.techControls.getLeftStickY()) > .2 || Math.abs(RobotMap.techControls.getRightStickY()) > .2 ||
+                (Math.abs(armTargetPosition - 512) < 80 && Math.abs(armTargetPosition - RobotMap.armMotor1.getSelectedSensorPosition()) < 15)) {
             return true;
         } else {
             return false;

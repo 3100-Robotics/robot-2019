@@ -50,11 +50,11 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
         speed = deadband(speed);
 
         if(motor.getSensorCollection().getAnalogInRaw() < 220) {
-            if(speed < 0) {
+            if(speed > 0) {
                 speed = .21;
             }
         } else if(motor.getSensorCollection().getAnalogInRaw() > 720) {
-            if(speed > 0) {
+            if(speed < 0) {
                 speed = -.21;
             }
         }

@@ -6,7 +6,7 @@ import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 /*
-This will trigger whatever lifting mechanism we decide on to lift
+Waits for ultrasonic input to end the command. A sensor-driven delay for a CommandGroup
  */
 public class LifterUltrasonicPauser extends Command {
 
@@ -26,11 +26,7 @@ public class LifterUltrasonicPauser extends Command {
     }
 
     protected boolean isFinished() {
-        if(sensor == Variables.Direction.FRONT) {
-            return(RobotMap.lifterFrontUltrasonic.getValue() < 300);
-        } else {
-            return(RobotMap.lifterBackUltrasonic.getValue() < 300);
-        }
+        return(RobotMap.lifterFrontUltrasonic.getValue() < 300);
 
     }
 
