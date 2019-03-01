@@ -4,6 +4,7 @@ import com.sun.org.apache.xpath.internal.operations.Variable;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team3100.robot.Autonomous.AutoClawMotion;
+import frc.team3100.robot.Autonomous.SensorReset;
 import frc.team3100.robot.Claw.ClawExtend;
 import frc.team3100.robot.Lifter.*;
 import frc.team3100.robot.Limelight.CameraMode;
@@ -22,6 +23,18 @@ public class OI {
 
     public Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
     public Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
+
+
+
+
+
+    private Button lifterActuateButton = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
+    private Button hatchPlayerCollectButton = new JoystickButton(RobotMap.techControls,RobotMap.yButtonChannel);
+    private Button sensorResetButton = new JoystickButton(RobotMap.techControls,RobotMap.bButtonChannel);
+
+
+
+
 
 
     private Button ballPickupPlayerBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton12Channel);
@@ -43,20 +56,21 @@ public class OI {
     private Button hatchScoreBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton4Channel);
 
 
-    private Button hatchPlayerCollectButton = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
 
 
 
     public OI() {
         cameraModeButton.whenPressed(new CameraMode());
         hatchReleaseButton.whenPressed(new ClawExtend());
+        lifterActuateButton.whenPressed(new LifterActuate());
+        sensorResetButton.whenPressed(new SensorReset());
 
 
         ballRocketBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketBack,Variables.ClawPositions.wristBallScoreRocketBack));
         ballCargoFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoFront,Variables.ClawPositions.wristBallScoreCargoFront));
         ballCargoBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoBack,Variables.ClawPositions.wristBallScoreCargoBack));
         ballRocketFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketFront,Variables.ClawPositions.wristBallScoreRocketFront));
-        ballRocket2BackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRockketlv2, Variables.ClawPositions.wristBallScoreRockketlv2));
+        ballRocket2BackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketlv2, Variables.ClawPositions.wristBallScoreRocketlv2));
 
         ballPickupBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallPickupBack,Variables.ClawPositions.wristBallPickupBack));
         ballPickupFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallPickupFront,Variables.ClawPositions.wristBallPickupFront));

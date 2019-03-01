@@ -1,6 +1,10 @@
 package frc.team3100.robot;
 
 import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Compressor;
@@ -22,6 +26,11 @@ import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.OI.OI;
 import frc.team3100.robot.OI.POVRunner;
 import frc.team3100.robot.Wrist.Wrist;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
+
 
 
 /*
@@ -75,12 +84,36 @@ public class Robot extends TimedRobot {
         oi = new OI();
 
         table = NetworkTableInstance.getDefault().getTable("limelight");
-
-
         new TalonConfig().configure();
 
+        try {
+            new Thread(() -> {
+                UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+                camera.setResolution(320, 320);
+                /*
+                CvSink cvSink = CameraServer.getInstance().getVideo();
+                CvSource outputStream = CameraServer.getInstance().putVideo("test", 320, 320);
 
+                Mat source = new Mat();
 
+                Mat output = new Mat();
+
+                while (!Thread.interrupted()) {
+                    cvSink.setEnabled(true);
+                    cvSink.grabFrame(source, 30);
+                    if (RobotMap.armMotor1.getSelectedSensorPosition() > 512) {
+                        Core.flip(source, output, 1);
+                    } else {
+                        source = output;
+                    }
+                    outputStream.putFrame(output);
+
+                }
+                */
+            }).start();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
 
     }
 

@@ -50,6 +50,7 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         speed = deadband(speed);
 
         // Soft limits for arm motion
+
         if(motor.getSensorCollection().getAnalogInRaw() < 240) {
             if(speed < 0) {
                 speed = .29;

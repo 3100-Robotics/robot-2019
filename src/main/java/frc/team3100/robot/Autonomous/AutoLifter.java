@@ -9,12 +9,26 @@ import frc.team3100.robot.Variables;
 public class AutoLifter extends CommandGroup {
 
     private Command driving = new AutoDrive(.5,0);
+    private Command clawMotors = new AutoClawClimbMotor();
     public AutoLifter() {
-        /*
+
         addParallel(new AutoClawMotion(Variables.ClawPositions.armClimbMotion,Variables.ClawPositions.wristClimbMotion));
-        addSequential(new LifterActuate(true));
-        addSequential(new );
-        */
+        addSequential(new LifterActuate());
+        clawMotors.start();
+        driving.start();
+        addSequential(new LifterUltrasonicPauser(Variables.Direction.FRONT));
+        addParallel(new LifterActuate());
+        clawMotors.cancel();
+        driving.cancel();
     }
 
+    @Override
+    protected void interrupted() {
+        if(clawMotors.isRunning()) {
+            clawMotors.cancel();
+        }
+        if(driving.isRunning()) {
+            driving.cancel();
+        }
+    }
 }

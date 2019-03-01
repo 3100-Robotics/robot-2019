@@ -10,16 +10,20 @@ This will trigger whatever lifting mechanism we decide on to lift
  */
 public class LifterActuate extends Command {
 
-    private boolean extend;
-    private int time = 0;
 
-    public LifterActuate(boolean extend) {
-        this.extend = extend;
+    public LifterActuate() {
+
     }
 
     protected void initialize() {
-        // Causes the piston to extend or retract depending on input
-        Robot.lifter.extend(extend);
+        // Causes the piston to extend or retract
+        if(!Variables.climbExtended) {
+            Robot.lifter.extend(true);
+            Variables.climbExtended = true;
+        } else {
+            Robot.lifter.extend(false);
+            Variables.climbExtended = false;
+        }
     }
 
     protected void execute() {
