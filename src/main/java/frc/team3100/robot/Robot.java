@@ -3,6 +3,7 @@ package frc.team3100.robot;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.MjpegServer;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
@@ -18,7 +19,7 @@ import frc.team3100.robot.Brake.Brake;
 import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
 import frc.team3100.robot.Lifter.Lifter;
-import frc.team3100.robot.Limelight.CameraMode;
+import frc.team3100.robot.Limelight.CameraScore;
 import frc.team3100.robot.Limelight.LimelightCalculation;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Mapping.TalonConfig;
@@ -28,9 +29,8 @@ import frc.team3100.robot.OI.POVRunner;
 import frc.team3100.robot.Wrist.Wrist;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
-import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 
+import static org.opencv.core.CvType.CV_32F;
 
 
 /*
@@ -54,6 +54,7 @@ public class Robot extends TimedRobot {
     public static OI oi;
     public static Compressor compressor;
 
+
     // Define variables used later in the Robot class
     public static boolean autoVal;
 
@@ -76,7 +77,7 @@ public class Robot extends TimedRobot {
         } catch (RuntimeException ex ) {
             System.out.println("Error instantiating navX MXP:  " + ex.getMessage());
         }
-        Command CameraMode = new CameraMode();
+        Command CameraMode = new CameraScore();
         CameraMode.start();
         povRunner = new POVRunner();
 
@@ -84,37 +85,38 @@ public class Robot extends TimedRobot {
         oi = new OI();
 
         table = NetworkTableInstance.getDefault().getTable("limelight");
+        table.getEntry("camMode").setNumber(1);
+        table.getEntry("ledMode").setNumber(1);
+
+
         new TalonConfig().configure();
+        new Thread(() -> {
 
-        try {
-            new Thread(() -> {
-                UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-                camera.setResolution(320, 320);
-                /*
-                CvSink cvSink = CameraServer.getInstance().getVideo();
-                CvSource outputStream = CameraServer.getInstance().putVideo("test", 320, 320);
+            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            camera.setResolution(320, 480);
 
-                Mat source = new Mat();
+            CvSink cvSink = CameraServer.getInstance().getVideo();
+            CvSource outputStream = CameraServer.getInstance().putVideo("test", 320, 480);
+            MjpegServer server = new MjpegServer("lime",5800);
+            Mat source = new Mat(320,480,CV_32F);
+            source = source.zeros(320,480,CV_32F);
 
-                Mat output = new Mat();
+            Mat output = new Mat(320,480,CV_32F);
 
-                while (!Thread.interrupted()) {
-                    cvSink.setEnabled(true);
-                    cvSink.grabFrame(source, 30);
-                    if (RobotMap.armMotor1.getSelectedSensorPosition() > 512) {
-                        Core.flip(source, output, 1);
-                    } else {
-                        source = output;
-                    }
-                    outputStream.putFrame(output);
-
+            while (!Thread.interrupted()) {
+                cvSink.setEnabled(true);
+                cvSink.grabFrame(source, 30);
+                if (RobotMap.armMotor1.getSelectedSensorPosition() > 512) {
+                    Core.flip(source, output, 1);
+                } else {
+                    source = output;
                 }
-                */
-            }).start();
-        } catch(Exception e) {
-            System.out.println(e);
-        }
+                outputStream.putFrame(output);
+            }
+        }).start();
 
+
+        Robot.drive.disable();
     }
 
 
@@ -129,12 +131,6 @@ public class Robot extends TimedRobot {
     }
 
     public void teleopInit() {
-        Dashboard.initDashboard();
-        if(autoVal) {
-            if(AutoChosen.isRunning()) {
-                AutoChosen.cancel();
-            }
-        }
         autoVal = false;
         povRunner.start();
 

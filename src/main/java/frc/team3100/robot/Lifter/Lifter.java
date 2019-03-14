@@ -18,6 +18,7 @@ public class Lifter extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void extend(boolean extend) {
         // input true/false to extend/retract the piston
+        System.out.println("Extend: " + extend);
         RobotMap.lifterFrontExtend.set(extend);
     }
 

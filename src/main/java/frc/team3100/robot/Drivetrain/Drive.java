@@ -3,10 +3,12 @@ package frc.team3100.robot.Drivetrain;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FollowerType;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 /*
@@ -14,7 +16,7 @@ This defines all aspects of the drive train-- specifically the shifting to high/
 Still need to implement PID Control with the magnetic encoders and potentially the NavX.
  */
 
-public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
+public class Drive extends PIDSubsystem implements Dashboard.DashboardUpdatable {
 
     private double dSpeedLimit = 0.08;
     private double dRotateLimit = 0.08;
@@ -26,11 +28,22 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
     private double targetAngle = 0;
 
     public Drive() {
-        super("Drive");
+        super("Drive",.04,0,0);
+        setOutputRange(-1,1);
+        setSetpoint(0);
     }
 
 
     public void initDefaultCommand() {setDefaultCommand(new DriveMotion());}
+
+    public double returnPIDInput() {
+        return Robot.vision.getLimelightX();
+    }
+
+    public void usePIDOutput(double output) {
+        System.out.println(output);
+        this.driveArcade(RobotMap.driveControls.getLeftStickY(),-output);
+    }
 
 
 
@@ -89,6 +102,12 @@ public class Drive extends Subsystem implements Dashboard.DashboardUpdatable {
         } else {
             return input;
         }
+    }
+
+    public void stop() {
+        RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput,0);
+        RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput,0);
+
     }
 
     public void initSD() {

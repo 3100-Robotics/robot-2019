@@ -15,8 +15,11 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
     private double robotDistance;
     private double targetX;
     private double targetY;
-    private int points = 100;
-    private double[] splineCenterPoints = new double[points];
+    private int points = 50;
+    private int position = 0;
+    private static double[][] splineCenterPoints = new double[50][2];
+    private double[] arrayPoints = {0,0};
+    public static double[][] splineLeft = new double[50][2];
 
     public void initDefaultCommand() {
 
@@ -52,17 +55,23 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
     }
 
 
-    public void generateSpline() {
+    public double[][] generateSpline() {
         targetX = robotDistance * Math.cos(getLimelightX());
         targetY = robotDistance * -1 * Math.sin(getLimelightX());
-        for(double dt = 0; dt < points; dt ++) {
+        for (double dt = 0; dt < points; dt++) {
             double t = dt / points;
             double tt = t * t;
             double ttt = tt * t;
             double xt = (targetX * ((-2 * ttt) + (3 * tt))) + (100 * Math.cos(gyroAngle) * (ttt - tt)) + (60 * (ttt - (2 * tt) + t));
             double yt = (targetY * ((-2 * ttt) + (3 * tt))) + (100 * Math.sin(gyroAngle) * (ttt - tt));
+            splineCenterPoints[position][0] = xt;
+            splineCenterPoints[position][1] = yt;
+            position += 1;
         }
+        position = 0;
+        return splineCenterPoints;
     }
+
 
     public void initSD() {
 

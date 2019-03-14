@@ -40,10 +40,10 @@ public class RobotMap {
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
     private static int lifterFrontPistonExtendChannel = 3;
-    private static int lifterBackPistonExtendChannel = 1;
+    private static int lifterBackPistonExtendChannel = 2;
     private static int armBrakeEngageChannel = 0;
-    private static int clawHatchReleaseChannel = 2;
-    private static int lifterRotationChannel = 5;
+    private static int clawHatchReleaseChannel = 1;
+    private static int lifterRotationChannel = 4;
 
 
     //     A N A L O G
@@ -111,7 +111,7 @@ public class RobotMap {
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
-    public static VictorSPX leftDriveMotor2 = new VictorSPX(driveLeft2Channel); /** Change to TalonSRX for Competition **/
+    public static TalonSRX leftDriveMotor2 = new TalonSRX(driveLeft2Channel);
     public static VictorSPX leftDriveMotor3 = new VictorSPX(driveLeft3Channel);
 
     public static TalonSRX rightDriveMotor1 = new TalonSRX(driveRight1Channel);

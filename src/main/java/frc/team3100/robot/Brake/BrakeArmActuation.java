@@ -1,6 +1,5 @@
 package frc.team3100.robot.Brake;
 
-import com.sun.org.apache.xpath.internal.operations.Variable;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Autonomous.AutoClawMotion;

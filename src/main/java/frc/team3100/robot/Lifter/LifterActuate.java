@@ -10,12 +10,12 @@ This will trigger whatever lifting mechanism we decide on to lift
  */
 public class LifterActuate extends Command {
 
-
     public LifterActuate() {
 
     }
 
     protected void initialize() {
+        System.out.println("LIFTING!!!");
         // Causes the piston to extend or retract
         if(!Variables.climbExtended) {
             Robot.lifter.extend(true);
@@ -31,8 +31,7 @@ public class LifterActuate extends Command {
     }
 
     protected boolean isFinished() {
-        // Finishes when the ultrasonic says the robot is in the air
-        return RobotMap.lifterFrontUltrasonic.getValue() > 300;
+        return true;
     }
 
     protected void end() {
