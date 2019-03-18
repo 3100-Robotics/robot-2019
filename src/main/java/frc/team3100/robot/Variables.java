@@ -67,6 +67,29 @@ public class Variables {
         TOP,
         BOTTOM
     }
+
+    public enum startPosition {
+        LEFT,
+        RIGHT,
+        CENTER
+    }
+
+    public enum preload {
+        HATCH,
+        CARGO,
+        NONE
+    }
+
+    public enum target {
+        CARGOSIDE,
+        CARGOFRONT,
+        ROCKET,
+        PLAYERSTATION,
+        NONE
+
+    }
+
+
     public static double armSensorOffset = 0;
     public static double wristSensorOffset = 81;
     public static double joystickError = 0.2;

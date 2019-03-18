@@ -13,13 +13,14 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.Arm.Arm;
+import frc.team3100.robot.Autonomous.AutoMaster;
 import frc.team3100.robot.Brake.Brake;
 import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
 import frc.team3100.robot.Lifter.Lifter;
-import frc.team3100.robot.Limelight.CameraScore;
 import frc.team3100.robot.Limelight.LimelightCalculation;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Mapping.TalonConfig;
@@ -38,9 +39,12 @@ Initializes all subsystems and runs the scheduler to enable the use of commands.
  */
 public class Robot extends TimedRobot {
 
-    private Command AutoChosen;
+    private Command AutoRunner;
 
     // Define subsystems for Commands to access
+    private SendableChooser<Variables.startPosition> autoStart;
+    private SendableChooser<Variables.preload> preload;
+    private SendableChooser<Variables.target> autoTarget;
     public static Drive drive;
     public static Variables varLog;
     public static Wrist wrist;
@@ -61,6 +65,26 @@ public class Robot extends TimedRobot {
     public static NetworkTable table;
 
     public void robotInit() {
+
+        autoStart = new SendableChooser<>();
+        autoStart.addOption("Left", Variables.startPosition.LEFT);
+        autoStart.addOption("Center", Variables.startPosition.CENTER);
+        autoStart.addOption("Right", Variables.startPosition.RIGHT);
+        SmartDashboard.putData(autoStart);
+
+        preload = new SendableChooser<>();
+        preload.addOption("Hatch", Variables.preload.HATCH);
+        preload.addOption("Cargo", Variables.preload.CARGO);
+        SmartDashboard.putData(preload);
+
+        autoTarget = new SendableChooser<>();
+        autoTarget.addOption("None", Variables.target.NONE);
+        autoTarget.addOption("CargoFront", Variables.target.CARGOFRONT);
+        autoTarget.addOption("Cargo Side", Variables.target.CARGOSIDE);
+        autoTarget.addOption("Rocket",Variables.target.ROCKET);
+        SmartDashboard.putData(autoTarget);
+
+
         //Creates instances of all of the subsystems for the autonomous to access.
         compressor = new Compressor(41);
         compressor.setClosedLoopControl(true);
@@ -77,8 +101,6 @@ public class Robot extends TimedRobot {
         } catch (RuntimeException ex ) {
             System.out.println("Error instantiating navX MXP:  " + ex.getMessage());
         }
-        Command CameraMode = new CameraScore();
-        CameraMode.start();
         povRunner = new POVRunner();
 
         // ALWAYS initialize OI after subsystems
@@ -121,7 +143,10 @@ public class Robot extends TimedRobot {
 
 
     public void autonomousInit() {
+        povRunner.start();
         autoVal = true;
+        AutoRunner = new AutoMaster(autoStart.getSelected(),preload.getSelected(),autoTarget.getSelected());
+        AutoRunner.start();
 
     }
 
@@ -131,9 +156,16 @@ public class Robot extends TimedRobot {
     }
 
     public void teleopInit() {
-        autoVal = false;
-        povRunner.start();
+        if(!povRunner.isRunning()) {
+            povRunner.start();
+        }
 
+        if(AutoRunner != null) {
+            if (AutoRunner.isRunning()) {
+                AutoRunner.cancel();
+            }
+        }
+        autoVal = false;
 
     }
 
@@ -143,14 +175,13 @@ public class Robot extends TimedRobot {
     }
 
      public void testInit() {
-         if(autoVal) {
-             if(AutoChosen.isRunning()) {
-                 AutoChosen.cancel();
+         if(AutoRunner != null) {
+             if (AutoRunner.isRunning()) {
+                 AutoRunner.cancel();
              }
          }
          autoVal = false;
-
-    }
+     }
 
     public void testPeriodic() {
         Scheduler.getInstance().run();

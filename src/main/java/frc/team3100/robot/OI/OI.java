@@ -3,10 +3,9 @@ package frc.team3100.robot.OI;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team3100.robot.Autonomous.AutoClawMotion;
-import frc.team3100.robot.Autonomous.SensorReset;
+import frc.team3100.robot.Autonomous.AutoScore;
 import frc.team3100.robot.Claw.ClawExtend;
 import frc.team3100.robot.Lifter.*;
-import frc.team3100.robot.Limelight.CameraScore;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Variables;
 
@@ -17,16 +16,14 @@ public class OI {
 
 
 
-    public Button cameraModeButton = new JoystickButton(RobotMap.driveControls,RobotMap.yButtonChannel);
     private Button hatchReleaseButton = new JoystickButton(RobotMap.driveControls,RobotMap.rightBumperChannel);
-    private Button climbingPrep = new JoystickButton(RobotMap.techControls,RobotMap.xButtonChannel);
     public Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
     public Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
+    public Button pathButton = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
 
 
 
-
-
+    private Button climbingPrep = new JoystickButton(RobotMap.techControls,RobotMap.xButtonChannel);
     private Button lifterActuateButton = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
     private Button hatchPlayerCollectButton = new JoystickButton(RobotMap.techControls,RobotMap.yButtonChannel);
     private Button sensorResetButton = new JoystickButton(RobotMap.techControls,RobotMap.bButtonChannel);
@@ -57,12 +54,11 @@ public class OI {
 
 
     public OI() {
-        cameraModeButton.whenPressed(new CameraScore());
         hatchReleaseButton.whenPressed(new ClawExtend());
         lifterActuateButton.whenPressed(new LifterActuate());
         sensorResetButton.whenPressed(new SensorReset());
         safetyButton.whenPressed(new LifterSafety());
-
+        pathButton.whenPressed(new AutoScore());
         climbingPrep.whenPressed(new AutoClawMotion(Variables.ClawPositions.armClimbPrep,Variables.ClawPositions.wristClimbPrep));
 
         ballRocketBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketBack,Variables.ClawPositions.wristBallScoreRocketBack));

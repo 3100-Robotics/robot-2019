@@ -5,21 +5,24 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3100.robot.OI.Dashboard;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Robot;
-
+import jaci.pathfinder.Pathfinder;
+import jaci.pathfinder.Trajectory;
+import jaci.pathfinder.Waypoint;
+import jaci.pathfinder.modifiers.TankModifier;
 
 
 public class LimelightCalculation extends Subsystem implements Dashboard.DashboardUpdatable {
     private double limelightHeight = 6.625;
     private double targetHeight = 28.25;
     private double gyroAngle;
+    private double targetAngle;
     private double robotDistance;
+    private Trajectory trajectory;
+    private TankModifier modifier;
+    public Trajectory driveLeft;
+    public Trajectory driveRight;
     private double targetX;
     private double targetY;
-    private int points = 50;
-    private int position = 0;
-    private static double[][] splineCenterPoints = new double[50][2];
-    private double[] arrayPoints = {0,0};
-    public static double[][] splineLeft = new double[50][2];
 
     public void initDefaultCommand() {
 
@@ -40,7 +43,7 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
 
     public double getModifiedGyro() {
         this.getDistance();
-        gyroAngle = 0;
+        gyroAngle = Robot.ahrs.getAngle();
         while (Math.abs(gyroAngle) >= 360) {
             if (gyroAngle > 360) {
                 gyroAngle -= 360;
@@ -54,10 +57,18 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
         return gyroAngle;
     }
 
+    public double getGyroTarget() {
+        double gyroActualVal = this.getModifiedGyro();
+        double gyroTargetVal = Math.round(gyroActualVal/45) * 45;
+        return gyroTargetVal-gyroActualVal;
+    }
 
-    public double[][] generateSpline() {
+
+    public void generateSpline() {
         targetX = robotDistance * Math.cos(getLimelightX());
         targetY = robotDistance * -1 * Math.sin(getLimelightX());
+        targetAngle = getModifiedGyro();
+        /*
         for (double dt = 0; dt < points; dt++) {
             double t = dt / points;
             double tt = t * t;
@@ -69,7 +80,21 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
             position += 1;
         }
         position = 0;
-        return splineCenterPoints;
+        */
+
+        Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
+                Trajectory.Config.SAMPLES_HIGH, 0.05, 135, 70.0, 60.0);
+        Waypoint[] points = new Waypoint[]{
+                new Waypoint(0, 0, 0),
+                new Waypoint(targetX, targetY, Pathfinder.d2r(this.getGyroTarget()))
+        };
+        trajectory = Pathfinder.generate(points, config);
+        modifier = new TankModifier(trajectory).modify(24.7);
+
+        driveLeft = modifier.getLeftTrajectory();
+        driveRight = modifier.getRightTrajectory();
+
+
     }
 
 
