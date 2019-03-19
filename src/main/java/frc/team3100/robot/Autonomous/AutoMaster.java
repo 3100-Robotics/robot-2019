@@ -42,7 +42,7 @@ public class AutoMaster extends CommandGroup {
         driveRight = modifier.getRightTrajectory();
 
         addSequential(new AutoPathFollower(driveLeft,driveRight));
-
+        addSequential(new AutoScore());
         if(preload == hatch) {
             addSequential(new ClawExtend());
         } else {

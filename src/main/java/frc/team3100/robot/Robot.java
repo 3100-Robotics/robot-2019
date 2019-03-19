@@ -66,6 +66,11 @@ public class Robot extends TimedRobot {
 
     public void robotInit() {
 
+
+        table = NetworkTableInstance.getDefault().getTable("limelight");
+        table.getEntry("camMode").setNumber(0);
+        table.getEntry("ledMode").setNumber(0);
+
         autoStart = new SendableChooser<>();
         autoStart.addOption("Left", Variables.startPosition.LEFT);
         autoStart.addOption("Center", Variables.startPosition.CENTER);
@@ -106,9 +111,6 @@ public class Robot extends TimedRobot {
         // ALWAYS initialize OI after subsystems
         oi = new OI();
 
-        table = NetworkTableInstance.getDefault().getTable("limelight");
-        table.getEntry("camMode").setNumber(1);
-        table.getEntry("ledMode").setNumber(1);
 
 
         new TalonConfig().configure();

@@ -97,6 +97,16 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
 
     }
 
+    public void enableVisionProcessing() {
+        Robot.table.getEntry("camMode").setNumber(0);
+        Robot.table.getEntry("ledMode").setNumber(3);
+    }
+
+    public void disableVisionProcessing() {
+        Robot.table.getEntry("camMode").setNumber(1);
+        Robot.table.getEntry("ledMode").setNumber(1);
+    }
+
 
     public void initSD() {
 
