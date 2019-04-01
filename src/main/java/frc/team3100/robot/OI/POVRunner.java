@@ -18,29 +18,7 @@ public class POVRunner extends Command {
     }
 
     protected void execute() {
-        if(RobotMap.driveControls.getPOVD()) {
 
-        } else if(RobotMap.driveControls.getPOVL()) {
-
-        }else if(RobotMap.driveControls.getPOVU()) {
-
-        }else if(RobotMap.driveControls.getPOVR()) {
-
-        }
-
-        if(RobotMap.techControls.getPOVD()) {
-            System.out.println("D");
-            motion = new AutoClawMotion(Variables.ClawPositions.armHatchGround,Variables.ClawPositions.wristHatchGround);
-        } else if(RobotMap.techControls.getPOVL()) {
-            System.out.println("L");
-            new AutoClawMotion(Variables.ClawPositions.armHatchFront,Variables.ClawPositions.wristHatchFront);
-        } else if(RobotMap.techControls.getPOVU()) {
-            System.out.println("U");
-            new AutoClawMotion(Variables.ClawPositions.armHatchGroundPrep,Variables.ClawPositions.wristHatchGroundPrep);
-        } else if(RobotMap.techControls.getPOVR()) {
-            System.out.println("R");
-            new AutoClawMotion(Variables.ClawPositions.armHatchBack,Variables.ClawPositions.wristHatchBack);
-        }
     }
 
     protected boolean isFinished() {

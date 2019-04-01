@@ -32,22 +32,10 @@ public class AutoMaster extends CommandGroup {
     private Trajectory driveLeft;
     private Trajectory driveRight;
     Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
-            Trajectory.Config.SAMPLES_HIGH, 0.05, 135, 70.0, 60.0);
-
-
+            Trajectory.Config.SAMPLES_FAST, 0.05, 135, 70.0, 60.0);
     public AutoMaster(Variables.startPosition startPosition, Variables.preload preload, Variables.target target) {
         trajectory = Pathfinder.generate(pathData.pointsFromStart(startPosition,target), config);
         modifier = new TankModifier(trajectory).modify(24.7);
-        driveLeft = modifier.getLeftTrajectory();
-        driveRight = modifier.getRightTrajectory();
-
-        addSequential(new AutoPathFollower(driveLeft,driveRight));
-        addSequential(new AutoScore());
-        if(preload == hatch) {
-            addSequential(new ClawExtend());
-        } else {
-            addSequential(new AutoClawWheels());
-        }
 
 
 

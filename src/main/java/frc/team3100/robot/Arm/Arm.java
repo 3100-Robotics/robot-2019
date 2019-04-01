@@ -86,8 +86,8 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         if(position < 220) {
             position = 220;
             System.out.println("Lower Bound Tripped");
-        } else if(position > 850) {
-            position = 850;
+        } else if(position > 980) {
+            position = 980;
             System.out.println("Upper Bound Tripped");
         }
 

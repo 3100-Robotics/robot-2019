@@ -25,7 +25,6 @@ public class WristMotion extends Command {
         speed = RobotMap.techControls.getRightStickY();
         if(Math.abs(speed) < .2 && !Variables.wristAuto) {
             Robot.wrist.manualRotation(.31 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? 1:-1));
-
         } else {
             Robot.wrist.manualRotation(speed);
         }

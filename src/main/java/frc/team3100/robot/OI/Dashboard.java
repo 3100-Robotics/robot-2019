@@ -58,6 +58,8 @@ public class Dashboard {
 			SmartDashboard.putBoolean("autoVal",Robot.autoVal);
 			SmartDashboard.putNumber("Dashboard Update Counts", updateCounts++);
 			SmartDashboard.putNumber("UltraDistance",RobotMap.lifterFrontUltrasonic.getValue());
+			SmartDashboard.putNumber("TargetX",Robot.vision.getDistance() * Math.sin(Math.toRadians(Robot.vision.getLimelightX())));
+			SmartDashboard.putNumber("TargetY",Robot.vision.getDistance() * Math.cos(Math.toRadians(Robot.vision.getLimelightX())));
 
 		}
 	}

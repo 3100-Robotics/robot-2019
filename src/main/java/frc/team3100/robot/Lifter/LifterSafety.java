@@ -24,7 +24,7 @@ public class LifterSafety extends Command {
 
     protected void execute() {
         // Ensures both buttons are pressed before starting the AutoLifter command
-        if(Robot.oi.safetyButton.get() && Robot.oi.triggerButton.get() && !ran) {
+        if(Robot.oi.safetyButton.get() && !ran) {
             lifting = new AutoLifter();
             lifting.start();
             ran = true;

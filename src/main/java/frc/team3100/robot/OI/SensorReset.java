@@ -18,6 +18,12 @@ public class SensorReset extends Command {
 
         int armPosition = RobotMap.armMotor1.getSensorCollection().getAnalogInRaw();
         RobotMap.armMotor1.setSelectedSensorPosition(armPosition);
+
+        Robot.ahrs.reset();
+        RobotMap.leftDriveMotor1.setSelectedSensorPosition(0);
+        RobotMap.rightDriveMotor1.setSelectedSensorPosition(0);
+        Robot.vision.disableVisionProcessing();
+
     }
 
     protected void execute() {

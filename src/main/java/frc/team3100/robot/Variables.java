@@ -1,6 +1,7 @@
 package frc.team3100.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import jaci.pathfinder.Trajectory;
 
 
 /*
@@ -11,41 +12,54 @@ public class Variables {
 
 
     public enum ClawPositions {
-        wristBallPickupFront(593+wristSensorOffset),
-        wristBallPickupPlayerBack(455+wristSensorOffset),
-        wristBallPickupPlayerFront(531+wristSensorOffset),
-        wristBallScoreRocketlv2(494+wristSensorOffset),
-        wristBallPickupBack(558-81+wristSensorOffset),
+        //wristBallPickupPlayerBack(455+wristSensorOffset),
+        //wristBallPickupPlayerFront(531+wristSensorOffset),
+        wristBallPickupFront(772-148+wristSensorOffset),
+        wristBallPickupBack(544-148+wristSensorOffset),
+
+
         wristBallScoreCargoFront(700+wristSensorOffset),
-        wristBallScoreRocketFront(708-81+wristSensorOffset),
-        wristBallScoreCargoBack(379+wristSensorOffset),
+        wristBallScoreCargoBack(345+wristSensorOffset),
+
+        wristBallScoreRocketFront(729-148+wristSensorOffset),
         wristBallScoreRocketBack(442+wristSensorOffset),
-        wristHatchGroundPrep(225+wristSensorOffset),
-        wristHatchGround(221+wristSensorOffset),
-        wristHatchFront(510+wristSensorOffset),
-        wristHatchBack(562+wristSensorOffset),
+        wristBallScoreRocketlv2(699-148+wristSensorOffset),
+
+
+        wristHatchFront(660-168+wristSensorOffset),
+        wristHatchBack(663-148+wristSensorOffset),
+        wristHatchScoreRocketLv2(538-168+wristSensorOffset),
+
         wristDefence(800+wristSensorOffset),
-        wristHatchPlayerGrab(742+wristSensorOffset),
-        wristClimbPrep(250+wristSensorOffset),
+
+        wristClimbPrep(430-148+wristSensorOffset),
         wristClimbMotion(255+wristSensorOffset),
 
-        armBallPickupFront(247+armSensorOffset),
-        armBallPickupPlayerBack(625+armSensorOffset),
-        armBallPickupPlayerFront(399+armSensorOffset),
-        armBallScoreRocketlv2(550+armSensorOffset),
-        armBallPickupBack(795+armSensorOffset),
+
+
+
+
+        //armBallPickupPlayerBack(625+armSensorOffset),
+        //armBallPickupPlayerFront(399+armSensorOffset),
+
+        armBallPickupFront(234-54+armSensorOffset),
+        armBallPickupBack(858-54+armSensorOffset),
+
         armBallScoreCargoFront(444+armSensorOffset),
-        armBallScoreRocketFront(345+armSensorOffset),
-        armBallScoreCargoBack(583+armSensorOffset),
+        armBallScoreCargoBack(540+armSensorOffset),
+
+        armBallScoreRocketFront(358-54+armSensorOffset),
         armBallScoreRocketBack(680+armSensorOffset),
-        armHatchGroundPrep(810+armSensorOffset),
-        armHatchGround(840+armSensorOffset),
-        armHatchFront(260+armSensorOffset),
-        armHatchBack(765+armSensorOffset),
+        armBallScoreRocketlv2(514-54+armSensorOffset),
+
+        armHatchFront(273-45+armSensorOffset),
+        armHatchBack(844-45+armSensorOffset),
+        armHatchScoreRocketLv2(532+armSensorOffset),
+
         armDefence(460+armSensorOffset),
-        armHatchPlayerGrab(651+armSensorOffset),
-        armClimbPrep(670+armSensorOffset),
-        armClimbMotion(900+armSensorOffset);
+
+        armClimbPrep(762-54+armSensorOffset),
+        armClimbMotion(980-54+armSensorOffset);
 
 
         private final double position;
@@ -89,9 +103,9 @@ public class Variables {
 
     }
 
-
-    public static double armSensorOffset = 0;
-    public static double wristSensorOffset = 81;
+    public static double armTargetLoc = 0;
+    public static double armSensorOffset = 54;
+    public static double wristSensorOffset = 148;
     public static double joystickError = 0.2;
     public static boolean armLock = true;
     public static boolean armAuto = false;
@@ -107,7 +121,8 @@ public class Variables {
     public static final Gains kGains_Turning = new Gains( 0.0, 0.0,  0.0, 0.0,200,  1.00 );
     public static final Gains armGains = new Gains(20.0, 0.0, 5.0, 0.0, 200, 1.0);
     public static final Gains wristGains = new Gains(16.0, 0.0, 13.0, 0.0, 200, 1.0);
-
+    public static Trajectory leftRoute = null;
+    public static Trajectory rightRoute = null;
 
     public final static double kNeutralDeadband = 0.001;
     // 4098 / 1023

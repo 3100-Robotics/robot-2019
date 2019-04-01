@@ -40,10 +40,10 @@ public class RobotMap {
 
     //     M A N I F O L D S (ALL SINGLE ACTION)
     private static int lifterFrontPistonExtendChannel = 3;
-    private static int lifterBackPistonExtendChannel = 2;
+    private static int lifterBackPistonExtendChannel = 4;
     private static int armBrakeEngageChannel = 0;
     private static int clawHatchReleaseChannel = 1;
-    private static int lifterRotationChannel = 4;
+    private static int lifterRotationChannel = 6;
 
 
     //     A N A L O G
@@ -53,8 +53,9 @@ public class RobotMap {
 
 
     //     D I O
-
-
+    private static int hatchLeftSwitchChannel = 0;
+    private static int hatchRightSwitchChannel = 1;
+    private static int cargoSwitchChannel = 2;
 
 
     //     D R I V E R   B U T T O N S
@@ -139,5 +140,10 @@ public class RobotMap {
     //    Initialize sensors
     public static AnalogInput lifterFrontUltrasonic = new AnalogInput(lifterFrontUltraChannel);
     public static AnalogInput lifterBackUltrasonic = new AnalogInput(lifterBackUltraChannel);
+
+    public static DigitalInput hatchLeftSwitch = new DigitalInput(hatchLeftSwitchChannel);
+    public static DigitalInput hatchRightSwitch = new DigitalInput(hatchRightSwitchChannel);
+    public static DigitalInput cargoSwitch = new DigitalInput(cargoSwitchChannel);
+
 
 }

@@ -37,7 +37,7 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
     }
 
     public double getDistance() {
-        robotDistance = (targetHeight - limelightHeight) / Math.tan(Math.toRadians(this.getLimelightY() + (0.232 * this.getLimelightY()) + 21.8));
+        robotDistance = 182 + (42.8 *this.getLimelightY()) + (2.78* Math.pow(this.getLimelightY(),2));
         return robotDistance;
     }
 
@@ -64,11 +64,9 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
     }
 
 
-    public void generateSpline() {
-        targetX = robotDistance * Math.cos(getLimelightX());
-        targetY = robotDistance * -1 * Math.sin(getLimelightX());
-        targetAngle = getModifiedGyro();
-        /*
+    /*public void generateSpline() {
+
+
         for (double dt = 0; dt < points; dt++) {
             double t = dt / points;
             double tt = t * t;
@@ -80,26 +78,13 @@ public class LimelightCalculation extends Subsystem implements Dashboard.Dashboa
             position += 1;
         }
         position = 0;
-        */
-
-        Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
-                Trajectory.Config.SAMPLES_HIGH, 0.05, 135, 70.0, 60.0);
-        Waypoint[] points = new Waypoint[]{
-                new Waypoint(0, 0, 0),
-                new Waypoint(targetX, targetY, Pathfinder.d2r(this.getGyroTarget()))
-        };
-        trajectory = Pathfinder.generate(points, config);
-        modifier = new TankModifier(trajectory).modify(24.7);
-
-        driveLeft = modifier.getLeftTrajectory();
-        driveRight = modifier.getRightTrajectory();
 
 
-    }
+    } */
 
     public void enableVisionProcessing() {
         Robot.table.getEntry("camMode").setNumber(0);
-        Robot.table.getEntry("ledMode").setNumber(3);
+        Robot.table.getEntry("ledMode").setNumber(0);
     }
 
     public void disableVisionProcessing() {

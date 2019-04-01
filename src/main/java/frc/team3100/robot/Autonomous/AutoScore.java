@@ -8,9 +8,7 @@ public class AutoScore extends CommandGroup {
 
     public AutoScore() {
         Robot.vision.enableVisionProcessing();
-        addSequential(new GenerateSpline());
-        addSequential(new AutoPathFollower(Robot.vision.driveLeft,Robot.vision.driveRight));
-        Robot.vision.disableVisionProcessing();
+        addSequential(new AutoPathScore());
     }
 
 

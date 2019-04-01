@@ -22,7 +22,7 @@ public class AutoLifter extends CommandGroup {
         addSequential(new LifterUltrasonicPauserFar(Variables.Direction.FRONT));
         clawMotors = new AutoClawClimbMotor();
         clawMotors.start();
-        driving = new AutoDrive(.5,0);
+        driving = new AutoDrive(-.5,0);
         driving.start();
         addSequential(new LifterUltrasonicPauserClose(Variables.Direction.FRONT));
         addParallel(new LifterActuate());

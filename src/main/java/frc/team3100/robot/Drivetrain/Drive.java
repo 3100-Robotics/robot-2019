@@ -45,7 +45,11 @@ public class Drive extends PIDSubsystem implements Dashboard.DashboardUpdatable 
         this.driveArcade(RobotMap.driveControls.getLeftStickY(),-output);
     }
 
-
+    public void driveTank(double leftSpeed, double rightSpeed) {
+        System.out.println(leftSpeed + ", " + rightSpeed);
+        RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput,rightSpeed);
+        RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput,leftSpeed);
+    }
 
 
     public void driveArcade(double inputSpeed, double inputRotate) {
@@ -117,8 +121,8 @@ public class Drive extends PIDSubsystem implements Dashboard.DashboardUpdatable 
     public void updateSD() {
         SmartDashboard.putNumber("Drive Speed",limitedSpeed);
         SmartDashboard.putNumber("Drive Rotate",limitedRotate);
-        SmartDashboard.putNumber("Drive Left Sensor",RobotMap.leftDriveMotor1.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Drive Right Sensor",RobotMap.rightDriveMotor1.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Drive Left Sensor",RobotMap.leftDriveMotor1.getSelectedSensorPosition());
+        SmartDashboard.putNumber("Drive Right Sensor",RobotMap.rightDriveMotor1.getSelectedSensorPosition());
 
     }
 }

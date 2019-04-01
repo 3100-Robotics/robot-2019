@@ -1,5 +1,6 @@
 package jaci.pathfinder.followers;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import jaci.pathfinder.Trajectory;
 
 /**
@@ -14,7 +15,7 @@ public class DistanceFollower {
 
     double last_error, heading;
 
-    int segment;
+    int segment = 0;
     Trajectory trajectory;
 
     public DistanceFollower(Trajectory traj) {

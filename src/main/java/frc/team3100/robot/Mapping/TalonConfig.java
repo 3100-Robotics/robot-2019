@@ -26,15 +26,18 @@ public class TalonConfig {
         RobotMap.wristMotor2.follow(RobotMap.wristMotor);
 
         // Set Inversions for cooperating motors
-        RobotMap.rightDriveMotor1.setInverted(true);
-        RobotMap.rightDriveMotor2.setInverted(false);
-        RobotMap.rightDriveMotor3.setInverted(false);
-        RobotMap.leftDriveMotor1.setInverted(false);
-        RobotMap.leftDriveMotor2.setInverted(true);
-        RobotMap.leftDriveMotor3.setInverted(true);
+        RobotMap.rightDriveMotor1.setInverted(false);
+        RobotMap.rightDriveMotor2.setInverted(true);
+        RobotMap.rightDriveMotor3.setInverted(true);
+        RobotMap.leftDriveMotor1.setInverted(true);
+        RobotMap.leftDriveMotor2.setInverted(false);
+        RobotMap.leftDriveMotor3.setInverted(false);
 
         RobotMap.wristMotor.setInverted(false); /** CHANGE TO false FOR COMP ROBOT**/
         RobotMap.wristMotor2.setInverted(true);
+
+        RobotMap.leftDriveMotor1.setSensorPhase(false);
+        RobotMap.rightDriveMotor1.setSensorPhase(false);
 
         RobotMap.wristMotor.setSensorPhase(false);
 
@@ -57,7 +60,6 @@ public class TalonConfig {
         RobotMap.leftDriveMotor1.configSelectedFeedbackSensor(	FeedbackDevice.QuadEncoder,			// Local Feedback Source
                 0,				// PID Slot for Source [0, 1]
                 30);              // Configuration Timeout
-
 
         // Configure the left Talon's Selected Sensor to be a remote sensor for the right Talon
         RobotMap.rightDriveMotor1.configRemoteFeedbackFilter(RobotMap.leftDriveMotor1.getDeviceID(),					// Device ID of Source

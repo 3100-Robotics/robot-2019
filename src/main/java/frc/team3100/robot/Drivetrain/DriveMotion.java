@@ -21,7 +21,7 @@ public class DriveMotion extends Command {
     }
 
     protected void execute() {
-        Robot.drive.driveArcade(RobotMap.driveControls.getLeftStickY(), RobotMap.driveControls.getRightStickX());
+        Robot.drive.driveArcade(-RobotMap.driveControls.getLeftStickY(), -RobotMap.driveControls.getRightStickX());
     }
 
     protected boolean isFinished() {

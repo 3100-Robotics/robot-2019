@@ -8,29 +8,73 @@ import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 /*
-This command takes the two trigger inputs on the Technician's controller and makes the claw motors move accordingly.
+This command takes the two trigger inputs on the Driver's controller and makes the claw motors move accordingly.
  */
 
 public class ClawRotate extends Command {
-
-
+    private boolean hatchExtendedCheck;
+    private int direcMod = 1;
+    private int time = 100;
     public ClawRotate() {
         super("ClawRotate");
         requires(Robot.claw);
     }
 
     protected void initialize() {
-
+        hatchExtendedCheck = Variables.hatchExtended;
     }
 
     protected void execute() {
-        if(RobotMap.driveControls.getLeftTrigger() > Variables.joystickError) {
-            Robot.claw.wheels(RobotMap.driveControls.getLeftTrigger(),RobotMap.driveControls.getLeftTrigger());
-        } else if(RobotMap.driveControls.getRightTrigger() > .5){
-            Robot.claw.wheels(-.7,-.7);
+
+        /*
+        if((RobotMap.driveControls.getRightTrigger() > .2 || RobotMap.driveControls.getLeftTrigger() > .2) && (hatchExtendedCheck != Variables.hatchExtended)) {
+            direcMod = -1;
+        }
+
+        if(RobotMap.driveControls.getRightTrigger() < .2 && RobotMap.driveControls.getLeftTrigger() < .2) {
+            hatchExtendedCheck = Variables.hatchExtended;
+            direcMod = 1;
+        }*/
+
+        if(Variables.hatchExtended && !RobotMap.cargoSwitch.get()){
+            Robot.claw.extend(!Variables.hatchExtended);
+            time = 0;
+            Robot.table.getEntry("ledMode").setNumber(0);
+            Variables.hatchExtended = !Variables.hatchExtended;
+        } else if(!Variables.hatchExtended && !RobotMap.hatchLeftSwitch.get() && !RobotMap.hatchRightSwitch.get()) {
+            Robot.claw.extend(!Variables.hatchExtended);
+            Robot.table.getEntry("ledMode").setNumber(0);
+            time = 0;
+            Variables.hatchExtended = !Variables.hatchExtended;
+        }
+
+        if(time == 20) {
+            Robot.table.getEntry("ledMode").setNumber(1);
+        }
+
+        /*
+        if(Variables.hatchExtended && (RobotMap.driveControls.getRightTrigger() > .2 || RobotMap.driveControls.getLeftTrigger() > .2)) {
+            Robot.claw.wheels(1*direcMod,1*direcMod);
+        } else if(!Variables.hatchExtended && (RobotMap.driveControls.getRightTrigger() > .2 || RobotMap.driveControls.getLeftTrigger() > .2)) {
+            Robot.claw.wheels(-1*direcMod,-1*direcMod);
+        } else if(!RobotMap.hatchLeftSwitch.get() || !RobotMap.hatchRightSwitch.get()) {
+            Robot.claw.wheels(-.3*direcMod,-.3*direcMod);
+        } else {
+            Robot.claw.wheels(0,0);
+        }*/
+
+
+
+        if(RobotMap.driveControls.getRightTrigger() > .2) {
+            Robot.claw.wheels(1,1);
+        } else if(RobotMap.driveControls.getLeftTrigger() > .2) {
+            Robot.claw.wheels(-1,-1);
+        } else if(!RobotMap.hatchLeftSwitch.get() || !RobotMap.hatchRightSwitch.get()) {
+            Robot.claw.wheels(-.6*direcMod,-.6*direcMod);
         } else {
             Robot.claw.wheels(0,0);
         }
+        time += 1;
     }
 
     protected boolean isFinished() {

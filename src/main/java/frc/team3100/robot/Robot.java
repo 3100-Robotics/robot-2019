@@ -1,10 +1,7 @@
 package frc.team3100.robot;
 
 import com.kauailabs.navx.frc.AHRS;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
-import edu.wpi.cscore.MjpegServer;
-import edu.wpi.cscore.UsbCamera;
+import edu.wpi.cscore.*;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -21,6 +18,7 @@ import frc.team3100.robot.Brake.Brake;
 import frc.team3100.robot.Claw.Claw;
 import frc.team3100.robot.Drivetrain.Drive;
 import frc.team3100.robot.Lifter.Lifter;
+import frc.team3100.robot.Limelight.Generator;
 import frc.team3100.robot.Limelight.LimelightCalculation;
 import frc.team3100.robot.Mapping.RobotMap;
 import frc.team3100.robot.Mapping.TalonConfig;
@@ -54,9 +52,9 @@ public class Robot extends TimedRobot {
     public static Brake brake;
     public static LimelightCalculation vision;
     public static AHRS ahrs;
-    public static POVRunner povRunner;
     public static OI oi;
     public static Compressor compressor;
+    public static Generator gen;
 
 
     // Define variables used later in the Robot class
@@ -66,10 +64,7 @@ public class Robot extends TimedRobot {
 
     public void robotInit() {
 
-
         table = NetworkTableInstance.getDefault().getTable("limelight");
-        table.getEntry("camMode").setNumber(0);
-        table.getEntry("ledMode").setNumber(0);
 
         autoStart = new SendableChooser<>();
         autoStart.addOption("Left", Variables.startPosition.LEFT);
@@ -106,7 +101,6 @@ public class Robot extends TimedRobot {
         } catch (RuntimeException ex ) {
             System.out.println("Error instantiating navX MXP:  " + ex.getMessage());
         }
-        povRunner = new POVRunner();
 
         // ALWAYS initialize OI after subsystems
         oi = new OI();
@@ -114,41 +108,44 @@ public class Robot extends TimedRobot {
 
 
         new TalonConfig().configure();
+
+        /*
         new Thread(() -> {
 
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
             camera.setResolution(320, 480);
 
-            CvSink cvSink = CameraServer.getInstance().getVideo();
+            CvSink cvSinkClaw = CameraServer.getInstance().getVideo();
+            cvSinkClaw.setEnabled(true);
+            AxisCamera lime = CameraServer.getInstance().addAxisCamera("10.31.0.11:5800");
+            lime.setResolution(320,480);
             CvSource outputStream = CameraServer.getInstance().putVideo("test", 320, 480);
-            MjpegServer server = new MjpegServer("lime",5800);
+            MjpegServer server = new MjpegServer("limelight",5800);
             Mat source = new Mat(320,480,CV_32F);
             source = source.zeros(320,480,CV_32F);
-
             Mat output = new Mat(320,480,CV_32F);
 
             while (!Thread.interrupted()) {
-                cvSink.setEnabled(true);
-                cvSink.grabFrame(source, 30);
+                cvSinkClaw.grabFrame(source, 30);
                 if (RobotMap.armMotor1.getSelectedSensorPosition() > 512) {
-                    Core.flip(source, output, 1);
+                    Core.flip(source, output, 0);
                 } else {
                     source = output;
                 }
                 outputStream.putFrame(output);
             }
-        }).start();
-
-
+        }).start(); */
+        gen = new Generator();
+        Robot.vision.disableVisionProcessing();
         Robot.drive.disable();
     }
 
 
     public void autonomousInit() {
-        povRunner.start();
-        autoVal = true;
-        AutoRunner = new AutoMaster(autoStart.getSelected(),preload.getSelected(),autoTarget.getSelected());
-        AutoRunner.start();
+        //povRunner.start();
+        //autoVal = true;
+        //AutoRunner = new AutoMaster(autoStart.getSelected(),preload.getSelected(),autoTarget.getSelected());
+        //AutoRunner.start();
 
     }
 
@@ -158,10 +155,6 @@ public class Robot extends TimedRobot {
     }
 
     public void teleopInit() {
-        if(!povRunner.isRunning()) {
-            povRunner.start();
-        }
-
         if(AutoRunner != null) {
             if (AutoRunner.isRunning()) {
                 AutoRunner.cancel();
@@ -177,11 +170,11 @@ public class Robot extends TimedRobot {
     }
 
      public void testInit() {
-         if(AutoRunner != null) {
+         /*if(AutoRunner != null) {
              if (AutoRunner.isRunning()) {
                  AutoRunner.cancel();
              }
-         }
+         }*/
          autoVal = false;
      }
 
@@ -197,10 +190,13 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("b",0);
         Dashboard.initDashboard();
         Dashboard.updateDashboard();
+
     }
 
     public void disabledPeriodic() {
         Dashboard.updateDashboard();
+        Robot.table.getEntry("stream").setNumber(1);
+
     }
 
 }

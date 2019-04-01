@@ -48,16 +48,16 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void manualRotation(double speed) {
         speed = deadband(speed);
-        /*
+
         if(motor.getSensorCollection().getAnalogInRaw() < 220) {
-            if(speed > 0) {
+            if(speed < 0) {
                 speed = .21;
             }
         } else if(motor.getSensorCollection().getAnalogInRaw() > 880) {
-            if(speed < 0) {
+            if(speed > 0) {
                 speed = -.21;
             }
-        }*/
+        }
 
         double scaleSpeed = speed < 0 ? -1 : 1;
         speed *= speed * scaleSpeed;
@@ -75,11 +75,11 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void movePosition(double position) {
 
-        if(position < 215) {
-            position = 215;
+        if(position < 420) {
+            position = 420;
             System.out.println("Lower Bound Tripped");
-        } else if(position > 720) {
-            position = 720;
+        } else if(position > 800) {
+            position = 800;
             System.out.println("Upper Bound Tripped");
         }
         pos = position;
