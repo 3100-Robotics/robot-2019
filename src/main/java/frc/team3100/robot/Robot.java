@@ -5,9 +5,7 @@ import edu.wpi.cscore.*;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.SPI;
-import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -28,6 +26,10 @@ import frc.team3100.robot.OI.POVRunner;
 import frc.team3100.robot.Wrist.Wrist;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
+
+import java.io.*;
+import java.util.Map;
+import java.util.Scanner;
 
 import static org.opencv.core.CvType.CV_32F;
 
@@ -55,7 +57,13 @@ public class Robot extends TimedRobot {
     public static OI oi;
     public static Compressor compressor;
     public static Generator gen;
-
+    public static int[] presetValues = new int [100];
+    private static Scanner scanner;
+    private static Map<String, String> env = System.getenv();
+    public static File f = new File(env.get("HOME") + "/presets.txt");
+    private static int i = 0;
+    private static FileWriter loader;
+    private static Joystick led = new Joystick(3);
 
     // Define variables used later in the Robot class
     public static boolean autoVal;
@@ -63,6 +71,26 @@ public class Robot extends TimedRobot {
     public static NetworkTable table;
 
     public void robotInit() {
+
+        try {
+            if (!f.exists()) {
+                f.createNewFile();
+                System.out.println("presets.txt does not exist. Creating and loading new copy.");
+                loader = new FileWriter(Robot.f);
+                loader.write("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+                loader.flush();
+                loader.close();
+            } else {
+                System.out.println("Exists!");
+            }
+            scanner = new Scanner(f);
+            while(scanner.hasNextInt()) {
+                presetValues[i] = scanner.nextInt();
+                i++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         table = NetworkTableInstance.getDefault().getTable("limelight");
 
@@ -162,11 +190,13 @@ public class Robot extends TimedRobot {
         }
         autoVal = false;
 
+
     }
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         Dashboard.updateDashboard();
+        led.setOutput(1,true);
     }
 
      public void testInit() {
@@ -190,7 +220,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("b",0);
         Dashboard.initDashboard();
         Dashboard.updateDashboard();
-
+        led.setOutput(1,true);
     }
 
     public void disabledPeriodic() {

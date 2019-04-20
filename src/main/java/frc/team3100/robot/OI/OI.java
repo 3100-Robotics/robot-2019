@@ -19,31 +19,32 @@ public class OI {
     private Button hatchReleaseButton = new JoystickButton(RobotMap.driveControls,RobotMap.rightBumperChannel);
     public Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
     public Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
-    public Button pathButton = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
+    //ublic Button pathButton = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
+    public Button presetTuning = new JoystickButton(RobotMap.techBoard,RobotMap.aButtonChannel);
 
 
 
     private Button lifterActuateButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton12Channel);
-    private Button climbingPrep = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton13Channel);
-    private Button sensorResetButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton14Channel);
+    public Button climbingPrep = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton13Channel);
+    private Button sensorResetButton = new JoystickButton(RobotMap.techControls,RobotMap.boardButton14Channel);
+    public Button climbingMotonButton = new JoystickButton(RobotMap.techBoard,RobotMap.bButtonChannel);
 
 
+    public Button defenceButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton7Channel);
 
-    private Button defenceButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton7Channel);
+    public Button ballPickupBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton4Channel);
+    public Button ballPickupFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton11Channel);
 
-    private Button ballPickupBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton4Channel);
-    private Button ballPickupFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton11Channel);
-
-    private Button ballRocketBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton6Channel);
-    private Button ballRocketFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton9Channel);
-    private Button ballRocket2BackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton8Channel);
-    private Button ballCargoFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton10Channel);
-    private Button ballCargoBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton5Channel);
+    public Button ballRocketBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton6Channel);
+    public Button ballRocketFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton9Channel);
+    public Button ballRocket2BackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton8Channel);
+    public Button ballCargoFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton10Channel);
+    public Button ballCargoBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton5Channel);
 
 
-    private Button hatchScoreFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton3Channel);
-    private Button hatchScoreBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton1Channel);
-    private Button hatchScoreRocketLv2Button = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton2Channel);
+    public Button hatchScoreFrontButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton3Channel);
+    public Button hatchScoreBackButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton1Channel);
+    public Button hatchScoreRocketLv2Button = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton2Channel);
 
 
 
@@ -53,7 +54,7 @@ public class OI {
         lifterActuateButton.whenPressed(new LifterActuate());
         sensorResetButton.whenPressed(new SensorReset());
         safetyButton.whenPressed(new LifterSafety());
-        pathButton.whenPressed(new AutoScore());
+        //pathButton.whenPressed(new AutoScore());
         climbingPrep.whenPressed(new AutoClawMotion(Variables.ClawPositions.armClimbPrep,Variables.ClawPositions.wristClimbPrep));
 
         ballRocketBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketBack,Variables.ClawPositions.wristBallScoreRocketBack));

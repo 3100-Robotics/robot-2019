@@ -13,7 +13,7 @@ This command takes the two trigger inputs on the Driver's controller and makes t
 
 public class ClawRotate extends Command {
     private boolean hatchExtendedCheck;
-    private int direcMod = 1;
+    private double direcMod = 1;
     private int time = 100;
     public ClawRotate() {
         super("ClawRotate");
@@ -70,6 +70,11 @@ public class ClawRotate extends Command {
         } else if(RobotMap.driveControls.getLeftTrigger() > .2) {
             Robot.claw.wheels(-1,-1);
         } else if(!RobotMap.hatchLeftSwitch.get() || !RobotMap.hatchRightSwitch.get()) {
+            if(RobotMap.armMotor1.getOutputCurrent() > .3) {
+                direcMod = 1.67;
+            } else {
+                direcMod = 1;
+            }
             Robot.claw.wheels(-.6*direcMod,-.6*direcMod);
         } else {
             Robot.claw.wheels(0,0);

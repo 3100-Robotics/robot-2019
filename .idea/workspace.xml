@@ -2,73 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f703dd1-cab8-4375-a059-96f39da506f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoPathScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cameraserver_cameraserver_java_2019_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cscore_cscore_java_2019_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_hal_hal_java_2019_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_ntcore_ntcore_java_2019_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_jniloader_JNILoader_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_pathfinder_Pathfinder_FRCSupport_2019_3_06_UNSTABLE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_pathfinder_Pathfinder_Java_2019_3_06_UNSTABLE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/ButtonTune.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cameraserver_cameraserver_java_2019_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cscore_cscore_java_2019_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_hal_hal_java_2019_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_ntcore_ntcore_java_2019_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpilibj_wpilibj_java_2019_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpilibj_wpilibj_java_2019_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpiutil_wpiutil_java_2019_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpiutil_wpiutil_java_2019_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/robot-2019.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/robot-2019.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/robot-2019.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/robot-2019.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/Arm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/Arm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawMotion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoLifter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoLifter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoPathFollower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/SensorReset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/BrakeArmActuation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/BrakeArmActuation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawExtend.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawExtend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawRotate.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawRotate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterSafety.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterSafety.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/GenerateSpline.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/GenerateSpline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/LimelightCalculation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/LimelightCalculation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/RobotMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/RobotMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/TalonConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/TalonConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/OI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/OI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/POVRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/POVRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/SensorReset.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/SensorReset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$ClawPositions.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$ClawPositions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$preload.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$preload.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$startPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$startPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$target.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$target.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/Wrist.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/Wrist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/WristMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/WristMotion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/DistanceFollower.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/DistanceFollower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/robot-2019.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/robot-2019.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoPathFollower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawExtend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/DriveMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/DriveMotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/GenerateSpline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/GenerateSpline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/LimelightCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/LimelightCalculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/RobotMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/RobotMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/TalonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/TalonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/Dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/SensorReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/SensorReset.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/Wrist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/Wrist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/WristMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/WristMotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jaci/pathfinder/followers/DistanceFollower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jaci/pathfinder/followers/DistanceFollower.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,11 +57,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2104">
+              <caret line="191" selection-start-line="191" selection-end-line="191" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+            <state relative-caret-position="885">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,22 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/Dashboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
+            <state relative-caret-position="795">
+              <caret line="59" column="46" selection-start-line="59" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,33 +91,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/ButtonTune.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="67" column="141" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="141" />
+            <state relative-caret-position="812">
+              <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="156" column="30" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4100#4101#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,8 +107,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/ArmMotion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,8 +131,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="240">
               <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="285">
               <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
             </state>
           </provider>
@@ -224,8 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Dashboard.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/POVRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/XBoxStates.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterRotate.java" />
@@ -265,16 +226,18 @@
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/SensorReset.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/LimelightCalculation.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/RobotMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/FileReset.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/ButtonTune.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java" />
       </list>
     </option>
   </component>
@@ -284,7 +247,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -296,7 +259,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -420,10 +382,15 @@
               <item name="robot" type="462c0819:PsiDirectoryNode" />
               <item name="Wrist" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="robot-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,11 +398,11 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553969549978" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555453405211" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4954023" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -518,9 +485,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34120172" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -534,8 +501,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.47496423" visible="true" weight="0.2955414" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.52503574" side_tool="true" visible="true" weight="0.2955414" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.46995708" visible="true" weight="0.2955414" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.53004295" side_tool="true" visible="true" weight="0.2955414" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49928468" weight="0.3299363" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49928468" weight="0.3299363" />
@@ -591,27 +558,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ToolchainPlugin/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendordeps/PathfinderOLD.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/Tank.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Limelight/CameraScore.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterUltrasonicPauserFar.java">
@@ -641,16 +587,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#881#882#0" expanded="true" />
             <element signature="e#909#910#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/Claw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,16 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -768,17 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawExtend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/Lifter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -795,18 +710,6 @@
           <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterActuate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -875,16 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="59" column="46" selection-start-line="59" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Mapping/RobotMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -923,16 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/ArmMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/Wrist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -940,23 +823,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="240">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/POVRunner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="900">
+          <caret line="67" column="141" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="141" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawExtend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoPaths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/FileReset.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterActuate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="42" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/Claw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="59" column="46" selection-start-line="59" selection-end-line="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/ArmMotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -967,40 +971,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoLifter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/ButtonTune.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="812">
+          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI/OI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoClawMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="67" column="141" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Variables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1009,32 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Robot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="156" column="30" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Lifter/LifterSafety.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Brake/BrakeArmActuation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/team3100/robot/Claw/ClawRotate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2104">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
         </state>
       </provider>
     </entry>

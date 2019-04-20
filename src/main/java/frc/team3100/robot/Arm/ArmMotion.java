@@ -19,6 +19,7 @@ MAX V / 100 ms ==
 
 public class ArmMotion extends Command {
     private double speed;
+    private boolean running = true;
 
     public ArmMotion() {
         super("ArmMotion");
@@ -30,20 +31,23 @@ public class ArmMotion extends Command {
     }
 
     protected void execute() {
-        // Pulls joystick input and applies it to arm speed for manual control.
+        if(!Robot.oi.presetTuning.get()) {
+            // Pulls joystick input and applies it to arm speed for manual control.
 
-        speed = RobotMap.techControls.getLeftStickY();
-        if(Math.abs(speed) < .2 && !Variables.armAuto) {
-            // Adds anti-gravity when not given controller input
-            Robot.arm.manualRotation(.21 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1:1));
+            speed = RobotMap.techControls.getLeftStickY();
+            if (Math.abs(speed) < .2 && !Variables.armAuto) {
+                // Adds anti-gravity when not given controller input
+                Robot.arm.manualRotation(.21 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? -1 : 1));
+            } else {
+                Robot.arm.manualRotation(speed);
+            }
         } else {
-            Robot.arm.manualRotation(speed);
+            running = false;
         }
-        
     }
 
     protected boolean isFinished() {
-        return false;
+        return !running;
     }
 
     protected void end() {
