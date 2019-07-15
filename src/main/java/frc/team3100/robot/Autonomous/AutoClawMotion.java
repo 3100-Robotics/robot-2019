@@ -17,33 +17,59 @@ starting the autonomous motion.
 public class AutoClawMotion extends Command {
     private double armTargetPosition;
     private double wristTargetPosition;
+    private String targetLoc;
 
-    public AutoClawMotion(Variables.ClawPositions armTarget, Variables.ClawPositions wristTarget) {
+    public AutoClawMotion(String target) {
         super("AutoClawMotion");
         requires(Robot.wrist);
         requires(Robot.arm);
-        armTargetPosition = armTarget.getPosition();
-        wristTargetPosition = wristTarget.getPosition();
-        Variables.armTargetLoc = armTargetPosition;
+        this.targetLoc = target;
 
-        /*if(Robot.arm.getCurrentPosition() >= armTargetPosition) {
-            armTargetPosition += 20;
-        } else {
-            armTargetPosition -= 20;
-        }
-        if(Robot.arm.getCurrentPosition() >= 512) {
-            wristTargetPosition -= 50;
-        } else {
-            wristTargetPosition += 50;
-        }*/
 
     }
 
     protected void initialize() {
-        Robot.arm.movePosition(armTargetPosition);
-        Robot.wrist.movePosition(wristTargetPosition);
-        Variables.armAuto = true;
-        Variables.wristAuto = true;
+        if(targetLoc.equals("DEF")) {
+            armTargetPosition = Robot.presetValues[21];
+            wristTargetPosition = Robot.presetValues[20];
+        } else if(targetLoc.equals("ballRocketBack")) {
+            armTargetPosition = Robot.presetValues[11];
+            wristTargetPosition = Robot.presetValues[10];
+        } else if(targetLoc.equals("ballRocketFront")) {
+            armTargetPosition = Robot.presetValues[9];
+            wristTargetPosition = Robot.presetValues[8];
+        } else if(targetLoc.equals("ballCargoFront")) {
+            armTargetPosition = Robot.presetValues[5];
+            wristTargetPosition = Robot.presetValues[4];
+        } else if(targetLoc.equals("ballCargoBack")) {
+            armTargetPosition = Robot.presetValues[7];
+            wristTargetPosition = Robot.presetValues[6];
+        } else if(targetLoc.equals("ballRocket2Back")) {
+            armTargetPosition = Robot.presetValues[13];
+            wristTargetPosition = Robot.presetValues[12];
+        } else if(targetLoc.equals("ballPickupFront")) {
+            armTargetPosition = Robot.presetValues[1];
+            wristTargetPosition = Robot.presetValues[0];
+        } else if(targetLoc.equals("ballPickupBack")) {
+            armTargetPosition = Robot.presetValues[3];
+            wristTargetPosition = Robot.presetValues[2];
+        } else if(targetLoc.equals("hatchScoreFront")) {
+            armTargetPosition = Robot.presetValues[15];
+            wristTargetPosition = Robot.presetValues[14];
+        } else if(targetLoc.equals("hatchScoreBack")) {
+            armTargetPosition = Robot.presetValues[17];
+            wristTargetPosition = Robot.presetValues[16];
+        } else if(targetLoc.equals("hatchScoreRocketLv2")) {
+            armTargetPosition = Robot.presetValues[19];
+            wristTargetPosition = Robot.presetValues[18];
+        }
+
+        if(!Robot.oi.presetTuning.get()) {
+            Robot.arm.movePosition(armTargetPosition);
+            Robot.wrist.movePosition(wristTargetPosition);
+            Variables.armAuto = true;
+            Variables.wristAuto = true;
+        }
     }
 
     protected void execute() {

@@ -57,10 +57,11 @@ public class Robot extends TimedRobot {
     public static OI oi;
     public static Compressor compressor;
     public static Generator gen;
-    public static int[] presetValues = new int [100];
+    public static int[] presetValues = new int [26];
     private static Scanner scanner;
+    private static Scanner scanner2;
     private static Map<String, String> env = System.getenv();
-    public static File f = new File(env.get("HOME") + "/presets.txt");
+    public static File f = new File("/home/lvuser/presets.txt");
     private static int i = 0;
     private static FileWriter loader;
     private static Joystick led = new Joystick(3);
@@ -77,7 +78,7 @@ public class Robot extends TimedRobot {
                 f.createNewFile();
                 System.out.println("presets.txt does not exist. Creating and loading new copy.");
                 loader = new FileWriter(Robot.f);
-                loader.write("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+                loader.write("512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512 512");
                 loader.flush();
                 loader.close();
             } else {
@@ -86,7 +87,9 @@ public class Robot extends TimedRobot {
             scanner = new Scanner(f);
             while(scanner.hasNextInt()) {
                 presetValues[i] = scanner.nextInt();
+                System.out.println(presetValues[i]);
                 i++;
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -134,14 +137,20 @@ public class Robot extends TimedRobot {
         oi = new OI();
 
 
-
+        /*
         new TalonConfig().configure();
 
-        /*
+        new Thread(() -> {
+            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            camera.setResolution(640, 480);
+
+            CvSink cvSink = CameraServer.getInstance().getVideo();
+            CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+
+        }).start();
         new Thread(() -> {
 
-            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-            camera.setResolution(320, 480);
+
 
             CvSink cvSinkClaw = CameraServer.getInstance().getVideo();
             cvSinkClaw.setEnabled(true);
@@ -189,6 +198,17 @@ public class Robot extends TimedRobot {
             }
         }
         autoVal = false;
+        System.out.println("ABCDEF");
+        try {
+            scanner2 = new Scanner(f);
+            while (scanner2.hasNextInt()) {
+                System.out.println(scanner2.next() + "C");
+                i++;
+            }
+        } catch(IOException e) {
+            System.out.println(e);
+        }
+        System.out.println("GHIJK");
 
 
     }
@@ -221,6 +241,7 @@ public class Robot extends TimedRobot {
         Dashboard.initDashboard();
         Dashboard.updateDashboard();
         led.setOutput(1,true);
+        vision.disableVisionProcessing();
     }
 
     public void disabledPeriodic() {

@@ -44,6 +44,7 @@ public class RobotMap {
     private static int armBrakeEngageChannel = 0;
     private static int clawHatchReleaseChannel = 1;
     private static int lifterRotationChannel = 6;
+    private static int backLEDChannel = 7;
 
 
     //     A N A L O G
@@ -56,6 +57,7 @@ public class RobotMap {
     private static int hatchLeftSwitchChannel = 0;
     private static int hatchRightSwitchChannel = 1;
     private static int cargoSwitchChannel = 2;
+
 
 
     //     D R I V E R   B U T T O N S
@@ -112,7 +114,7 @@ public class RobotMap {
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
-    public static VictorSPX leftDriveMotor2 = new VictorSPX(driveLeft2Channel); // TalonSRX
+    public static TalonSRX leftDriveMotor2 = new TalonSRX(driveLeft2Channel); // TalonSRX
     public static VictorSPX leftDriveMotor3 = new VictorSPX(driveLeft3Channel);
 
     public static TalonSRX rightDriveMotor1 = new TalonSRX(driveRight1Channel);
@@ -135,6 +137,8 @@ public class RobotMap {
     public static Solenoid lifterBackExtend = new Solenoid(PCM1Channel,lifterBackPistonExtendChannel);
     public static Solenoid lifterRotation = new Solenoid(PCM1Channel,lifterRotationChannel);
     public static Solenoid clawHatchRelease = new Solenoid(PCM1Channel,clawHatchReleaseChannel);
+    public static Solenoid backLED = new Solenoid(PCM1Channel,backLEDChannel);
+
 
 
     //    Initialize sensors

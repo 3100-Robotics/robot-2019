@@ -7,6 +7,7 @@ import frc.team3100.robot.Autonomous.AutoScore;
 import frc.team3100.robot.Claw.ClawExtend;
 import frc.team3100.robot.Lifter.*;
 import frc.team3100.robot.Mapping.RobotMap;
+import frc.team3100.robot.Robot;
 import frc.team3100.robot.Variables;
 
 /*
@@ -15,19 +16,18 @@ Interfaces buttons with commands
 public class OI {
 
 
-
+    public Button presetTuning = new JoystickButton(RobotMap.techControls,RobotMap.aButtonChannel);
     private Button hatchReleaseButton = new JoystickButton(RobotMap.driveControls,RobotMap.rightBumperChannel);
     public Button safetyButton = new JoystickButton(RobotMap.driveControls,RobotMap.startButtonChannel);
     public Button triggerButton = new JoystickButton(RobotMap.driveControls,RobotMap.backButtonChannel);
     //ublic Button pathButton = new JoystickButton(RobotMap.driveControls,RobotMap.aButtonChannel);
-    public Button presetTuning = new JoystickButton(RobotMap.techBoard,RobotMap.aButtonChannel);
 
 
 
     private Button lifterActuateButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton12Channel);
-    public Button climbingPrep = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton13Channel);
-    private Button sensorResetButton = new JoystickButton(RobotMap.techControls,RobotMap.boardButton14Channel);
-    public Button climbingMotonButton = new JoystickButton(RobotMap.techBoard,RobotMap.bButtonChannel);
+    private Button sensorResetButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton14Channel);
+    public Button climbingMotonButton = new JoystickButton(RobotMap.techControls,RobotMap.bButtonChannel);
+    public Button climbingPrep = new JoystickButton(RobotMap.techControls,RobotMap.xButtonChannel);
 
 
     public Button defenceButton = new JoystickButton(RobotMap.techBoard,RobotMap.boardButton7Channel);
@@ -50,27 +50,28 @@ public class OI {
 
 
     public OI() {
+        presetTuning.whenPressed(new ButtonTune());
         hatchReleaseButton.whenPressed(new ClawExtend());
         lifterActuateButton.whenPressed(new LifterActuate());
         sensorResetButton.whenPressed(new SensorReset());
         safetyButton.whenPressed(new LifterSafety());
         //pathButton.whenPressed(new AutoScore());
-        climbingPrep.whenPressed(new AutoClawMotion(Variables.ClawPositions.armClimbPrep,Variables.ClawPositions.wristClimbPrep));
+        //climbingPrep.whenPressed(new AutoClawMotion(Variables.ClawPositions.armClimbPrep,Variables.ClawPositions.wristClimbPrep));
 
-        ballRocketBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketBack,Variables.ClawPositions.wristBallScoreRocketBack));
-        ballCargoFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoFront,Variables.ClawPositions.wristBallScoreCargoFront));
-        ballCargoBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreCargoBack,Variables.ClawPositions.wristBallScoreCargoBack));
-        ballRocketFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketFront,Variables.ClawPositions.wristBallScoreRocketFront));
-        ballRocket2BackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallScoreRocketlv2, Variables.ClawPositions.wristBallScoreRocketlv2));
+        ballRocketBackButton.whenPressed(new AutoClawMotion("ballRocketBack"));
+        ballCargoFrontButton.whenPressed(new AutoClawMotion("ballCargoFront"));
+        ballCargoBackButton.whenPressed(new AutoClawMotion("ballCargoBack"));
+        ballRocketFrontButton.whenPressed(new AutoClawMotion("ballRocketFront"));
+        ballRocket2BackButton.whenPressed(new AutoClawMotion("ballRocket2Back"));
 
-        ballPickupBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallPickupBack,Variables.ClawPositions.wristBallPickupBack));
-        ballPickupFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armBallPickupFront,Variables.ClawPositions.wristBallPickupFront));
+        ballPickupBackButton.whenPressed(new AutoClawMotion("ballPickupBack"));
+        ballPickupFrontButton.whenPressed(new AutoClawMotion("ballPickupFront"));
 
-        defenceButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armDefence,Variables.ClawPositions.wristDefence));
+        defenceButton.whenPressed(new AutoClawMotion("DEF"));
 
-        hatchScoreFrontButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchFront,Variables.ClawPositions.wristHatchFront));
-        hatchScoreBackButton.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchBack,Variables.ClawPositions.wristHatchBack));
-        hatchScoreRocketLv2Button.whenPressed(new AutoClawMotion(Variables.ClawPositions.armHatchScoreRocketLv2,Variables.ClawPositions.wristHatchScoreRocketLv2));
+        hatchScoreFrontButton.whenPressed(new AutoClawMotion("hatchScoreFront"));
+        hatchScoreBackButton.whenPressed(new AutoClawMotion("hatchScoreBack"));
+        hatchScoreRocketLv2Button.whenPressed(new AutoClawMotion("hatchScoreRocketLv2"));
 
     }
 }

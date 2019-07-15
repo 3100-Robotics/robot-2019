@@ -15,7 +15,7 @@ public class AutoLifter extends CommandGroup {
 
 
     public AutoLifter() {
-        addParallel(new AutoClawMotion(Variables.ClawPositions.armClimbMotion,Variables.ClawPositions.wristClimbMotion));
+        //addParallel(new AutoClawMotion(Variables.ClawPositions.armClimbMotion,Variables.ClawPositions.wristClimbMotion));
         addSequential(new LifterActuate());
         addSequential(new LifterUltrasonicPauserFar(Variables.Direction.FRONT));
         clawMotors = new AutoClawClimbMotor();

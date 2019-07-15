@@ -75,8 +75,8 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void movePosition(double position) {
 
-        if(position < 420) {
-            position = 420;
+        if(position < 200) {
+            position = 200;
             System.out.println("Lower Bound Tripped");
         } else if(position > 800) {
             position = 800;
