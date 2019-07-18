@@ -135,10 +135,10 @@ public class Robot extends TimedRobot {
 
         // ALWAYS initialize OI after subsystems
         oi = new OI();
-
-
-        /*
         new TalonConfig().configure();
+        CameraServer.getInstance().startAutomaticCapture();
+        /*
+
 
         new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();

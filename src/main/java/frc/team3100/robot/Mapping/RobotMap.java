@@ -114,7 +114,7 @@ public class RobotMap {
 
     //    Initialize speed controllers
     public static TalonSRX leftDriveMotor1 = new TalonSRX(driveLeft1Channel);
-    public static TalonSRX leftDriveMotor2 = new TalonSRX(driveLeft2Channel); // TalonSRX
+    public static VictorSPX leftDriveMotor2 = new VictorSPX(driveLeft2Channel); // TalonSRX
     public static VictorSPX leftDriveMotor3 = new VictorSPX(driveLeft3Channel);
 
     public static TalonSRX rightDriveMotor1 = new TalonSRX(driveRight1Channel);

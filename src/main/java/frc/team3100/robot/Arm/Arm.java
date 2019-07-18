@@ -51,11 +51,11 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
         // Soft limits for arm motion
 
-        if(motor.getSensorCollection().getAnalogInRaw() < 0) {
+        if(motor.getSensorCollection().getAnalogInRaw() < 235) {
             if(speed < 0) {
                 speed = .29;
             }
-        } else if(motor.getSensorCollection().getAnalogInRaw() > 850) {
+        } else if(motor.getSensorCollection().getAnalogInRaw() > 600) {
             if(speed > 0) {
                 speed = -.29;
             }
