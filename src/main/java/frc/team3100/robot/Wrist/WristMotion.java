@@ -23,12 +23,12 @@ public class WristMotion extends Command {
 
     protected void execute() {
         speed = RobotMap.techControls.getRightStickY();
-        if(Math.abs(speed) < .2 && !Variables.wristAuto) {
-            Robot.wrist.manualRotation(-.31 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? 1:-1));
-        } else {
+    //    if(Math.abs(speed) < .2 && !Variables.wristAuto) {
+      //      Robot.wrist.manualRotation(-.31 * (RobotMap.armMotor1.getSensorCollection().getAnalogIn() > 512 ? 1:-1));
+
             Robot.wrist.manualRotation(speed);
         }
-    }
+
 
     protected boolean isFinished() {
         return false;

@@ -38,8 +38,8 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
         motor.config_kI(0,Variables.wristGains.kI);
         motor.config_kD(0,Variables.wristGains.kD);
 
-        int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
-        motor.setSelectedSensorPosition(absolutePosition);
+       int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
+       motor.setSelectedSensorPosition(absolutePosition);
     }
 
     public void initDefaultCommand() {
@@ -48,7 +48,7 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
 
     public void manualRotation(double speed) {
         speed = deadband(speed);
-
+/*
         if(motor.getSensorCollection().getAnalogInRaw() < 510) {
             if(speed < 0) {
                 speed = .21;
@@ -59,8 +59,11 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
             }
         }
 
-        double scaleSpeed = speed < 0 ? -1 : 1;
-        speed *= speed * scaleSpeed;
+        */
+
+//
+       double scaleSpeed = speed < 0 ? -0.6 : 0.6;
+       speed *= speed * scaleSpeed;
 
 
         if(speed != 0) {
@@ -72,7 +75,7 @@ public class Wrist extends Subsystem implements Dashboard.DashboardUpdatable {
             ran = true;
         }
     }
-
+//
     public void movePosition(double position) {
 
         if(position < 510) {

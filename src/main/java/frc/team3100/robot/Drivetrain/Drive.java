@@ -18,7 +18,7 @@ Still need to implement PID Control with the magnetic encoders and potentially t
 
 public class Drive extends PIDSubsystem implements Dashboard.DashboardUpdatable {
 
-    private double dSpeedLimit = 0.08;
+    private double dSpeedLimit = 0.01;
     private double dRotateLimit = 0.08;
     private double limitedSpeed = 0;
     private double limitedRotate = 0;

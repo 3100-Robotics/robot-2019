@@ -117,10 +117,6 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         ran = true;
     }
 
-
-
-
-
     public void initSD() {
 
     }

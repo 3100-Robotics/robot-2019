@@ -33,14 +33,14 @@ public class AutoMaster extends CommandGroup {
     private Trajectory driveRight;
     Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
             Trajectory.Config.SAMPLES_FAST, 0.05, 135, 70.0, 60.0);
-    public AutoMaster(Variables.startPosition startPosition, Variables.preload preload, Variables.target target) {
-        trajectory = Pathfinder.generate(pathData.pointsFromStart(startPosition,target), config);
-        modifier = new TankModifier(trajectory).modify(24.7);
+   // public AutoMaster(Variables.startPosition startPosition, Variables.preload preload, Variables.target target) {
+   //     trajectory = Pathfinder.generate(pathData.pointsFromStart(startPosition,target), config);
+   //     modifier = new TankModifier(trajectory).modify(24.7);
 
 
 
 
-    }
+   // }
 
 
 
