@@ -2,180 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="998e7f60-4f4e-4144-920f-9622271afb96" name="Default" comment="Disabling sensor functions">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ctre_phoenix_api_java_5_12_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ctre_phoenix_wpiapi_java_5_12_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_kauailabs_navx_frc_navx_java_3_1_344.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cameraserver_cameraserver_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_cscore_cscore_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_hal_hal_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_ntcore_ntcore_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_thirdparty_frc2019_opencv_opencv_java_3_4_4_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpilibj_wpilibj_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_wpi_first_wpiutil_wpiutil_java_2019_4_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_jniloader_JNILoader_1_0_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_pathfinder_Pathfinder_FRCSupport_2019_3_06_UNSTABLE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jaci_pathfinder_Pathfinder_Java_2019_3_06_UNSTABLE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_6.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/robot-2019.main.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/robot-2019.test.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSPosTSUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSPosTSUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSPosUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSPosUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSUpdateBase.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRSUpdateBase.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_DATA_ACTION.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_DATA_ACTION.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_DATA_TYPE.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_DATA_TYPE.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_TUNING_VAR_ID.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$AHRS_TUNING_VAR_ID.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$BoardID.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$BoardID.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$DataSetResponse.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$DataSetResponse.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$IntegrationControl.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$IntegrationControl.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$MagCalData.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$MagCalData.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$TuningVar.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol$TuningVar.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/AHRSProtocol.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$GyroUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$GyroUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$QuaternionUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$QuaternionUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$StreamCommand.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$StreamCommand.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$StreamResponse.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$StreamResponse.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$YPRUpdate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol$YPRUpdate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMUProtocol.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMURegisters.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/IMURegisters.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardAxis.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardAxis.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardCapabilities.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardCapabilities.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardYawAxis.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$BoardYawAxis.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$IOCompleteNotification.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$IOCompleteNotification.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$IOThread.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$IOThread.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$SerialDataType.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS$SerialDataType.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/AHRS.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/ContinuousAngleTracker.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/ContinuousAngleTracker.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IBoardCapabilities.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IBoardCapabilities.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOCompleteNotification$BoardState.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOCompleteNotification$BoardState.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOCompleteNotification.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOCompleteNotification.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOProvider.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IIOProvider.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IRegisterIO.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/IRegisterIO.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/ITimestampedDataSubscriber.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/ITimestampedDataSubscriber.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/InertialDataIntegrator.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/InertialDataIntegrator.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/OffsetTracker.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/OffsetTracker.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/Quaternion$FloatVectorStruct.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/Quaternion$FloatVectorStruct.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/Quaternion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/Quaternion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO_I2C.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO_I2C.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO_SPI.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/RegisterIO_SPI.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/SerialIO.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kauailabs/navx/frc/SerialIO.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/Arm.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/Arm.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/ArmMotion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Arm/ArmMotion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawClimbMotor.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawClimbMotor.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawMotion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawMotion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawWheels.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoClawWheels.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoDrive.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoDrive.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoLifter.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoLifter.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoMaster.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoMaster.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoPathScore.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoPathScore.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoPaths.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoPaths.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoScore.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Autonomous/AutoScore.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/Brake.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/Brake.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/BrakeArmActuation.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Brake/BrakeArmActuation.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/Claw.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/Claw.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawExtend.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawExtend.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawRotate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Claw/ClawRotate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Gains.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Gains.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/Lifter.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/Lifter.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterActuate.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterActuate.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterSafety.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterSafety.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterUltrasonicPauserClose.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterUltrasonicPauserClose.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterUltrasonicPauserFar.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Lifter/LifterUltrasonicPauserFar.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/GenerateSpline.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/GenerateSpline.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/Generator.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/Generator.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/LimelightCalculation.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Limelight/LimelightCalculation.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Main.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Main.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/ButtonBoard.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/ButtonBoard.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/RobotMap.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/RobotMap.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/TalonConfig.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/TalonConfig.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/XBoxStates.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Mapping/XBoxStates.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/ButtonTune.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/ButtonTune.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard$DashboardUpdatable.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard$DashboardUpdatable.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/Dashboard.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/OI.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/OI.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/POVRunner.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/POVRunner.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/SensorReset.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI/SensorReset.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Robot.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Robot.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$ClawPositions.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$ClawPositions.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$Direction.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$Direction.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$preload.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$preload.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$startPosition.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$startPosition.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$target.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables$target.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Variables.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/Wrist.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/Wrist.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/WristMotion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Wrist/WristMotion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder$GenerationException.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder$GenerationException.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder$PathfinderJNIException.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder$PathfinderJNIException.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Pathfinder.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/PathfinderJNI.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/PathfinderJNI.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$Config.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$Config.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$FitMethod.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$FitMethod.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$Segment.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory$Segment.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Trajectory.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Waypoint.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/Waypoint.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/DistanceFollower.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/DistanceFollower.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/EncoderFollower.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/followers/EncoderFollower.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/SwerveModifier$Mode.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/SwerveModifier$Mode.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/SwerveModifier.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/SwerveModifier.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/TankModifier.class" afterPath="$PROJECT_DIR$/build/classes/java/main/jaci/pathfinder/modifiers/TankModifier.class" />
-      <change beforePath="$PROJECT_DIR$/build/debug/debuginfo.json" afterPath="$PROJECT_DIR$/build/debug/debuginfo.json" />
-      <change beforePath="$PROJECT_DIR$/build/debug/riopartial/robot-2019.json" afterPath="$PROJECT_DIR$/build/debug/riopartial/robot-2019.json" />
-      <change beforePath="$PROJECT_DIR$/build/libs/robot-2019.jar" afterPath="$PROJECT_DIR$/build/libs/robot-2019.jar" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libcscore.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libcscorejni.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libntcore.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libntcorejni.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_calib3d.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_core.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_features2d.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_flann.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_highgui.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_imgcodecs.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_imgproc.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_java344.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_ml.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_objdetect.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_photo.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_shape.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_stitching.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_superres.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_video.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_videoio.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libopencv_videostab.3.4.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libpathfinder.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libpathfinderjni.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libwpiHal.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libwpiHaljni.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jniExtractDir/libwpiutil.dylib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Arm/Arm.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoMaster.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Autonomous/AutoMaster.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/Wrist.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/Wrist.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/WristMotion.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Wrist/WristMotion.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -445,6 +272,14 @@
       <option name="presentableId" value="Default" />
       <updated>1568150658698</updated>
     </task>
+    <task id="LOCAL-00001" summary="Disabling sensor functions">
+      <created>1568319579477</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568319579478</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
