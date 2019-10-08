@@ -53,12 +53,12 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
         if(motor.getSensorCollection().getAnalogInRaw() < 235) {
             if(speed < 0) {
-                speed = .29;
-            }
+        speed = .29;
+        }
         } else if(motor.getSensorCollection().getAnalogInRaw() > 600) {
-            if(speed > 0) {
-                speed = -.29;
-            }
+        if(speed > 0) {
+        speed = -.29;
+        }
         }
 
         // Scaling the arm speed for more intuitive control
@@ -67,61 +67,61 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
 
 
         if(speed != 0) {
-            motor.set(ControlMode.PercentOutput, speed);
-            ran = false;
+        motor.set(ControlMode.PercentOutput, speed);
+        ran = false;
 
         } else if(speed == 0 && !ran) {
-            //Ensuring motor isn't still running within the controller deadband
-            motor.set(ControlMode.PercentOutput, 0);
-            ran = true;
+        //Ensuring motor isn't still running within the controller deadband
+        motor.set(ControlMode.PercentOutput, 0);
+        ran = true;
         }
-    }
+        }
 
-    public void movePosition(double position) {
+public void movePosition(double position) {
         // Using the position from the AutoClawMotion command and starting the built-in PID
 
         // Soft-limit on motion
         int absolutePosition = motor.getSensorCollection().getAnalogInRaw();
         motor.setSelectedSensorPosition(absolutePosition);
         if(position < 220) {
-            position = 220;
-            System.out.println("Lower Bound Tripped");
+        position = 220;
+        System.out.println("Lower Bound Tripped");
         } else if(position > 980) {
-            position = 980;
-            System.out.println("Upper Bound Tripped");
+        position = 980;
+        System.out.println("Upper Bound Tripped");
         }
 
         pos = position;
         // Starting position control
         motor.set(ControlMode.Position,position);
 
-    }
+        }
 
-    private double deadband(double input) {
+private double deadband(double input) {
         // Defining the controller deadband
         if(Math.abs(input) <= Variables.joystickError) {
-            return 0;
+        return 0;
         } else {
-            return input;
+        return input;
         }
-    }
+        }
 
-    public int getCurrentPosition() {
+public int getCurrentPosition() {
         // Find the current position of the sensor
         return motor.getSelectedSensorPosition();
-    }
+        }
 
-    public void stop() {
+public void stop() {
         // Halt all arm motion with one simple command! Buy one today!
         motor.set(ControlMode.PercentOutput,0);
         ran = true;
-    }
+        }
 
-    public void initSD() {
+public void initSD() {
 
-    }
+        }
 
-    public void updateSD() {
+public void updateSD() {
         // All smartdashboard debug values
         SmartDashboard.putNumber("Arm target",pos);
         SmartDashboard.putNumber("Arm Speed",motor.getOutputCurrent());
@@ -129,5 +129,5 @@ public class Arm extends Subsystem implements Dashboard.DashboardUpdatable {
         SmartDashboard.putNumber("Arm Position2",motor.getSensorCollection().getAnalogIn());
         SmartDashboard.putNumber("Arm Position3",this.getCurrentPosition());
 
-    }
-}
+        }
+        }
