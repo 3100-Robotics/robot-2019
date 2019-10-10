@@ -84,6 +84,22 @@ public class ClawRotate extends Command {
             Robot.claw.wheels(0,0);
         }
         time += 1;
+
+        if(RobotMap.techControls.getRightTrigger() > .2) {
+            Robot.claw.wheels(1,1);
+        } else if(RobotMap.techControls.getLeftTrigger() > .2) {
+            Robot.claw.wheels(-1,-1);
+        } else if(!RobotMap.hatchLeftSwitch.get() || !RobotMap.hatchRightSwitch.get()) {
+            if(RobotMap.armMotor1.getOutputCurrent() > .3) {
+                direcMod = 0;
+            } else {
+                direcMod = 0;
+            }
+            Robot.claw.wheels(-.6*direcMod,-.6*direcMod);
+        } else {
+            Robot.claw.wheels(0,0);
+        }
+        time += 1;
     }
 
     protected boolean isFinished() {
