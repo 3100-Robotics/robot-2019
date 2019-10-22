@@ -1,128 +1,56 @@
 package frc.team3100.robot.Drivetrain;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.DemandType;
-import com.ctre.phoenix.motorcontrol.FollowerType;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3100.robot.OI.Dashboard;
-import frc.team3100.robot.Mapping.RobotMap;
-import frc.team3100.robot.Robot;
-import frc.team3100.robot.Variables;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-/*
-This defines all aspects of the drive train-- specifically the shifting to high/low gear and the six mini-CIMs.
-Still need to implement PID Control with the magnetic encoders and potentially the NavX.
- */
+import static frc.team3100.robot.RobotMap.leftDriveMotor;
+import static frc.team3100.robot.RobotMap.rightDriveMotor;
 
-public class Drive extends PIDSubsystem implements Dashboard.DashboardUpdatable {
 
-    private double dSpeedLimit = 0.05;
-    private double dRotateLimit = 0.08;
-    private double limitedSpeed = 0;
-    private double limitedRotate = 0;
-    private double scaleRotate = 1;
-    private double scaleSpeed = 1;
-    private boolean ran = false;
-    private double targetAngle = 0;
+public class Drive extends Subsystem {
+
+    DifferentialDrive differentialDrive = null;
 
     public Drive() {
-        super("Drive",.04,0,0);
-        setOutputRange(-1,1);
-        setSetpoint(0);
+        super("Drive");
+
+        differentialDrive = new DifferentialDrive(leftDriveMotor, rightDriveMotor);
+
+
     }
 
+    public void arcadeDrive(double moveSpeed, double rotateSpeed, boolean squaredInputs) {
 
-    public void initDefaultCommand() {setDefaultCommand(new DriveMotion());}
-
-    public double returnPIDInput() {
-        return Robot.vision.getLimelightX();
-    }
-
-    public void usePIDOutput(double output) {
-        System.out.println(output);
-        this.driveArcade(RobotMap.driveControls.getLeftStickY(),-output);
-    }
-
-    public void driveTank(double leftSpeed, double rightSpeed) {
-        System.out.println(leftSpeed + ", " + rightSpeed);
-        RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput,rightSpeed);
-        RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput,leftSpeed);
-    }
-
-
-    public void driveArcade(double inputSpeed, double inputRotate) {
-        inputSpeed = deadband(inputSpeed);
-        inputRotate = deadband(inputRotate);
-
-
-
-        scaleSpeed = inputSpeed < 0 ? -0.8 : 0.8;
-        scaleRotate = inputRotate < 0 ? -1 : 1;
-
-        inputSpeed *= inputSpeed * scaleSpeed;
-        inputRotate *= inputRotate * scaleRotate;
-
-
-        double dSpeed = inputSpeed - limitedSpeed;
-        if (dSpeed > dSpeedLimit) {
-            dSpeed = dSpeedLimit;
-        } else if (dSpeed < -dSpeedLimit) {
-            dSpeed = -dSpeedLimit;
-        }
-        limitedSpeed += dSpeed;
-
-        double dRotate = inputRotate - limitedRotate;
-        if (dRotate > dRotateLimit) {
-            dRotate = dRotateLimit;
-        } else if (dRotate < -dRotateLimit) {
-            dRotate = -dRotateLimit;
+        if (squaredInputs) {
+            moveSpeed = Math.copySign(moveSpeed * moveSpeed, moveSpeed);
+            rotateSpeed = Math.copySign(rotateSpeed * rotateSpeed, rotateSpeed);
         }
 
-        limitedRotate += dRotate;
-
-        if(inputRotate != 0) {
-
-            RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, -limitedRotate);
-            RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.ArbitraryFeedForward, +limitedRotate);
-            ran = false;
-
-        } else {
-
-            targetAngle = RobotMap.rightDriveMotor1.getSensorCollection().getPulseWidthVelocity() - RobotMap.leftDriveMotor1.getSensorCollection().getPulseWidthVelocity();
-
-            RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput, limitedSpeed, DemandType.AuxPID, targetAngle);
-            RobotMap.leftDriveMotor1.follow(RobotMap.rightDriveMotor1, FollowerType.AuxOutput1);
-            ran = true;
-
-
-        }
-    }
-
-    private double deadband(double input) {
-        if(Math.abs(input) < Variables.joystickError) {
-            return 0;
-        } else {
-            return input;
-        }
-    }
-
-    public void stop() {
-        RobotMap.leftDriveMotor1.set(ControlMode.PercentOutput,0);
-        RobotMap.rightDriveMotor1.set(ControlMode.PercentOutput,0);
+        differentialDrive.arcadeDrive(moveSpeed, rotateSpeed, squaredInputs);
 
     }
 
-    public void initSD() {
+    public void tankDrive(double leftSpeed, double rightSpeed){
+
+        differentialDrive.tankDrive(leftSpeed, rightSpeed);
 
     }
 
-    public void updateSD() {
-        SmartDashboard.putNumber("Drive Speed",limitedSpeed);
-        SmartDashboard.putNumber("Drive Rotate",limitedRotate);
-        SmartDashboard.putNumber("Drive Left Sensor",RobotMap.leftDriveMotor1.getSelectedSensorPosition());
-        SmartDashboard.putNumber("Drive Right Sensor",RobotMap.rightDriveMotor1.getSelectedSensorPosition());
+    protected void initialize() {}
+
+    protected void execute() {}
+
+
+    protected boolean isFinished() {
+        // TODO: Make this return true when this Command no longer needs to run execute()
+        return false;
+    }
+
+    public void initDefaultCommand() {
+        setDefaultCommand(new DriveMotion());
+    }
+
+    protected void end() {
 
     }
 }
