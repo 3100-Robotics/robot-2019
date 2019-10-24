@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c14f9d4f-5d5b-44c5-ad03-d98cc96ddc57" name="Default" comment="MK1-Improvements">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/robot-2019.iml" afterPath="$PROJECT_DIR$/.idea/modules/robot-2019.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="c14f9d4f-5d5b-44c5-ad03-d98cc96ddc57" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ToolchainPlugin/src/main/main1.iml" afterPath="$PROJECT_DIR$/ToolchainPlugin/src/main/main1.iml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/Drive.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/Drivetrain/DriveMotion.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/OI.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/RobotMap.class" afterPath="$PROJECT_DIR$/build/classes/java/main/frc/team3100/robot/RobotMap.class" />
-      <change beforePath="$PROJECT_DIR$/build/debug/debuginfo.json" afterPath="$PROJECT_DIR$/build/debug/debuginfo.json" />
-      <change beforePath="$PROJECT_DIR$/build/debug/riopartial/robot-2019.json" afterPath="$PROJECT_DIR$/build/debug/riopartial/robot-2019.json" />
-      <change beforePath="$PROJECT_DIR$/build/libs/robot-2019.jar" afterPath="$PROJECT_DIR$/build/libs/robot-2019.jar" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/Drive.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/DriveMotion.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/Drivetrain/DriveMotion.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/OI.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/RobotMap.java" afterPath="$PROJECT_DIR$/src/main/java/frc/team3100/robot/RobotMap.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" afterPath="$PROJECT_DIR$/src/main/main.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -377,11 +349,18 @@
       <option name="presentableId" value="Default" />
       <updated>1571782126386</updated>
     </task>
+    <task id="LOCAL-00001" summary="MK1-Improvements">
+      <created>1571956587974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571956587974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
