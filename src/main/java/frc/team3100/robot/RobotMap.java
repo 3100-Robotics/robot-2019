@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Spark;
 public class RobotMap
 {
 
-    public static int driveControlsChannel = 0;
+    public static int driveControlsChannel = 3;
 
     //     D R I V E R   B U T T O N S
     //X B O X
@@ -29,21 +29,13 @@ public class RobotMap
     public static final int leftTriggerChannel = 2;
 
     //Sparks
-    public static final int driveLeft1Channel = 8;
-    public static final int driveRight1Channel = 9;
-
-    //Joystick
-    public static final int moveAxis = 1;
-    public static final int rotateAxis = 5;
-
-    public static final int DRIVETRAIN_LEFT_BACK_TALON = 3;
-    public static final int DRIVETRAIN_RIGHT_BACK_TALON = 4;
+    public static final int driveLeft1Channel = 1;
+    public static final int driveRight1Channel = 2;
 
 
     public static XBoxStates driveControls = new XBoxStates(driveControlsChannel);
 
     public static Spark leftDriveMotor = new Spark(driveLeft1Channel);
     public static Spark rightDriveMotor = new Spark(driveRight1Channel);
-    // public static TalonSRX leftBTalon = new TalonSRX(DRIVETRAIN_LEFT_BACK_TALON);
-    // public static TalonSRX rightBTalon = new TalonSRX(DRIVETRAIN_RIGHT_BACK_TALON);
+
 }

@@ -1,11 +1,11 @@
 package frc.team3100.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
+
 
 public class OI
 {
 
-    public static Joystick driverController = new Joystick(RobotMap.driveControlsChannel);
+
 
     //Buttons Here
 

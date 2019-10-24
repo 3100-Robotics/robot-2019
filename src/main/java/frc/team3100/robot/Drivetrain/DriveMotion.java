@@ -21,20 +21,19 @@ public class DriveMotion extends Command {
     @Override
     protected void execute() {
 
-        double moveSpeed = -Robot.oi.driverController.getRawAxis(RobotMap.moveAxis);
-        double rotateSpeed = Robot.oi.driverController.getRawAxis(RobotMap.rotateAxis);
-        boolean squaredInput = true;
+        double mode = 2;
 
-        Robot.drive.arcadeDrive(moveSpeed, rotateSpeed, squaredInput);
+            if (mode == 1) {
 
-//        double leftSpeed = -Robot.oi.driverController.getRawAxis(RobotMap.moveAxis);
-//        double rightSpeed = Robot.oi.driverController.getRawAxis(RobotMap.rotateAxis);
-//        Robot.drive.tankDrive(leftSpeed, rightSpeed);
+                Robot.drive.arcadeDrive(-RobotMap.driveControls.getLeftStickY(), -RobotMap.driveControls.getRightStickX());
+            }
 
 
-        //Robot.drive.arcadeDrive(-RobotMap.driveControls.getLeftStickY(), -RobotMap.driveControls.getRightStickY());
-        //Robot.drive.driveTank(-RobotMap.driveControls.getLeftStickY(), -RobotMap.driveControls.getRightStickY());
+            else if (mode == 2) {
 
+                Robot.drive.tankDrive(-RobotMap.driveControls.getLeftStickY(), -RobotMap.driveControls.getRightStickY());
+
+        }
     }
 
 
