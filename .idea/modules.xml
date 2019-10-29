@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/ToolchainPlugin/src/main/main1.iml" filepath="$PROJECT_DIR$/ToolchainPlugin/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/robot-2019.iml" filepath="$PROJECT_DIR$/.idea/modules/robot-2019.iml" />
     </modules>
   </component>
 </project>

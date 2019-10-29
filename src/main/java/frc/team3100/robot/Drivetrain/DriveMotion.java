@@ -21,7 +21,7 @@ public class DriveMotion extends Command {
     @Override
     protected void execute() {
 
-        double mode = 2;
+        double mode = 1;
 
             if (mode == 1) {
 

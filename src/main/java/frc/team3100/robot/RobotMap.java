@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Spark;
 public class RobotMap
 {
 
-    public static int driveControlsChannel = 3;
+    public static int driveControlsChannel = 0;
 
     //     D R I V E R   B U T T O N S
     //X B O X

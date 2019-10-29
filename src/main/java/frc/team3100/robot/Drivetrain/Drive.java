@@ -35,6 +35,8 @@ public class Drive extends Subsystem {
         moveSpeed *= limitSpeed * moveSpeed;
         rotateSpeed *= limitRotate * rotateSpeed;
 
+        moveSpeed = Math.pow(moveSpeed, 3);
+
         differentialDrive.arcadeDrive(moveSpeed, rotateSpeed);
 
 
